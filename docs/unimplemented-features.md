@@ -30,11 +30,11 @@
 
 ## `GEM-005` 单品牌双入口
 
-- **已确认：** [Rubiae 网站视觉与首屏实施规范](brand/rubiae-web-visual-spec.md) 已固定雨后窗景、女性背影、清晰桌面、高饱和桌面宝石和编辑式故事页的首页第一视觉，并定义色彩、字体角色、响应式、动效、图片真实性与组件边界。
-- **剩余范围：** 依据已确认规范完成 B2C 首页其余区块、商品详情、Stories、How to Choose、About、公开 `For Trade`、私密批发目录及分渠道社交沟通设计。
-- **验收：** 首页第一视窗通过实施规范中的桌面、手机、真实性、可访问性和性能检查；消费者能看到专业贸易能力但无法看到批发价格；专业买家能直达交易信息与预约入口。
+- **已确认：** [Rubiae 网站视觉与首屏实施规范](brand/rubiae-web-visual-spec.md) 已固定雨后窗景、女性背影、清晰桌面、高饱和桌面宝石和编辑式故事页的首页第一视觉；首屏后的摄影以静物表达成长，每个场景均有红宝石，完整人物只保留首屏背影，后续最多一次局部手部；全页保持冷灰，仅灯光、木材和红宝石反射带少量暖意；示意宝石采用最新实拍中的冷调深莓红主体、酒红暗部与亮玫红受光切面，但不替代校色后的商品摄影。
+- **剩余范围：** 依据已确认规范和静物叙事长页示意，完成 B2C 首页其余区块、商品详情、Stories、How to Choose、About、公开 `For Trade`、私密批发目录及分渠道社交沟通设计，并以真实库存摄影替换示意宝石。
+- **验收：** 首页第一视窗通过实施规范中的桌面、手机、真实性、可访问性和性能检查；后续每个摄影场景都有亮而无光晕的红宝石，有参照物时尺寸可信，无参照物时按构图决定占比；消费者能看到专业贸易能力但无法看到批发价格；专业买家能直达交易信息与预约入口。
 - **依赖：** 商品资料、内容资产与网站预算。
-- **设计资料：** `docs/brand/rubiae-home-hero-approved-reference.png` 为已批准首屏参考；`docs/brand/rubiae-visual-directions-preview.png` 为早期方向比较板。两者均不得作为商品真实性证据。
+- **设计资料：** `docs/brand/rubiae-home-hero-approved-reference.png` 为已批准首屏参考；`docs/brand/rubiae-homepage-still-life-concept-v5.png` 为已确认的全页静物叙事、人物边界、色温、宝石亮度、比例与实拍色相方向参考；`docs/brand/rubiae-visual-directions-preview.png` 为早期方向比较板。三者均不得作为商品真实性证据。
 - **设计来源：** [Rubiae品牌经营基本信息](rubiae-business-basics.md)与 [Rubiae 品牌基调与表达系统](rubiae-brand-foundation.md)。
 
 ## `GEM-006` 宝石销售知识冲刺
