@@ -12,7 +12,8 @@
 ## 2026-07-28
 
 - **What changed:** Moved the business design document out of the skill-specific `superpowers` directory and renamed it [Rubiae品牌经营基本信息](docs/rubiae-business-basics.md); updated all source links.
-- **Relevant commits:** `9e53152` (move Rubiae business basics)
-- **Verification:** Confirmed the old path and `superpowers` references are gone, the new target exists, and `git diff --check` passes.
+- **What changed:** Selected visual direction A (“静默纪念”) for Rubiae: warm white, deep gemstone red, restrained old gold, ink gray, natural warm light, and a hand choosing a loose stone as the primary visual moment. Updated the brand foundation, TODO, and unimplemented-feature scope.
+- **Relevant commits:** `9e53152` (move Rubiae business basics), `ddcac8c` (select visual direction A)
+- **Verification:** Confirmed the old path and `superpowers` references are gone, the new target exists, `git diff --check` passes, and `GEM-005` remains open for exact color values, fonts, components, and site/directory design.
 - **Open IDs:** `GEM-001`, `GEM-002`, `GEM-003`, `GEM-004`, `GEM-005`, `GEM-006`, `GEM-007`, `GEM-008`.
 - **Next planned work:** Resolve supplier P0 questions before the next shipment or buyer quotation.
