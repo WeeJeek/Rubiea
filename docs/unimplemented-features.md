@@ -30,10 +30,11 @@
 
 ## `GEM-005` 单品牌双入口
 
-- **范围：** 以已选择的视觉方向 A 为基础，确认精确色值、字体和组件规范；再设计 B2C 默认首页、公开 `For Trade` 页面、私密批发目录及分渠道社交沟通。
-- **验收：** 方向 A 的精确视觉规范完成；消费者能看到专业贸易能力但无法看到批发价格；专业买家能直达交易信息与预约入口。
+- **已确认：** [Rubiae 网站视觉与首屏实施规范](brand/rubiae-web-visual-spec.md) 已固定雨后窗景、女性背影、清晰桌面、高饱和桌面宝石和编辑式故事页的首页第一视觉，并定义色彩、字体角色、响应式、动效、图片真实性与组件边界。
+- **剩余范围：** 依据已确认规范完成 B2C 首页其余区块、商品详情、Stories、How to Choose、About、公开 `For Trade`、私密批发目录及分渠道社交沟通设计。
+- **验收：** 首页第一视窗通过实施规范中的桌面、手机、真实性、可访问性和性能检查；消费者能看到专业贸易能力但无法看到批发价格；专业买家能直达交易信息与预约入口。
 - **依赖：** 商品资料、内容资产与网站预算。
-- **待复核资料：** `docs/brand/rubiae-visual-directions-preview.png`；仅供方向比较，图内宝石、产地和证书均为虚构排版示意，不得用于宣传。
+- **设计资料：** `docs/brand/rubiae-home-hero-approved-reference.png` 为已批准首屏参考；`docs/brand/rubiae-visual-directions-preview.png` 为早期方向比较板。两者均不得作为商品真实性证据。
 - **设计来源：** [Rubiae品牌经营基本信息](rubiae-business-basics.md)与 [Rubiae 品牌基调与表达系统](rubiae-brand-foundation.md)。
 
 ## `GEM-006` 宝石销售知识冲刺
