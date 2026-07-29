@@ -1,0 +1,16 @@
+{
+  "name": "Header group",
+  "type": "header",
+  "sections": {
+    "preview-notice": {
+      "type": "preview-notice"
+    },
+    "site-header": {
+      "type": "site-header"
+    }
+  },
+  "order": [
+    "preview-notice",
+    "site-header"
+  ]
+}

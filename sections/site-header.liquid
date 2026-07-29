@@ -1,0 +1,49 @@
+<header class="site-header">
+  <a class="site-header__brand" href="{{ routes.root_url }}">Rubiae</a>
+
+  <button
+    class="site-header__toggle"
+    type="button"
+    data-menu-toggle
+    data-open-menu="{{ 'accessibility.open_menu' | t }}"
+    data-close-menu="{{ 'accessibility.close_menu' | t }}"
+    aria-controls="SiteNavigation"
+    aria-expanded="false"
+    aria-label="{{ 'accessibility.open_menu' | t }}"
+  >
+    <span data-menu-label>{{ 'accessibility.open_menu' | t }}</span>
+  </button>
+
+  <nav class="site-header__navigation" id="SiteNavigation" aria-label="{{ 'accessibility.main_navigation' | t }}">
+    <ul>
+      {% for link in section.settings.menu.links %}
+        <li><a href="{{ link.url }}">{{ link.title | escape }}</a></li>
+      {% endfor %}
+    </ul>
+  </nav>
+
+  {% form 'localization', class: 'language-selector' %}
+    <label class="visually-hidden" for="LanguageSelector">{{ 'common.language' | t }}</label>
+    <select id="LanguageSelector" name="locale_code" onchange="this.form.submit()">
+      {% for language in localization.available_languages %}
+        <option value="{{ language.iso_code }}" {% if language.iso_code == localization.language.iso_code %}selected{% endif %}>
+          {{ language.endonym_name }}
+        </option>
+      {% endfor %}
+    </select>
+  {% endform %}
+</header>
+
+{% schema %}
+{
+  "name": "Site header",
+  "settings": [
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Navigation menu",
+      "default": "main-menu"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,18 @@
+{
+  "preview": {
+    "notice": "Rubiae is preparing for launch. Purchasing is not yet available."
+  },
+  "stone": {
+    "unknown": "Unknown"
+  },
+  "common": {
+    "language": "Language"
+  },
+  "accessibility": {
+    "skip_to_content": "Skip to content",
+    "open_menu": "Open menu",
+    "close_menu": "Close menu",
+    "main_navigation": "Main navigation",
+    "footer_navigation": "Footer navigation"
+  }
+}

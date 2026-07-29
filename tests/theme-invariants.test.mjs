@@ -28,3 +28,19 @@ const themeSource = () => THEME_SOURCE_DIRECTORIES.flatMap(files)
 test('theme has no transaction primitives', () => {
   assert.doesNotMatch(themeSource(), TRANSACTION_PRIMITIVES);
 });
+
+test('both locales expose preview notice and translated unknown value', () => {
+  for (const file of ['locales/en.default.json', 'locales/nl.json']) {
+    const locale = JSON.parse(readFileSync(file, 'utf8'));
+    assert.ok(locale.preview.notice);
+    assert.ok(locale.stone.unknown);
+    assert.ok(locale.common.language);
+    assert.ok(locale.accessibility.open_menu);
+    assert.ok(locale.accessibility.close_menu);
+  }
+});
+
+test('shared shell includes a skip link and reduced-motion rule', () => {
+  assert.match(readFileSync('layout/theme.liquid', 'utf8'), /skip-link/);
+  assert.match(readFileSync('assets/rubiae.css', 'utf8'), /prefers-reduced-motion/);
+});

@@ -1,0 +1,18 @@
+{
+  "preview": {
+    "notice": "Rubiae bereidt de lancering voor. Aankopen is nog niet mogelijk."
+  },
+  "stone": {
+    "unknown": "Onbekend"
+  },
+  "common": {
+    "language": "Taal"
+  },
+  "accessibility": {
+    "skip_to_content": "Ga naar inhoud",
+    "open_menu": "Menu openen",
+    "close_menu": "Menu sluiten",
+    "main_navigation": "Hoofdnavigatie",
+    "footer_navigation": "Voetnavigatie"
+  }
+}
