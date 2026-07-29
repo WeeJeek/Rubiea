@@ -85,3 +85,15 @@ test('homepage has the six approved editorial sections and one primary hero CTA'
   ]);
   assert.match(readFileSync('sections/home-hero.liquid', 'utf8'), /home\.hero\.cta/);
 });
+
+test('homepage reference disclosure covers either selected image above the hero table', () => {
+  const hero = readFileSync('sections/home-hero.liquid', 'utf8');
+  const css = readFileSync('assets/rubiae.css', 'utf8');
+
+  assert.match(
+    hero,
+    /\{%\s*if section\.settings\.hero_reference != blank or section\.settings\.mobile_reference != blank\s*%\}[\s\S]*home-reference-caption/,
+  );
+  assert.match(css, /\.home-hero__reference\s*\{[^}]*z-index:\s*0/);
+  assert.match(css, /\.home-reference-caption\s*\{[^}]*z-index:\s*1/);
+});

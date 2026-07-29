@@ -2,10 +2,12 @@
   <div class="home-hero__reference">
     {% if section.settings.hero_reference != blank %}
       {{ section.settings.hero_reference | image_url: width: 2880 | image_tag: class: 'home-hero__image', widths: '750, 1100, 1600, 2200, 2880', sizes: '100vw', preload: true, alt: '' }}
-      <p class="home-reference-caption">{{ 'home.reference_caption' | t }}</p>
     {% endif %}
     {% if section.settings.mobile_reference != blank %}
       {{ section.settings.mobile_reference | image_url: width: 1440 | image_tag: class: 'home-hero__mobile-image', widths: '640, 960, 1440', sizes: '100vw', alt: '' }}
+    {% endif %}
+    {% if section.settings.hero_reference != blank or section.settings.mobile_reference != blank %}
+      <p class="home-reference-caption">{{ 'home.reference_caption' | t }}</p>
     {% endif %}
   </div>
 

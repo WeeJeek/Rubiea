@@ -206,7 +206,7 @@ select:focus-visible {
 }
 
 .home-hero__reference {
-  z-index: -2;
+  z-index: 0;
 }
 
 .home-hero__image,
