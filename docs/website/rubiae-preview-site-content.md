@@ -1,0 +1,547 @@
+# Rubiae 公开预览站内容源
+
+## 状态与用途
+
+- **状态：** 2026-07-29 已确认，可用于 Shopify 公开预览站制作。
+- **范围：** 英语与荷兰语公开页面、表单、系统状态、SEO 和图片映射。
+- **不在本阶段：** 价格、购物车、结账、付款、商业预约及正式交易页面。相关规则继续保存在 `GEM-008`，取得 KVK 与 VAT ID 并满足上线门槛后再启用。
+- **使用方法：** 英语为默认语言，荷兰语内容必须同步存在。`{{...}}` 是 Shopify 数据字段或发布前由经营者填写的事实，不得由制作人员猜测。
+- **真实性：** 商品事实只取自库存、独立报告和已核验资料。未知项显示 `Unknown / Onbekend`；资料不足的商品只能接受询问。
+
+## 全站内容规则
+
+### 公开预览提示
+
+| 用途 | English | Nederlands |
+| --- | --- | --- |
+| 顶部公告 | Rubiae is preparing for launch. Purchasing is not yet available. | Rubiae bereidt de lancering voor. Aankopen is nog niet mogelijk. |
+| 商品状态 | Preview — not yet available for purchase | Voorvertoning — nog niet te koop |
+| 询盘说明 | Your message does not reserve the stone or create an order. | Je bericht reserveert de steen niet en vormt geen bestelling. |
+
+### 导航
+
+| English | Nederlands | 路径建议 |
+| --- | --- | --- |
+| Stones | Stenen | `/stones` / `/nl/stones` |
+| Stories | Verhalen | `/stories` / `/nl/stories` |
+| How to Choose | Hoe kies je | `/how-to-choose` / `/nl/how-to-choose` |
+| About | Over Rubiae | `/about` / `/nl/about` |
+| For Trade | Voor professionals | `/for-trade` / `/nl/for-trade` |
+| Contact | Contact | `/contact` / `/nl/contact` |
+| EN / NL | EN / NL | 语言切换，不改变当前页面语义 |
+
+### 固定 CTA
+
+| English | Nederlands |
+| --- | --- |
+| Explore the stones | Bekijk de stenen |
+| Register interest | Interesse registreren |
+| Ask about this stone | Vraag naar deze steen |
+| Read her moment | Lees haar moment |
+| Discover Rubiae Moments | Ontdek Rubiae Moments |
+| How to choose | Hoe kies je |
+| How we describe stones | Hoe we stenen beschrijven |
+| Contact Rubiae | Neem contact op met Rubiae |
+| Send message | Verstuur bericht |
+
+## 首页 Home
+
+首页模块顺序与 [全页批准设计参考](../brand/rubiae-homepage-still-life-concept-v5.png) 一致。
+
+### 1. 首屏
+
+**English**
+
+- Eyebrow: `Natural gemstones`
+- Heading: `Choose a stone for the life you are shaping.`
+- Body: `Natural gemstones, honestly described and chosen on your terms.`
+- Primary CTA: `Explore the stones`
+- Product fact cue: `What is known, clearly stated.`
+- Story card eyebrow: `RUBIAE MOMENTS`
+- Story card heading: `Her story, in her own words.`
+- Story card CTA: `Read her moment`
+
+**Nederlands**
+
+- Eyebrow: `Natuurlijke edelstenen`
+- Heading: `Kies een steen voor het leven dat je vormgeeft.`
+- Body: `Natuurlijke edelstenen, eerlijk beschreven en gekozen op jouw voorwaarden.`
+- Primary CTA: `Bekijk de stenen`
+- Product fact cue: `Wat bekend is, helder vermeld.`
+- Story card eyebrow: `RUBIAE MOMENTS`
+- Story card heading: `Haar verhaal, in haar eigen woorden.`
+- Story card CTA: `Lees haar moment`
+
+### 2. Langzaam kijken
+
+**English**
+
+- Display line: `A stone, seen slowly.`
+- Supporting heading: `Begin with the stone.`
+- Body: `Colour, natural character, and what is known — clearly described.`
+- CTA: `Explore the stones`
+
+**Nederlands**
+
+- Display line: `Een steen, rustig bekeken.`
+- Supporting heading: `Begin bij de steen.`
+- Body: `Kleur, natuurlijk karakter en wat bekend is — helder beschreven.`
+- CTA: `Bekijk de stenen`
+
+### 3. Vrij kiezen
+
+**English**
+
+- Display lines: `Look slowly.` / `Ask clearly.` / `Choose freely.`
+- CTA: `How to choose`
+
+**Nederlands**
+
+- Display lines: `Kijk rustig.` / `Vraag door.` / `Kies vrij.`
+- CTA: `Hoe kies je`
+
+### 4. Rubiae Moments
+
+**English**
+
+- Heading: `A moment can begin with a stone.`
+- Body: `Rubiae Moments is a space for stories shared in her own words.`
+- CTA: `Discover Rubiae Moments`
+
+**Nederlands**
+
+- Heading: `Een moment kan beginnen met een steen.`
+- Body: `Rubiae Moments biedt ruimte aan verhalen, verteld in haar eigen woorden.`
+- CTA: `Ontdek Rubiae Moments`
+
+### 5. Feiten
+
+**English**
+
+- Heading: `For those who need the facts.`
+- CTA 1: `How we describe stones`
+- CTA 2: `For Trade`
+
+**Nederlands**
+
+- Heading: `Voor wie de feiten nodig heeft.`
+- CTA 1: `Hoe we stenen beschrijven`
+- CTA 2: `Voor professionals`
+
+### 6. Afsluiting
+
+**English**
+
+- Heading: `Choose on your terms.`
+- CTA: `Explore the stones`
+
+**Nederlands**
+
+- Heading: `Kies op jouw voorwaarden.`
+- CTA: `Bekijk de stenen`
+
+## Stones 商品列表
+
+### 页面开场
+
+**English**
+
+- Eyebrow: `STONES`
+- Heading: `Stones, considered one at a time.`
+- Intro: `Each stone is shown with the facts currently known. Look slowly, compare what matters to you, and ask before deciding.`
+- Preview note: `The collection is shown for preview. Prices and purchasing will be added only when Rubiae is ready to trade.`
+
+**Nederlands**
+
+- Eyebrow: `STENEN`
+- Heading: `Stenen, één voor één bekeken.`
+- Intro: `Elke steen wordt getoond met de feiten die nu bekend zijn. Kijk rustig, vergelijk wat voor jou telt en stel vragen voordat je beslist.`
+- Preview note: `De collectie is nu een voorvertoning. Prijzen en aankoopmogelijkheden volgen pas wanneer Rubiae klaar is om te verkopen.`
+
+### 商品卡字段
+
+| 数据字段 | English label | Nederlands label |
+| --- | --- | --- |
+| `stone_id` | Stone | Steen |
+| `gemstone_name` | Gemstone | Edelsteen |
+| `weight_ct` | Weight | Gewicht |
+| `shape` | Shape | Vorm |
+| `treatment` | Treatment | Behandeling |
+| `report_status` | Report | Rapport |
+| 固定状态 | Preview — not yet available for purchase | Voorvertoning — nog niet te koop |
+
+商品卡 CTA：`Ask about this stone / Vraag naar deze steen`。
+
+### 空状态
+
+**English:** `The first stones are being documented. Register for a launch notice or return soon.`
+
+**Nederlands:** `De eerste stenen worden gedocumenteerd. Meld je aan voor een lanceringsbericht of kom binnenkort terug.`
+
+## Stone Detail 商品详情模板
+
+### 开场
+
+**English**
+
+- Eyebrow: `STONE {{stone_id}}`
+- Heading: `{{gemstone_name}}`
+- Status: `Preview — not yet available for purchase`
+- Intro: `A closer look at this individual stone, including what is known, what remains unknown, and the evidence available.`
+
+**Nederlands**
+
+- Eyebrow: `STEEN {{stone_id}}`
+- Heading: `{{gemstone_name_nl}}`
+- Status: `Voorvertoning — nog niet te koop`
+- Intro: `Bekijk deze afzonderlijke steen van dichtbij, met wat bekend is, wat nog onbekend is en welk bewijs beschikbaar is.`
+
+### 必填事实字段
+
+| 数据字段 | English | Nederlands |
+| --- | --- | --- |
+| `stone_id` | Stone ID | Steennummer |
+| `material_type` | Natural or synthetic | Natuurlijk of synthetisch |
+| `weight_ct` | Weight | Gewicht |
+| `dimensions_mm` | Dimensions | Afmetingen |
+| `shape` | Shape | Vorm |
+| `cut` | Cut | Slijpvorm |
+| `colour_description` | Colour | Kleur |
+| `clarity_transparency` | Transparency and clarity | Transparantie en zuiverheid |
+| `treatment` | Treatment | Behandeling |
+| `origin_opinion` | Geographic origin opinion | Oordeel over geografische herkomst |
+| `laboratory` | Laboratory | Laboratorium |
+| `report_number` | Report number | Rapportnummer |
+| `report_date` | Report date | Rapportdatum |
+| `evidence_source` | Source of this information | Bron van deze informatie |
+
+值缺失时显示 `Unknown / Onbekend`，不得省略字段制造“已确认”的错觉。
+
+### 事实说明
+
+**English**
+
+- Heading: `What is known`
+- Body: `We separate laboratory conclusions, supplier statements, and information that is still unknown. Ask us if you would like to understand the limits of any statement or report.`
+- CTA: `Ask about this stone`
+
+**Nederlands**
+
+- Heading: `Wat bekend is`
+- Body: `We maken onderscheid tussen laboratoriumconclusies, verklaringen van leveranciers en informatie die nog onbekend is. Vraag ons gerust naar de beperkingen van een verklaring of rapport.`
+- CTA: `Vraag naar deze steen`
+
+### 图库要求
+
+真实商品相册只使用该件实物的中性光整体照、毫米参照、正反面、侧面、微距、报告及短视频。AI 场景图只可作为首页气氛参考，不进入商品相册。
+
+## Stories / Rubiae Moments
+
+### 列表页
+
+**English**
+
+- Eyebrow: `RUBIAE MOMENTS`
+- Heading: `Stories, shared on her terms.`
+- Intro: `A stone may mark a beginning, a change, a promise, or something that needs no public name. Each story belongs first to the person who lived it.`
+- No-story state: `Rubiae Moments is being prepared. No personal story is published without clear permission.`
+
+**Nederlands**
+
+- Eyebrow: `RUBIAE MOMENTS`
+- Heading: `Verhalen, gedeeld op haar voorwaarden.`
+- Intro: `Een steen kan een begin, een verandering, een belofte of iets zonder openbare naam markeren. Elk verhaal behoort in de eerste plaats toe aan degene die het heeft geleefd.`
+- No-story state: `Rubiae Moments wordt voorbereid. Geen persoonlijk verhaal wordt zonder duidelijke toestemming gepubliceerd.`
+
+### 详情页模板
+
+- 必须由真实授权内容填入：`{{story_title}}`、`{{story_text}}`、`{{display_name_or_anonymous}}`、`{{approved_images}}`、`{{permission_record}}`。
+- English label: `Shared in her own words.`
+- Nederlands label: `Verteld in haar eigen woorden.`
+- 不补写经历、不制造引语、不暗示购买是成长的证明。
+
+## How to Choose
+
+### English
+
+- Eyebrow: `HOW TO CHOOSE`
+- Heading: `Look slowly. Ask clearly. Choose freely.`
+- Intro: `A gemstone can be beautiful before it is perfect, rare, or expensive. Start with what you notice, then ask what can be known.`
+- Section 1 heading: `Begin with colour and character`
+- Section 1 body: `Notice the colour in different light, the shape, the cut, and the natural features that make the stone individual.`
+- Section 2 heading: `Read the description carefully`
+- Section 2 body: `Weight, dimensions, treatment, origin opinions, and reports answer different questions. Unknown information should remain visible as unknown.`
+- Section 3 heading: `Separate fact from interpretation`
+- Section 3 body: `A laboratory conclusion, a supplier statement, and a personal impression do not carry the same certainty. Rubiae labels the source of each claim.`
+- Section 4 heading: `Ask before deciding`
+- Section 4 body: `Ask about the report, treatment, visible features, photography, or anything that affects your choice. A careful question is part of choosing well.`
+- Section 5 heading: `Choose on your terms`
+- Section 5 body: `You do not need a dramatic reason. You may choose for colour, curiosity, a private milestone, or simply because the stone feels right to you.`
+- CTA: `Explore the stones`
+
+### Nederlands
+
+- Eyebrow: `HOE KIES JE`
+- Heading: `Kijk rustig. Vraag door. Kies vrij.`
+- Intro: `Een edelsteen kan mooi zijn voordat hij perfect, zeldzaam of kostbaar is. Begin met wat je opvalt en vraag daarna wat er bekend kan zijn.`
+- Section 1 heading: `Begin bij kleur en karakter`
+- Section 1 body: `Bekijk de kleur in verschillend licht, de vorm, het slijpsel en de natuurlijke kenmerken die de steen eigen maken.`
+- Section 2 heading: `Lees de beschrijving aandachtig`
+- Section 2 body: `Gewicht, afmetingen, behandeling, herkomstoordelen en rapporten beantwoorden verschillende vragen. Onbekende informatie moet zichtbaar onbekend blijven.`
+- Section 3 heading: `Scheid feiten van interpretatie`
+- Section 3 body: `Een laboratoriumconclusie, een verklaring van een leverancier en een persoonlijke indruk bieden niet dezelfde zekerheid. Rubiae vermeldt de bron van elke bewering.`
+- Section 4 heading: `Vraag voordat je beslist`
+- Section 4 body: `Vraag naar het rapport, de behandeling, zichtbare kenmerken, fotografie of alles wat jouw keuze beïnvloedt. Een zorgvuldige vraag hoort bij goed kiezen.`
+- Section 5 heading: `Kies op jouw voorwaarden`
+- Section 5 body: `Je hebt geen groot verhaal nodig. Je kunt kiezen om de kleur, uit nieuwsgierigheid, voor een persoonlijk moment of eenvoudigweg omdat de steen bij je past.`
+- CTA: `Bekijk de stenen`
+
+## About
+
+### English
+
+- Eyebrow: `ABOUT RUBIAE`
+- Heading: `A quieter way to choose a gemstone.`
+- Paragraph 1: `Rubiae brings natural gemstones into view without turning them into promises about the person who chooses them.`
+- Paragraph 2: `We believe in looking slowly, describing honestly, and leaving space for personal meaning. The stone is presented with its character and the evidence available; the choice remains yours.`
+- Paragraph 3: `Rubiae is being built in the Netherlands. The public site is currently a preview, while the collection, reports, and future service are prepared with care.`
+- CTA: `Contact Rubiae`
+
+### Nederlands
+
+- Eyebrow: `OVER RUBIAE`
+- Heading: `Een rustigere manier om een edelsteen te kiezen.`
+- Paragraph 1: `Rubiae brengt natuurlijke edelstenen in beeld zonder er beloften van te maken over de persoon die ze kiest.`
+- Paragraph 2: `We geloven in rustig kijken, eerlijk beschrijven en ruimte laten voor persoonlijke betekenis. De steen wordt getoond met zijn karakter en het beschikbare bewijs; de keuze blijft van jou.`
+- Paragraph 3: `Rubiae wordt opgebouwd in Nederland. De openbare website is nu een voorvertoning, terwijl de collectie, rapporten en toekomstige dienstverlening zorgvuldig worden voorbereid.`
+- CTA: `Neem contact op met Rubiae`
+
+## For Trade
+
+### English
+
+- Eyebrow: `FOR TRADE`
+- Heading: `Clear stones. Clear information.`
+- Intro: `Rubiae is preparing a focused supply of coloured gemstones for jewellers, designers, collectors, and other professional buyers.`
+- Offer heading: `Current areas of focus`
+- Offer list: `Selected cutting rough` / `Commercial cutting rough parcels` / `Ruby specimens with matrix` / `Finished loose stones`
+- Process heading: `A professional enquiry starts with the facts.`
+- Process body: `Tell us the material, format, quantity, quality range, and documentation you need. Wholesale inventory, pricing, and terms are shared only after professional-buyer verification.`
+- CTA: `Introduce your requirements`
+
+### Nederlands
+
+- Eyebrow: `VOOR PROFESSIONALS`
+- Heading: `Duidelijke stenen. Duidelijke informatie.`
+- Intro: `Rubiae bereidt een gerichte selectie gekleurde edelstenen voor juweliers, ontwerpers, verzamelaars en andere professionele kopers voor.`
+- Offer heading: `Huidige aandachtspunten`
+- Offer list: `Geselecteerd slijpruw` / `Commerciële partijen slijpruw` / `Robijnspecimens met moedergesteente` / `Geslepen losse stenen`
+- Process heading: `Een professionele aanvraag begint bij de feiten.`
+- Process body: `Vertel welk materiaal, formaat, volume, kwaliteitsniveau en welke documentatie je nodig hebt. Groothandelsvoorraad, prijzen en voorwaarden worden pas gedeeld nadat de professionele koper is geverifieerd.`
+- CTA: `Beschrijf je aanvraag`
+
+## Contact 与兴趣表单
+
+### Contact 页面
+
+**English**
+
+- Heading: `Ask clearly.`
+- Intro: `Ask about a stone, a report, the future collection, or a professional requirement. Rubiae aims to reply personally within one working day.`
+
+**Nederlands**
+
+- Heading: `Vraag gerust door.`
+- Intro: `Vraag naar een steen, een rapport, de toekomstige collectie of een professionele behoefte. Rubiae streeft ernaar binnen één werkdag persoonlijk te antwoorden.`
+
+### 表单字段
+
+| 字段 | English | Nederlands | 规则 |
+| --- | --- | --- | --- |
+| `name` | Name | Naam | 必填 |
+| `email` | Email | E-mail | 必填 |
+| `stone_id` | Stone ID | Steennummer | 兴趣表单必填，普通联系可选 |
+| `preferred_language` | Preferred language | Voorkeurstaal | EN / NL |
+| `message` | Message (optional) | Bericht (optioneel) | 可选 |
+
+隐私说明：
+
+- EN: `We use these details to answer your enquiry. See our Privacy notice.`
+- NL: `We gebruiken deze gegevens om je vraag te beantwoorden. Lees onze privacyverklaring.`
+
+独立开售通知许可，默认不勾选：
+
+- EN: `Email me when Rubiae opens for purchasing. I understand that I must confirm this separately by email.`
+- NL: `E-mail mij wanneer aankopen bij Rubiae mogelijk worden. Ik begrijp dat ik dit apart per e-mail moet bevestigen.`
+
+提交按钮：`Send enquiry / Verstuur aanvraag`。
+
+### 成功确认
+
+**English:** `Thank you. Your message has been received. This does not reserve the stone, create an order, require payment, or give priority. Rubiae aims to reply personally within one working day.`
+
+**Nederlands:** `Dank je. Je bericht is ontvangen. Dit reserveert de steen niet, vormt geen bestelling, vereist geen betaling en geeft geen voorrang. Rubiae streeft ernaar binnen één werkdag persoonlijk te antwoorden.`
+
+确认页必须 `noindex`。
+
+### 表单错误
+
+| English | Nederlands |
+| --- | --- |
+| Enter your name. | Vul je naam in. |
+| Enter a valid email address. | Vul een geldig e-mailadres in. |
+| Select your preferred language. | Kies je voorkeurstaal. |
+| Enter the stone ID. | Vul het steennummer in. |
+| We could not send your message. Your information has not been submitted. Try again or email {{CONTACT_EMAIL}}. | We konden je bericht niet versturen. Je gegevens zijn niet verzonden. Probeer het opnieuw of mail naar {{CONTACT_EMAIL}}. |
+
+## Privacy 页面内容
+
+发布前必须填写 `{{LEGAL_NAME}}`、`{{PRIVACY_EMAIL}}`、`{{CONTACT_EMAIL}}`、`{{DOMAIN}}`、实际处理方和版本日期。
+
+### English
+
+- Title: `Privacy`
+- Intro: `This notice explains how {{LEGAL_NAME}}, trading as Rubiae, uses personal data on {{DOMAIN}}.`
+- Data collected: `We collect the information you choose to provide in contact and interest forms: name, email address, preferred language, stone ID, optional message, and any separate launch-notification consent.`
+- Purpose: `We use enquiry data to answer your request and maintain a record of the conversation. We use launch-notification data only after separate consent and email confirmation.`
+- Legal basis: `We process enquiries to take steps at your request and, where applicable, for our legitimate interest in answering and documenting genuine enquiries. We send launch notifications only with consent.`
+- Sharing: `We share data only with service providers needed to operate the website, forms, email, and security. They may include Shopify and the providers listed in the current processor register. We do not sell personal data.`
+- International processing: `If a provider processes data outside the European Economic Area, we use the safeguards described by that provider and required by applicable law.`
+- Retention: `Unconverted enquiries are kept for up to 12 months. Launch-notification data is removed when you unsubscribe or after 24 months without interaction, unless a shorter period is required.`
+- Rights: `You may ask for access, correction, deletion, restriction, portability, or object to certain processing. You may withdraw consent at any time without affecting earlier lawful processing.`
+- Contact: `Email {{PRIVACY_EMAIL}}. You may also complain to the Dutch Data Protection Authority.`
+- Version: `Last updated: {{PRIVACY_VERSION_DATE}}`
+
+### Nederlands
+
+- Title: `Privacy`
+- Intro: `Deze verklaring legt uit hoe {{LEGAL_NAME}}, handelend onder de naam Rubiae, persoonsgegevens gebruikt op {{DOMAIN}}.`
+- Data collected: `We verzamelen de gegevens die je zelf invult in contact- en interesseformulieren: naam, e-mailadres, voorkeurstaal, steennummer, optioneel bericht en eventuele afzonderlijke toestemming voor een lanceringsbericht.`
+- Purpose: `We gebruiken aanvraaggegevens om je vraag te beantwoorden en de correspondentie vast te leggen. Gegevens voor lanceringsberichten gebruiken we alleen na afzonderlijke toestemming en bevestiging per e-mail.`
+- Legal basis: `We verwerken aanvragen om op jouw verzoek stappen te zetten en, waar van toepassing, op basis van ons gerechtvaardigd belang om echte aanvragen te beantwoorden en vast te leggen. Lanceringsberichten sturen we alleen met toestemming.`
+- Sharing: `We delen gegevens alleen met dienstverleners die nodig zijn voor de website, formulieren, e-mail en beveiliging. Daaronder kunnen Shopify en de leveranciers uit het actuele verwerkingsregister vallen. We verkopen geen persoonsgegevens.`
+- International processing: `Als een dienstverlener gegevens buiten de Europese Economische Ruimte verwerkt, gebruiken we de waarborgen die de leverancier beschrijft en die de toepasselijke wet vereist.`
+- Retention: `Aanvragen die niet tot een klantrelatie leiden bewaren we maximaal 12 maanden. Gegevens voor lanceringsberichten verwijderen we na afmelding of na 24 maanden zonder interactie, tenzij een kortere termijn vereist is.`
+- Rights: `Je kunt vragen om inzage, correctie, verwijdering, beperking of overdraagbaarheid, of bezwaar maken tegen bepaalde verwerkingen. Toestemming kun je altijd intrekken zonder dat dit eerdere rechtmatige verwerking aantast.`
+- Contact: `E-mail {{PRIVACY_EMAIL}}. Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens.`
+- Version: `Laatst bijgewerkt: {{PRIVACY_VERSION_DATE}}`
+
+## Cookies 页面内容
+
+实际 Cookie 名称、用途、提供方和保存期限必须在 Shopify 主题与应用确定后通过扫描填写。公开文案如下。
+
+### English
+
+- Title: `Cookies`
+- Intro: `Rubiae uses necessary cookies to operate and secure the website. Optional analytics or marketing technologies remain off unless you actively accept them.`
+- Choice: `You may accept, reject, or choose optional categories. Refusing optional cookies does not block the public website or future checkout.`
+- Change: `You can change or withdraw your choice at any time through Cookie settings.`
+- Inventory labels: `Name` / `Provider` / `Purpose` / `Category` / `Duration`
+- Version: `Last updated: {{COOKIE_VERSION_DATE}}`
+
+### Nederlands
+
+- Title: `Cookies`
+- Intro: `Rubiae gebruikt noodzakelijke cookies om de website te laten werken en te beveiligen. Optionele analyse- of marketingtechnologie blijft uit totdat je deze actief accepteert.`
+- Choice: `Je kunt optionele categorieën accepteren, weigeren of zelf kiezen. Het weigeren van optionele cookies blokkeert de openbare website of toekomstige checkout niet.`
+- Change: `Je kunt je keuze altijd wijzigen of intrekken via Cookie-instellingen.`
+- Inventory labels: `Naam` / `Aanbieder` / `Doel` / `Categorie` / `Duur`
+- Version: `Laatst bijgewerkt: {{COOKIE_VERSION_DATE}}`
+
+Cookie 横幅按钮：
+
+| English | Nederlands |
+| --- | --- |
+| Accept optional cookies | Optionele cookies accepteren |
+| Reject optional cookies | Optionele cookies weigeren |
+| Choose settings | Voorkeuren kiezen |
+| Save choices | Keuzes opslaan |
+
+## Footer
+
+### English
+
+- Closing line: `Choose on your terms.`
+- Links: `Stones` / `Stories` / `How to Choose` / `About` / `For Trade` / `Privacy` / `Cookies` / `Contact` / `Instagram`
+- Preview note: `Rubiae is preparing for launch. Purchasing is not yet available.`
+- Copyright: `© {{CURRENT_YEAR}} Rubiae`
+
+### Nederlands
+
+- Closing line: `Kies op jouw voorwaarden.`
+- Links: `Stenen` / `Verhalen` / `Hoe kies je` / `Over Rubiae` / `Voor professionals` / `Privacy` / `Cookies` / `Contact` / `Instagram`
+- Preview note: `Rubiae bereidt de lancering voor. Aankopen is nog niet mogelijk.`
+- Copyright: `© {{CURRENT_YEAR}} Rubiae`
+
+## 系统页面与无障碍文字
+
+| 状态 | English | Nederlands |
+| --- | --- | --- |
+| 404 heading | This page is not here. | Deze pagina is er niet. |
+| 404 body | Return to the stones or continue exploring Rubiae. | Ga terug naar de stenen of ontdek Rubiae verder. |
+| 404 CTA | Return home | Terug naar home |
+| 加载 | Loading | Laden |
+| 无结果 | No stones match this view. | Geen stenen passen bij deze weergave. |
+| 重试 | Try again | Probeer opnieuw |
+| 菜单 | Open menu / Close menu | Menu openen / Menu sluiten |
+| 语言 | Change language | Taal wijzigen |
+
+图片替代文字必须描述画面功能与内容，不写 `image of`，不把情绪当作事实。示例：
+
+- EN: `Ruby jewellery beside a worn notebook on a cool grey table.`
+- NL: `Robijnsieraad naast een gebruikt notitieboek op een koelgrijze tafel.`
+- 纯装饰纹理使用空 `alt`。
+
+## SEO 内容
+
+| 页面 | English title | English description | Nederlandse titel | Nederlandse beschrijving |
+| --- | --- | --- | --- | --- |
+| Home | Rubiae — Natural gemstones, honestly described | Choose a natural gemstone slowly, with clear information and room for personal meaning. Rubiae is preparing for launch in the Netherlands. | Rubiae — Natuurlijke edelstenen, eerlijk beschreven | Kies rustig een natuurlijke edelsteen, met heldere informatie en ruimte voor persoonlijke betekenis. Rubiae bereidt de lancering in Nederland voor. |
+| Stones | Stones — Rubiae | Preview individual gemstones with the facts currently known. Purchasing is not yet available. | Stenen — Rubiae | Bekijk afzonderlijke edelstenen met de feiten die nu bekend zijn. Aankopen is nog niet mogelijk. |
+| Stories | Rubiae Moments — Stories on her terms | Personal moments shared only with permission and in her own words. | Rubiae Moments — Verhalen op haar voorwaarden | Persoonlijke momenten, alleen met toestemming en in haar eigen woorden gedeeld. |
+| How to Choose | How to choose a gemstone — Rubiae | Look at colour and character, understand the facts, ask clearly, and choose on your terms. | Hoe kies je een edelsteen — Rubiae | Bekijk kleur en karakter, begrijp de feiten, vraag door en kies op jouw voorwaarden. |
+| About | About Rubiae | A quieter, honest way to discover and choose natural gemstones in the Netherlands. | Over Rubiae | Een rustigere, eerlijke manier om natuurlijke edelstenen in Nederland te ontdekken en te kiezen. |
+| For Trade | Gemstones for professional buyers — Rubiae | Rubiae is preparing selected coloured gemstone material for verified professional buyers. | Edelstenen voor professionele kopers — Rubiae | Rubiae bereidt geselecteerd gekleurd edelsteenmateriaal voor geverifieerde professionele kopers voor. |
+| Contact | Contact Rubiae | Ask about a gemstone, report, future collection, or professional requirement. | Contact met Rubiae | Vraag naar een edelsteen, rapport, toekomstige collectie of professionele behoefte. |
+| Privacy | Privacy — Rubiae | How Rubiae handles personal data submitted through the preview website. | Privacy — Rubiae | Hoe Rubiae omgaat met persoonsgegevens die via de voorvertoningswebsite worden verstrekt. |
+| Cookies | Cookies — Rubiae | How Rubiae uses necessary and optional cookies and how you can manage your choice. | Cookies — Rubiae | Hoe Rubiae noodzakelijke en optionele cookies gebruikt en hoe je jouw keuze beheert. |
+
+首页结构化数据只使用可证实的 `Organization` / `WebSite` 数据。商品不可购买期间不得输出虚假的 `Offer`、价格或库存状态。
+
+## 图片与页面映射
+
+### 已批准参考
+
+- [高清全页参考](../brand/rubiae-homepage-still-life-concept-v5.png)：主要版式、节奏、冷灰色调、宝石亮度和静物叙事参考。
+- [用户再次确认的版式截图](../brand/rubiae-homepage-approved-layout-reference.jpg)：本次附图的原始归档，用于证明最终选定方向。
+- [首屏参考](../brand/rubiae-home-hero-approved-reference.png)：首屏雨窗、人物背影、桌面与故事卡构图参考。
+
+这些文件是设计证据，不是商品真实性证据，也不进入商品相册。
+
+### 明日视觉替换要求（`GEM-005`）
+
+- 已批准版式、首屏场景和内容顺序不变。
+- 将网页场景中作为焦点的裸红宝石颗粒替换为真实感强、比例合理的红宝石成品饰品。
+- 每个场景仍须出现红宝石；红色沿用已确认的冷调深莓红、酒红暗部和亮玫红受光面，并保持足够亮度。
+- 有手、书、钥匙、腕表等参照物时，饰品尺寸必须符合真实佩戴与产品尺度；无参照物时按构图美感决定，但不得形成夸张商品暗示。
+- 只保留首屏完整人物背影；后续最多一次局部手部。全页保持冷灰，仅灯光、木材和红宝石反射带少量暖意。
+- 若具体饰品尚未确定，先用明确标记的设计参考图占位；正式商品与商品卡只用真实、对应实物的摄影。
+
+## 发布前数据清单
+
+文案和页面状态已齐。以下是必须从真实经营或商品资料填入的数据，不属于待写文案：
+
+1. `{{LEGAL_NAME}}`、`{{DOMAIN}}`、`{{CONTACT_EMAIL}}`、`{{PRIVACY_EMAIL}}`。
+2. 每颗商品的编号、事实、证据来源、报告与真实相册。
+3. 获授权的 Rubiae Moments 故事；没有时使用已写好的无故事状态。
+4. Shopify 主题与应用确定后的实际 Cookie 清单及处理方登记。
+5. 用于正式页面的红宝石饰品类型、实拍素材和每个场景映射。
+
+## 公开预览验收
+
+- Home、Stones、Stone Detail、Stories、How to Choose、About、For Trade、Contact、Privacy、Cookies 均有 EN/NL 内容。
+- 全站无价格、购物车、结账、付款、预约成交或可购买暗示。
+- 商品询盘与开售通知许可分离；确认页明确不锁货、不成单、不产生优先权。
+- 公开页面可索引；确认页、测试主题、隐藏交易页与客户数据页 `noindex`。
+- 图片符合 [网站视觉规范](../brand/rubiae-web-visual-spec.md)，商品相册符合真实性要求。
+- 键盘、焦点、对比度、表单标签、错误提示、语言切换及响应式布局达到 WCAG 2.2 AA 目标。
