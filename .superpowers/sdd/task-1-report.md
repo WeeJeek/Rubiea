@@ -54,6 +54,23 @@ Result: production build passed; 4 Sites worker tests passed.
 
 - Demonstration fixtures deliberately contain no verified stone facts beyond their IDs. Page components must render `null` values as `Unknown / Onbekend` and must replace the fixtures with verified inventory facts before public product use.
 
+## Review revision: complete copy boundary
+
+- Expanded `content.en` and `content.nl` with approved Home, Stones, Stone Detail, Stories, How to Choose, About, For Trade, Contact, confirmation, Privacy, Cookies, system, navigation, CTA, footer, image-alt, and SEO copy from `docs/website/rubiae-preview-site-content.md`.
+- Added a schema regression test covering every approved copy group in both locales, including field labels, bodies, CTAs, empty states, legal and Cookie copy. Home component files remain untouched.
+
+### RED
+
+`npm test -- tests/routes.test.mjs` failed as expected: `en.stones.fieldLabels` was absent. After broadening the completeness coverage to Home and shared SEO text, it again failed as expected: `en.shared.seo` was absent.
+
+### GREEN
+
+- `npm test -- tests/routes.test.mjs`: 8 passing, 0 failing.
+- `npm test`: 8 passing, 0 failing.
+- `npm run test:sites`: 4 passing, 0 failing.
+
+Review-fix commit: pending at report write time.
+
 ## Commit
 
 `4182284f4065866daf61d739443020685a9e4113` — `feat: add preview route fixtures`
