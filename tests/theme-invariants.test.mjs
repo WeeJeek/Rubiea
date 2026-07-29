@@ -44,3 +44,31 @@ test('shared shell includes a skip link and reduced-motion rule', () => {
   assert.match(readFileSync('layout/theme.liquid', 'utf8'), /skip-link/);
   assert.match(readFileSync('assets/rubiae.css', 'utf8'), /prefers-reduced-motion/);
 });
+
+test('footer links use a light visible focus outline on the dark footer', () => {
+  const css = readFileSync('assets/rubiae.css', 'utf8');
+  assert.match(
+    css,
+    /\.site-footer a:focus-visible\s*\{[^}]*outline:\s*3px solid var\(--rubiae-paper\)/,
+  );
+});
+
+test('mobile header wraps its open navigation onto a full row', () => {
+  const css = readFileSync('assets/rubiae.css', 'utf8');
+  assert.match(css, /\.site-header\s*\{[^}]*flex-wrap:\s*wrap/);
+  assert.match(
+    css,
+    /\.site-header__navigation\.is-open\s*\{[^}]*flex-basis:\s*100%/,
+  );
+});
+
+test('header and footer share a neutral site brand class', () => {
+  const header = readFileSync('sections/site-header.liquid', 'utf8');
+  const footer = readFileSync('sections/site-footer.liquid', 'utf8');
+  const css = readFileSync('assets/rubiae.css', 'utf8');
+
+  assert.match(header, /class="site-brand"/);
+  assert.match(footer, /class="site-brand"/);
+  assert.doesNotMatch(`${header}\n${footer}`, /site-header__brand/);
+  assert.match(css, /\.site-brand\s*\{/);
+});
