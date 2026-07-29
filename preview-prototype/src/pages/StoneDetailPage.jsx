@@ -11,7 +11,7 @@ export function StoneDetailPage({ stoneId, stone, locale, text, notFound }) {
     );
   }
 
-  const heading = text.heading.replace("{{gemstone_name}}", stone.facts.material_type || text.unknown);
+  const heading = text.heading.replace(/\{\{gemstone_name(?:_nl)?\}\}/g, stone.facts.material_type || text.unknown);
   const eyebrow = text.eyebrow.replace("{{stone_id}}", stone.id);
   const contactLabel = text.cta || (locale === "nl" ? "Vraag naar deze steen" : "Ask about this stone");
   const contactHref = withLocalePath(`/contact?stone_id=${encodeURIComponent(stone.id)}`, locale);

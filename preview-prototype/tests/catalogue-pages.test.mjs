@@ -24,3 +24,10 @@ test("catalogue and detail preserve evidence-first preview boundaries", () => {
   assert.match(styles, /\.site-header:has\(\+ main \.catalogue-page\)/);
   assert.doesNotMatch(`${stoneCard}\n${stonesPage}\n${detailPage}`, /price|cart|checkout|payment|reservation|availability|buy now/i);
 });
+
+test("stone detail resolves English and Dutch gemstone heading tokens with an honest fallback", () => {
+  const detailPage = readSource("../src/pages/StoneDetailPage.jsx");
+
+  assert.match(detailPage, /replace\(\/\\\{\\\{gemstone_name\(\?:_nl\)\?\\\}\\\}\/g, stone\.facts\.material_type \|\| text\.unknown\)/);
+  assert.doesNotMatch(detailPage, /replace\("\{\{gemstone_name\}\}"/);
+});
