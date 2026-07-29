@@ -1,37 +1,42 @@
-# Rubiae preview prototype — Design QA
+# Rubiae Hero ruby reference correction — Design QA
 
-- **Source of truth:** `../docs/brand/rubiae-homepage-still-life-concept-v5.png` (803 × 1959, approved v5)
-- **Desktop evidence:** `.design-qa/desktop-1440x900.jpg` (1440 × 900 CSS px, density 1×)
-- **Mobile evidence:** `.design-qa/mobile-390x844.jpg` (390 × 844 CSS px, density 1×)
-- **Combined comparison:** `.design-qa/reference-vs-implementation.jpg` (approved source and implementation in one comparison surface)
-- **Runtime:** local Vite preview at `http://127.0.0.1:4173/`
+## Evidence
 
-## Acceptance evidence
+- **Binding source:** `/var/folders/c6/bk68f2cj2cqbbj8pjhg899lw0000gn/T/codex-clipboard-8f067538-5753-4759-8eba-34e788ae4a88.png` — 1092 × 1352 px, user-selected card close-up.
+- **Desktop implementation:** `.design-qa/desktop-1440x900.jpg` — 1440 × 900 CSS px, English Hero, menu closed.
+- **Mobile implementation:** `.design-qa/mobile-390x844.jpg` — 390 × 844 CSS px, scrolled card-region state.
+- **Focused comparison:** `.design-qa/reference-vs-implementation.jpg` — binding source and current desktop card in one same-height comparison.
+- **Runtime:** local Vite preview at `http://127.0.0.1:4173/`.
 
-- Desktop preserves the approved composition: rainy-window hero, left editorial headline, right human silhouette, paper Moments card, cool-grey palette, restrained plum accents, and serif-led hierarchy.
-- All six photographic assets load with non-zero natural dimensions. No placeholder, CSS art, duplicated baked-in copy, or missing image remains.
-- Mobile uses a dedicated stacked composition: live copy on a light field, followed by the hero photograph and then the Moments card. At 390 × 844: CTA bottom `493.96`, image top `504`, image bottom `888`, Moments top `888`, overlap `0`, horizontal overflow `0`.
-- EN/NL toggle works and synchronizes `html.lang`; mobile menu, anchor navigation, skip link, and visible keyboard focus work.
-- Source and built output contain no price, cart, checkout, payment, reservation, inventory, availability, product form, or Offer schema.
+## Fidelity result
 
-## Iteration history
+- Desktop keeps the approved portrait paper, `3.5deg` tilt, live text, and unchanged rainy-street crop.
+- The charcoal circle is now enlarged and raised to remove the excess white gap above it: desktop `right: -10%`, `bottom: -3%`, `width: 58%`.
+- The final 1254 × 1254 v6 raster is a deep berry-red, vertically oval faceted ruby. The paper edge crops it so only its left portion is visible, matching the binding source.
+- Mobile keeps the paper unrotated and uses `right: -29%`, `bottom: -6%`, `width: 58%`; document width equals the 390 px viewport.
+- All 8 images load with non-zero natural dimensions. No later page section or transactional behavior changed.
 
-1. Rejected the initial stitched static preview: duplicated copy, overlapping layers, missing images, and large empty regions.
-2. Rebuilt from the approved v5 reference as a React prototype with six text-free photographic assets.
-3. Independent review rejected the first mobile crop because the headline crossed the dark figure and `html.lang`/focus handling were incomplete.
-4. Independent review rejected the 20% mobile crop because the person and ruby disappeared.
-5. Replaced crop-only mobile layout with stacked copy/image/card; independent review then found a 30 px CTA/image overlap.
-6. Increased the mobile copy field to 31.5 rem. Final independent review passed desktop, 390 × 844 mobile, EN/NL, keyboard, image loading, overflow, build, tests, and no-commerce scan.
-7. Restored the Hero Moments feature as one tall paper sheet rotated `3deg` clockwise on desktop. The reference and current 1440 × 900 Hero were reviewed side by side; the mobile card remains unrotated in normal flow with zero image/card overlap and zero horizontal overflow.
+## Comparison history
+
+1. The prior v2 asset exposed a complete bright round ruby and left too much white space above the lower-right image.
+2. A geometry boundary test went RED for the prior values; the circle was enlarged and repositioned, then the test returned GREEN.
+3. Focused comparisons rejected v4 because too little ruby was visible and v5 because its pointed pear silhouette did not match the source.
+4. The v6 rounded vertical oval matches the requested silhouette, crop, dark berry palette, and partial edge exposure with no actionable P0/P1/P2 mismatch.
+
+## Responsive and interaction QA
+
+- At 390 × 844, the card is 328 × 512 px, document width is 390 px, and there is no horizontal overflow.
+- Mobile menu toggled `aria-expanded` from `false` to `true` and back.
+- EN/NL changed `html.lang` from `en` to `nl` and rendered the Dutch Hero headline, then returned to English.
+- Browser console contained only Vite/React development messages; no errors or warnings.
 
 ## Verification
 
-- `npm run build`: passed
-- `npm test`: 1/1 passed
-- `npm run test:sites`: 4/4 passed
-- Desktop geometry: 1440 × 900 viewport, `rotate(3deg)`, no overlap with headline, CTA, or navigation, and no horizontal overflow
-- Mobile geometry: 390 × 844 viewport, `transform: none`, static card image, zero image/card overlap, and no horizontal overflow
-- Independent visual/code review: PASS — no blockers
+- `npm test`: passed after the expected RED/implementation/GREEN cycle.
+- `npm run build`: passed; Sites artifacts prepared.
+- `npm run test:sites`: 4/4 passed.
+- Preview-only and form-control scans: zero matches; `git diff --check`: passed.
+- Independent final review: spec PASS, task quality PASS, no blockers.
 
 ## Final result
 

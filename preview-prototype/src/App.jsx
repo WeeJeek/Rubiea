@@ -62,7 +62,8 @@ export function App() {
           <a className="solid-link" href="#stones">{text.hero.cta}<span aria-hidden="true">⟶</span></a>
         </div>
         <aside className="hero-story" aria-label="Rubiae Moments">
-          <img src="/assets/rubiae-moments-envelope.png" alt="Ruby jewellery on a paper envelope" />
+          <img className="hero-story-street" src="/assets/rubiae-moments-rain-street-v2.png" alt="Rainy city street and sculpture in monochrome" />
+          <img className="hero-story-ruby" src="/assets/rubiae-moments-ruby-v6.png" alt="Decorative close-up of a deep red ruby" />
           <div>
             <p className="eyebrow">{text.hero.storyLabel}</p>
             <h2>{text.hero.story}</h2>
