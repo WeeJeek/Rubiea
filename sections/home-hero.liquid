@@ -1,0 +1,40 @@
+<section class="home-hero" aria-labelledby="HomeHeroTitle">
+  <div class="home-hero__reference">
+    {% if section.settings.hero_reference != blank %}
+      {{ section.settings.hero_reference | image_url: width: 2880 | image_tag: class: 'home-hero__image', widths: '750, 1100, 1600, 2200, 2880', sizes: '100vw', preload: true, alt: '' }}
+      <p class="home-reference-caption">{{ 'home.reference_caption' | t }}</p>
+    {% endif %}
+    {% if section.settings.mobile_reference != blank %}
+      {{ section.settings.mobile_reference | image_url: width: 1440 | image_tag: class: 'home-hero__mobile-image', widths: '640, 960, 1440', sizes: '100vw', alt: '' }}
+    {% endif %}
+  </div>
+
+  <div class="home-hero__copy">
+    <p class="home-eyebrow">{{ 'home.hero.eyebrow' | t }}</p>
+    <h1 id="HomeHeroTitle">{{ 'home.hero.heading' | t }}</h1>
+    <p class="home-hero__body">{{ 'home.hero.body' | t }}</p>
+    <a class="home-button" href="{{ routes.root_url }}pages/stones">{{ 'home.hero.cta' | t }}</a>
+  </div>
+
+  <div class="home-hero__table" aria-hidden="true">
+    <span class="home-hero__ruby"></span>
+  </div>
+
+  <aside class="home-hero__moment" aria-label="{{ 'home.hero.moment_eyebrow' | t }}">
+    <p class="home-eyebrow">{{ 'home.hero.moment_eyebrow' | t }}</p>
+    <p class="home-hero__moment-heading">{{ 'home.hero.moment_heading' | t }}</p>
+    <a class="home-text-link" href="{{ routes.root_url }}pages/stories">{{ 'home.hero.moment_cta' | t }}</a>
+  </aside>
+
+  <p class="home-hero__fact-cue">{{ 'home.hero.fact_cue' | t }}</p>
+</section>
+
+{% schema %}
+{
+  "name": "Home hero",
+  "settings": [
+    { "type": "image_picker", "id": "hero_reference", "label": "Desktop design reference" },
+    { "type": "image_picker", "id": "mobile_reference", "label": "Mobile design reference" }
+  ]
+}
+{% endschema %}

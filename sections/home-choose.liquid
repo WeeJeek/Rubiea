@@ -1,0 +1,15 @@
+<section class="home-section home-choose" aria-labelledby="ChooseTitle">
+  <div class="home-choose__copy">
+    <h2 id="ChooseTitle">
+      <span>{{ 'home.choose.line_one' | t }}</span>
+      <span>{{ 'home.choose.line_two' | t }}</span>
+      <span>{{ 'home.choose.line_three' | t }}</span>
+    </h2>
+    <a class="home-button home-button--light" href="{{ routes.root_url }}pages/how-to-choose">{{ 'home.choose.cta' | t }}</a>
+  </div>
+  <div class="home-choose__ruby" aria-hidden="true"></div>
+</section>
+
+{% schema %}
+{ "name": "Home choose", "settings": [] }
+{% endschema %}

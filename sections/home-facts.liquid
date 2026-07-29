@@ -1,0 +1,14 @@
+<section class="home-section home-facts" aria-labelledby="FactsTitle">
+  <div class="home-facts__copy">
+    <p class="home-eyebrow">RUBIAE</p>
+    <h2 id="FactsTitle">{{ 'home.facts.heading' | t }}</h2>
+  </div>
+  <nav class="home-facts__links" aria-label="{{ 'home.facts.heading' | t }}">
+    <a class="home-text-link" href="{{ routes.root_url }}pages/how-to-choose">{{ 'home.facts.describe_cta' | t }}</a>
+    <a class="home-text-link" href="{{ routes.root_url }}pages/for-trade">{{ 'home.facts.trade_cta' | t }}</a>
+  </nav>
+</section>
+
+{% schema %}
+{ "name": "Home facts", "settings": [] }
+{% endschema %}

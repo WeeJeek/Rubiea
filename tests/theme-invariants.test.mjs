@@ -72,3 +72,16 @@ test('header and footer share a neutral site brand class', () => {
   assert.doesNotMatch(`${header}\n${footer}`, /site-header__brand/);
   assert.match(css, /\.site-brand\s*\{/);
 });
+
+test('homepage has the six approved editorial sections and one primary hero CTA', () => {
+  const index = JSON.parse(readFileSync('templates/index.json', 'utf8'));
+  assert.deepEqual(Object.values(index.sections).map((section) => section.type), [
+    'home-hero',
+    'home-slow-look',
+    'home-choose',
+    'home-moments',
+    'home-facts',
+    'home-closing',
+  ]);
+  assert.match(readFileSync('sections/home-hero.liquid', 'utf8'), /home\.hero\.cta/);
+});

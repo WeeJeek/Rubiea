@@ -1,0 +1,11 @@
+{
+  "sections": {
+    "hero": { "type": "home-hero" },
+    "slow": { "type": "home-slow-look" },
+    "choose": { "type": "home-choose" },
+    "moments": { "type": "home-moments" },
+    "facts": { "type": "home-facts" },
+    "closing": { "type": "home-closing" }
+  },
+  "order": ["hero", "slow", "choose", "moments", "facts", "closing"]
+}

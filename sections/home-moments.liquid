@@ -1,0 +1,13 @@
+<section class="home-section home-moments" aria-labelledby="MomentsTitle">
+  <div class="home-moments__frame" aria-hidden="true"><span></span></div>
+  <div class="home-moments__copy">
+    <p class="home-eyebrow">RUBIAE MOMENTS</p>
+    <h2 id="MomentsTitle">{{ 'home.moments.heading' | t }}</h2>
+    <p>{{ 'home.moments.body' | t }}</p>
+    <a class="home-text-link" href="{{ routes.root_url }}pages/stories">{{ 'home.moments.cta' | t }}</a>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Home moments", "settings": [] }
+{% endschema %}

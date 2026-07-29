@@ -14,5 +14,44 @@
     "close_menu": "Close menu",
     "main_navigation": "Main navigation",
     "footer_navigation": "Footer navigation"
+  },
+  "home": {
+    "reference_caption": "Design reference only — not product evidence.",
+    "hero": {
+      "eyebrow": "Natural gemstones",
+      "heading": "Choose a stone for the life you are shaping.",
+      "body": "Natural gemstones, honestly described and chosen on your terms.",
+      "cta": "Explore the stones",
+      "fact_cue": "What is known, clearly stated.",
+      "moment_eyebrow": "RUBIAE MOMENTS",
+      "moment_heading": "Her story, in her own words.",
+      "moment_cta": "Read her moment"
+    },
+    "slow_look": {
+      "display": "A stone, seen slowly.",
+      "heading": "Begin with the stone.",
+      "body": "Colour, natural character, and what is known — clearly described.",
+      "cta": "Explore the stones"
+    },
+    "choose": {
+      "line_one": "Look slowly.",
+      "line_two": "Ask clearly.",
+      "line_three": "Choose freely.",
+      "cta": "How to choose"
+    },
+    "moments": {
+      "heading": "A moment can begin with a stone.",
+      "body": "Rubiae Moments is a space for stories shared in her own words.",
+      "cta": "Discover Rubiae Moments"
+    },
+    "facts": {
+      "heading": "For those who need the facts.",
+      "describe_cta": "How we describe stones",
+      "trade_cta": "For Trade"
+    },
+    "closing": {
+      "heading": "Choose on your terms.",
+      "cta": "Explore the stones"
+    }
   }
 }

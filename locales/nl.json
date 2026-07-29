@@ -14,5 +14,44 @@
     "close_menu": "Menu sluiten",
     "main_navigation": "Hoofdnavigatie",
     "footer_navigation": "Voetnavigatie"
+  },
+  "home": {
+    "reference_caption": "Alleen ontwerpvoorbeeld — geen productbewijs.",
+    "hero": {
+      "eyebrow": "Natuurlijke edelstenen",
+      "heading": "Kies een steen voor het leven dat je vormgeeft.",
+      "body": "Natuurlijke edelstenen, eerlijk beschreven en gekozen op jouw voorwaarden.",
+      "cta": "Bekijk de stenen",
+      "fact_cue": "Wat bekend is, helder vermeld.",
+      "moment_eyebrow": "RUBIAE MOMENTS",
+      "moment_heading": "Haar verhaal, in haar eigen woorden.",
+      "moment_cta": "Lees haar moment"
+    },
+    "slow_look": {
+      "display": "Een steen, rustig bekeken.",
+      "heading": "Begin bij de steen.",
+      "body": "Kleur, natuurlijk karakter en wat bekend is — helder beschreven.",
+      "cta": "Bekijk de stenen"
+    },
+    "choose": {
+      "line_one": "Kijk rustig.",
+      "line_two": "Vraag door.",
+      "line_three": "Kies vrij.",
+      "cta": "Hoe kies je"
+    },
+    "moments": {
+      "heading": "Een moment kan beginnen met een steen.",
+      "body": "Rubiae Moments biedt ruimte aan verhalen, verteld in haar eigen woorden.",
+      "cta": "Ontdek Rubiae Moments"
+    },
+    "facts": {
+      "heading": "Voor wie de feiten nodig heeft.",
+      "describe_cta": "Hoe we stenen beschrijven",
+      "trade_cta": "Voor professionals"
+    },
+    "closing": {
+      "heading": "Kies op jouw voorwaarden.",
+      "cta": "Bekijk de stenen"
+    }
   }
 }

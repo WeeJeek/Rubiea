@@ -1,0 +1,13 @@
+<section class="home-section home-slow-look" aria-labelledby="SlowLookTitle">
+  <div class="home-slow-look__ruby" aria-hidden="true"></div>
+  <div class="home-slow-look__copy">
+    <p class="home-slow-look__display">{{ 'home.slow_look.display' | t }}</p>
+    <h2 id="SlowLookTitle">{{ 'home.slow_look.heading' | t }}</h2>
+    <p>{{ 'home.slow_look.body' | t }}</p>
+    <a class="home-text-link" href="{{ routes.root_url }}pages/stones">{{ 'home.slow_look.cta' | t }}</a>
+  </div>
+</section>
+
+{% schema %}
+{ "name": "Home slow look", "settings": [] }
+{% endschema %}
