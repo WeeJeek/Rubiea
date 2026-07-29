@@ -16,6 +16,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid #a5203f; outline-offs
 .skip-link { position: fixed; z-index: 5; top: 0.75rem; left: 0.75rem; padding: 0.7rem 0.9rem; transform: translateY(-160%); background: #251f24; color: #fffafa; font-size: 0.8rem; text-decoration: none; }
 .skip-link:focus { transform: translateY(0); }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
+
 .site-header {
   position: absolute;
   z-index: 3;
