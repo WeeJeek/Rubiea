@@ -1,0 +1,25 @@
+{% assign stone_id = product.metafields.rubiae.stone_id.value %}
+{% assign weight = product.metafields.rubiae.weight_ct.value %}
+{% assign shape = product.metafields.rubiae.shape.value %}
+{% assign treatment = product.metafields.rubiae.treatment.value %}
+{% assign report_number = product.metafields.rubiae.report_number.value %}
+
+<article class="stone-card">
+  <a class="stone-card__image" href="{{ product.url }}">
+    {% if product.featured_image != blank %}
+      {{ product.featured_image | image_url: width: 960 | image_tag: widths: '480, 720, 960', sizes: '(min-width: 768px) 33vw, 100vw', alt: product.title }}
+    {% endif %}
+  </a>
+  <div class="stone-card__copy">
+    <p class="stone-card__status">{{ 'stone.status' | t }}</p>
+    <h2><a href="{{ product.url }}">{{ product.title | escape }}</a></h2>
+    <dl>
+      <div><dt>{{ 'stone.fields.stone_id' | t }}</dt><dd>{% if stone_id != blank %}{{ stone_id | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+      <div><dt>{{ 'stone.fields.weight_ct' | t }}</dt><dd>{% if weight != blank %}{{ weight | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+      <div><dt>{{ 'stone.fields.shape' | t }}</dt><dd>{% if shape != blank %}{{ shape | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+      <div><dt>{{ 'stone.fields.treatment' | t }}</dt><dd>{% if treatment != blank %}{{ treatment | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+      <div><dt>{{ 'stone.card.report' | t }}</dt><dd>{% if report_number != blank %}{{ report_number | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+    </dl>
+    <a class="home-text-link" href="{{ routes.root_url }}pages/contact?stone_id={{ product.metafields.rubiae.stone_id.value | url_encode }}">{{ 'stone.enquiry' | t }}</a>
+  </div>
+</article>

@@ -3,7 +3,40 @@
     "notice": "Rubiae is preparing for launch. Purchasing is not yet available."
   },
   "stone": {
-    "unknown": "Unknown"
+    "unknown": "Unknown",
+    "status": "Preview — not yet available for purchase",
+    "enquiry": "Ask about this stone",
+    "detail_eyebrow": "STONE",
+    "detail_intro": "A closer look at this individual stone, including what is known, what remains unknown, and the evidence available.",
+    "evidence_heading": "What is known",
+    "evidence_body": "We separate laboratory conclusions, supplier statements, and information that is still unknown. Ask us if you would like to understand the limits of any statement or report.",
+    "card": {
+      "report": "Report"
+    },
+    "fields": {
+      "stone_id": "Stone ID",
+      "material_type": "Natural or synthetic",
+      "weight_ct": "Weight",
+      "dimensions_mm": "Dimensions",
+      "shape": "Shape",
+      "cut": "Cut",
+      "colour_description": "Colour",
+      "clarity_transparency": "Transparency and clarity",
+      "treatment": "Treatment",
+      "origin_opinion": "Geographic origin opinion",
+      "laboratory": "Laboratory",
+      "report_number": "Report number",
+      "report_date": "Report date",
+      "evidence_source": "Source of this information"
+    }
+  },
+  "collection": {
+    "eyebrow": "STONES",
+    "heading": "Stones, considered one at a time.",
+    "intro": "Each stone is shown with the facts currently known. Look slowly, compare what matters to you, and ask before deciding.",
+    "preview_note": "The collection is shown for preview. Prices and purchasing will be added only when Rubiae is ready to trade.",
+    "empty": "The first stones are being documented. Register for a launch notice or return soon.",
+    "register_interest": "Register interest"
   },
   "common": {
     "language": "Language"

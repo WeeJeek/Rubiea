@@ -40,6 +40,50 @@ test('both locales expose preview notice and translated unknown value', () => {
   }
 });
 
+test('stone facts render every required metafield and translated unknown fallback', () => {
+  const source = readFileSync('snippets/stone-facts.liquid', 'utf8');
+  for (const key of ['stone_id', 'material_type', 'weight_ct', 'dimensions_mm', 'shape', 'cut', 'colour_description', 'clarity_transparency', 'treatment', 'origin_opinion', 'laboratory', 'report_number', 'report_date', 'evidence_source']) assert.match(source, new RegExp(`rubiae\\.${key}`));
+  assert.match(source, /'stone\.unknown' \| t/);
+});
+
+test('preview templates bind the Stones and Stone Detail sections', () => {
+  const collectionTemplate = JSON.parse(readFileSync('templates/collection.preview.json', 'utf8'));
+  const productTemplate = JSON.parse(readFileSync('templates/product.preview.json', 'utf8'));
+
+  assert.deepEqual(Object.values(collectionTemplate.sections).map((section) => section.type), ['preview-collection']);
+  assert.deepEqual(Object.values(productTemplate.sections).map((section) => section.type), ['preview-product']);
+});
+
+test('preview catalogue has a paginated, enquiry-only stone path', () => {
+  const collection = readFileSync('sections/preview-collection.liquid', 'utf8');
+  const product = readFileSync('sections/preview-product.liquid', 'utf8');
+  const card = readFileSync('snippets/stone-card.liquid', 'utf8');
+
+  assert.match(collection, /paginate collection\.products by 24/);
+  assert.match(collection, /render 'stone-card', product: product/);
+  assert.match(collection, /collection\.empty/);
+  assert.match(product, /render 'stone-facts', product: product/);
+  assert.match(product, /\?stone_id=\{\{ product\.metafields\.rubiae\.stone_id\.value \| url_encode \}\}/);
+
+  const links = [...card.matchAll(/href="([^"]+)"/g)].map((match) => match[1]);
+  assert.deepEqual(links, [
+    '{{ product.url }}',
+    '{{ product.url }}',
+    '{{ routes.root_url }}pages/contact?stone_id={{ product.metafields.rubiae.stone_id.value | url_encode }}',
+  ]);
+});
+
+test('both locales translate the preview catalogue and all stone labels', () => {
+  const fields = ['stone_id', 'material_type', 'weight_ct', 'dimensions_mm', 'shape', 'cut', 'colour_description', 'clarity_transparency', 'treatment', 'origin_opinion', 'laboratory', 'report_number', 'report_date', 'evidence_source'];
+  for (const file of ['locales/en.default.json', 'locales/nl.json']) {
+    const locale = JSON.parse(readFileSync(file, 'utf8'));
+    assert.ok(locale.collection.empty);
+    assert.ok(locale.stone.status);
+    assert.ok(locale.stone.enquiry);
+    for (const field of fields) assert.ok(locale.stone.fields[field]);
+  }
+});
+
 test('shared shell includes a skip link and reduced-motion rule', () => {
   assert.match(readFileSync('layout/theme.liquid', 'utf8'), /skip-link/);
   assert.match(readFileSync('assets/rubiae.css', 'utf8'), /prefers-reduced-motion/);

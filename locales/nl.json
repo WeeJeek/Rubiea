@@ -3,7 +3,40 @@
     "notice": "Rubiae bereidt de lancering voor. Aankopen is nog niet mogelijk."
   },
   "stone": {
-    "unknown": "Onbekend"
+    "unknown": "Onbekend",
+    "status": "Voorvertoning — nog niet te koop",
+    "enquiry": "Vraag naar deze steen",
+    "detail_eyebrow": "STEEN",
+    "detail_intro": "Bekijk deze afzonderlijke steen van dichtbij, met wat bekend is, wat nog onbekend is en welk bewijs beschikbaar is.",
+    "evidence_heading": "Wat bekend is",
+    "evidence_body": "We maken onderscheid tussen laboratoriumconclusies, verklaringen van leveranciers en informatie die nog onbekend is. Vraag ons gerust naar de beperkingen van een verklaring of rapport.",
+    "card": {
+      "report": "Rapport"
+    },
+    "fields": {
+      "stone_id": "Steennummer",
+      "material_type": "Natuurlijk of synthetisch",
+      "weight_ct": "Gewicht",
+      "dimensions_mm": "Afmetingen",
+      "shape": "Vorm",
+      "cut": "Slijpvorm",
+      "colour_description": "Kleur",
+      "clarity_transparency": "Transparantie en zuiverheid",
+      "treatment": "Behandeling",
+      "origin_opinion": "Oordeel over geografische herkomst",
+      "laboratory": "Laboratorium",
+      "report_number": "Rapportnummer",
+      "report_date": "Rapportdatum",
+      "evidence_source": "Bron van deze informatie"
+    }
+  },
+  "collection": {
+    "eyebrow": "STENEN",
+    "heading": "Stenen, één voor één bekeken.",
+    "intro": "Elke steen wordt getoond met de feiten die nu bekend zijn. Kijk rustig, vergelijk wat voor jou telt en stel vragen voordat je beslist.",
+    "preview_note": "De collectie is nu een voorvertoning. Prijzen en aankoopmogelijkheden volgen pas wanneer Rubiae klaar is om te verkopen.",
+    "empty": "De eerste stenen worden gedocumenteerd. Meld je aan voor een lanceringsbericht of kom binnenkort terug.",
+    "register_interest": "Interesse registreren"
   },
   "common": {
     "language": "Taal"

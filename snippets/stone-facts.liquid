@@ -1,0 +1,43 @@
+<dl class="stone-facts">
+  {% assign value = product.metafields.rubiae.stone_id.value %}
+  <div><dt>{{ 'stone.fields.stone_id' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.material_type.value %}
+  <div><dt>{{ 'stone.fields.material_type' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.weight_ct.value %}
+  <div><dt>{{ 'stone.fields.weight_ct' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.dimensions_mm.value %}
+  <div><dt>{{ 'stone.fields.dimensions_mm' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.shape.value %}
+  <div><dt>{{ 'stone.fields.shape' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.cut.value %}
+  <div><dt>{{ 'stone.fields.cut' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.colour_description.value %}
+  <div><dt>{{ 'stone.fields.colour_description' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.clarity_transparency.value %}
+  <div><dt>{{ 'stone.fields.clarity_transparency' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.treatment.value %}
+  <div><dt>{{ 'stone.fields.treatment' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.origin_opinion.value %}
+  <div><dt>{{ 'stone.fields.origin_opinion' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.laboratory.value %}
+  <div><dt>{{ 'stone.fields.laboratory' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.report_number.value %}
+  <div><dt>{{ 'stone.fields.report_number' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.report_date.value %}
+  <div><dt>{{ 'stone.fields.report_date' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+
+  {% assign value = product.metafields.rubiae.evidence_source.value %}
+  <div><dt>{{ 'stone.fields.evidence_source' | t }}</dt><dd>{% if value != blank %}{{ value | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</dd></div>
+</dl>

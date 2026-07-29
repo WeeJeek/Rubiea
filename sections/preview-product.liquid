@@ -1,0 +1,31 @@
+{% assign stone_id = product.metafields.rubiae.stone_id.value %}
+
+<article class="preview-product" aria-labelledby="PreviewProductTitle">
+  <header class="preview-product__intro">
+    <p class="home-eyebrow">{{ 'stone.detail_eyebrow' | t }} {% if stone_id != blank %}{{ stone_id | escape }}{% else %}{{ 'stone.unknown' | t }}{% endif %}</p>
+    <h1 id="PreviewProductTitle">{{ product.title | escape }}</h1>
+    <p class="preview-product__status">{{ 'stone.status' | t }}</p>
+    <p>{{ 'stone.detail_intro' | t }}</p>
+  </header>
+
+  {% if product.featured_image != blank %}
+    <div class="preview-product__image">
+      {{ product.featured_image | image_url: width: 1600 | image_tag: widths: '640, 960, 1280, 1600', sizes: '(min-width: 768px) 60vw, 100vw', alt: product.title }}
+    </div>
+  {% endif %}
+
+  {% render 'stone-facts', product: product %}
+
+  <section class="preview-product__evidence" aria-labelledby="EvidenceTitle">
+    <h2 id="EvidenceTitle">{{ 'stone.evidence_heading' | t }}</h2>
+    <p>{{ 'stone.evidence_body' | t }}</p>
+    <a class="home-text-link" href="{{ routes.root_url }}pages/contact?stone_id={{ product.metafields.rubiae.stone_id.value | url_encode }}">{{ 'stone.enquiry' | t }}</a>
+  </section>
+</article>
+
+{% schema %}
+{
+  "name": "Preview product",
+  "settings": []
+}
+{% endschema %}

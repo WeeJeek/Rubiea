@@ -1,0 +1,31 @@
+<section class="preview-collection" aria-labelledby="PreviewCollectionTitle">
+  <header class="preview-collection__intro">
+    <p class="home-eyebrow">{{ 'collection.eyebrow' | t }}</p>
+    <h1 id="PreviewCollectionTitle">{{ 'collection.heading' | t }}</h1>
+    <p>{{ 'collection.intro' | t }}</p>
+    <p>{{ 'collection.preview_note' | t }}</p>
+  </header>
+
+  {% paginate collection.products by 24 %}
+    {% if collection.products.size > 0 %}
+      <ul class="preview-collection__grid" role="list">
+        {% for product in collection.products %}
+          <li>{% render 'stone-card', product: product %}</li>
+        {% endfor %}
+      </ul>
+      {{ paginate | default_pagination }}
+    {% else %}
+      <div class="preview-collection__empty">
+        <p>{{ 'collection.empty' | t }}</p>
+        <a class="home-text-link" href="{{ routes.root_url }}pages/contact">{{ 'collection.register_interest' | t }}</a>
+      </div>
+    {% endif %}
+  {% endpaginate %}
+</section>
+
+{% schema %}
+{
+  "name": "Preview collection",
+  "settings": []
+}
+{% endschema %}
