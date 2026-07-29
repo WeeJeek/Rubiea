@@ -29,13 +29,13 @@ export function SiteFrame({ locale, onLocaleChange, onNavigate, menuOpen, onMenu
 
   return (
     <div onClick={onNavigate}>
-      <a className="skip-link" href="#main-content">Skip to content</a>
+      <a className="skip-link" href="#main-content">{shared.shared.shell.skipToContent}</a>
       <header className="site-header">
-        <a className="brand" href={withLocalePath("/", locale)} aria-label={shared.shared.seo.home.title} aria-current={routePath === "/" ? "page" : undefined}>Rubiae</a>
+        <a className="brand" href={withLocalePath("/", locale)} aria-label={shared.shared.shell.brand} aria-current={routePath === "/" ? "page" : undefined}>Rubiae</a>
         <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => onMenuChange((open) => !open)}>
           {menuOpen ? shared.pages.system.menuClose : shared.pages.system.menuOpen}
         </button>
-        <nav id="site-navigation" className={`site-nav ${menuOpen ? "is-open" : ""}`} aria-label="Main navigation">
+        <nav id="site-navigation" className={`site-nav ${menuOpen ? "is-open" : ""}`} aria-label={shared.shared.shell.primaryNavigation}>
           {links.map(([href, key]) => {
             const isCurrent = routePath === href;
             return <a key={href} href={withLocalePath(href, locale)} aria-current={isCurrent ? "page" : undefined} onClick={closeMenu}>{shared.shared.navigation[key]}</a>;
@@ -47,7 +47,7 @@ export function SiteFrame({ locale, onLocaleChange, onNavigate, menuOpen, onMenu
       <footer className="site-footer">
         <section id="about"><p className="eyebrow">RUBIAE</p><p>{shared.pages.about.paragraphs[0]}</p></section>
         <section id="for-trade"><p className="eyebrow">{shared.shared.navigation.forTrade}</p><p>{shared.pages.forTrade.intro}</p></section>
-        <div className="footer-bottom"><h2>{shared.shared.footer.closingLine}</h2><nav aria-label="Footer navigation">{links.map(([href, key]) => <a key={href} href={withLocalePath(href, locale)}>{shared.shared.navigation[key]}</a>)}</nav></div>
+        <div className="footer-bottom"><h2>{shared.shared.footer.closingLine}</h2><nav aria-label={shared.shared.shell.footerNavigation}>{links.map(([href, key]) => <a key={href} href={withLocalePath(href, locale)}>{shared.shared.navigation[key]}</a>)}</nav></div>
       </footer>
     </div>
   );

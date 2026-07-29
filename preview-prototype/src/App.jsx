@@ -66,7 +66,7 @@ export function App() {
 
   return (
     <SiteFrame locale={locale} onLocaleChange={changeLocale} onNavigate={navigate} menuOpen={menuOpen} onMenuChange={setMenuOpen} shared={content[locale]}>
-      {page.page === "home" ? <HomePage text={text.home} /> : <GenericPage page={pageName} text={text} stone={stone} />}
+      {page.page === "home" ? <HomePage text={text.home} locale={locale} /> : <GenericPage page={pageName} text={text} stone={stone} />}
     </SiteFrame>
   );
 }

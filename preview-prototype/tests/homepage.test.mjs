@@ -21,10 +21,22 @@ test("shared frame waits for route rendering, preserves locale home links, and k
   assert.match(frame, /href=\{withLocalePath\("\/", locale\)\}/);
   assert.match(frame, /function isModifiedClick\(event\)/);
   assert.match(frame, /if \(isModifiedClick\(event\)\) return;/);
-  assert.match(frame, /aria-label=\{shared\.shared\.seo\.home\.title\}/);
+  assert.match(frame, /aria-label=\{shared\.shared\.shell\.brand\}/);
   assert.match(frame, /shared\.pages\.system\.menuClose/);
   assert.match(frame, /shared\.pages\.system\.changeLanguage/);
   assert.doesNotMatch(frame, /aria-label="Rubiae home"/);
+});
+
+test("NL Home actions retain their locale and shell labels come from localized content", () => {
+  assert.match(home, /import \{ withLocalePath \} from "\.\.\/routes\.js"/);
+  assert.match(home, /HomePage\(\{ text, locale \}\)/);
+  assert.equal((home.match(/href=\{withLocalePath\(/g) || []).length, 7);
+  assert.doesNotMatch(home, /href="\/(?:stones|stories|how-to-choose|for-trade)"/);
+  assert.match(frame, /shared\.shared\.shell\.skipToContent/);
+  assert.match(frame, /aria-label=\{shared\.shared\.shell\.brand\}/);
+  assert.match(frame, /aria-label=\{shared\.shared\.shell\.primaryNavigation\}/);
+  assert.match(frame, /aria-label=\{shared\.shared\.shell\.footerNavigation\}/);
+  assert.doesNotMatch(frame, /aria-label="(?:Main|Footer) navigation"/);
 });
 
 test("approved v6 homepage keeps visual assets, navigation, language and preview-only boundaries", () => {
@@ -42,7 +54,7 @@ test("approved v6 homepage keeps visual assets, navigation, language and preview
   assert.match(app, /document\.documentElement\.lang\s*=\s*locale/);
   assert.match(frame, /className="skip-link" href="#main-content"/);
   assert.match(home, /<main id="main-content"/);
-  assert.match(frame, /aria-label="Main navigation"/);
+  assert.match(frame, /aria-label=\{shared\.shared\.shell\.primaryNavigation\}/);
   assert.match(frame, /aria-expanded=/);
   assert.match(frame, /withLocalePath\(href, locale\)/);
   for (const id of ["stones", "stories", "how-to-choose", "about", "for-trade"]) {
