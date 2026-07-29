@@ -1,0 +1,9 @@
+{% comment %} Confirmation page is noindex in layout/theme.liquid. {% endcomment %}
+<section class="noindex-confirmation" aria-labelledby="ConfirmationTitle">
+  <h1 id="ConfirmationTitle">{{ 'confirmation.heading' | t }}</h1>
+  <p>{{ 'confirmation.message' | t }}</p>
+</section>
+
+{% schema %}
+{ "name": "Noindex confirmation", "settings": [] }
+{% endschema %}

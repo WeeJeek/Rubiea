@@ -1,6 +1,7 @@
 {
   "preview": {
-    "notice": "Rubiae bereidt de lancering voor. Aankopen is nog niet mogelijk."
+    "notice": "Rubiae bereidt de lancering voor. Aankopen is nog niet mogelijk.",
+    "enquiry_notice": "We gebruiken deze gegevens om je vraag te beantwoorden. Lees onze privacyverklaring."
   },
   "stone": {
     "unknown": "Onbekend",
@@ -84,6 +85,101 @@
     },
     "closing": {
       "heading": "Kies op jouw voorwaarden.",
+      "cta": "Bekijk de stenen"
+    }
+  },
+  "form": {
+    "name": "Naam",
+    "email": "E-mail",
+    "stone_id": "Steennummer",
+    "preferred_language": "Voorkeurstaal",
+    "choose_language": "Kies een taal",
+    "message": "Bericht (optioneel)",
+    "launch_consent": "E-mail mij wanneer aankopen bij Rubiae mogelijk worden. Ik begrijp dat ik dit apart per e-mail moet bevestigen.",
+    "send": "Verstuur aanvraag"
+  },
+  "contact": {
+    "heading": "Vraag gerust door.",
+    "intro": "Vraag naar een steen, een rapport, de toekomstige collectie of een professionele behoefte. Rubiae streeft ernaar binnen één werkdag persoonlijk te antwoorden."
+  },
+  "confirmation": {
+    "heading": "Dank je.",
+    "message": "Je bericht is ontvangen. Dit reserveert de steen niet, vormt geen bestelling, vereist geen betaling en geeft geen voorrang. Rubiae streeft ernaar binnen één werkdag persoonlijk te antwoorden."
+  },
+  "editorial": {
+    "stories": {
+      "eyebrow": "RUBIAE MOMENTS",
+      "heading": "Verhalen, gedeeld op haar voorwaarden.",
+      "intro": "Een steen kan een begin, een verandering, een belofte of iets zonder openbare naam markeren. Elk verhaal behoort in de eerste plaats toe aan degene die het heeft geleefd.",
+      "empty": "Rubiae Moments wordt voorbereid. Geen persoonlijk verhaal wordt zonder duidelijke toestemming gepubliceerd."
+    },
+    "how_to_choose": {
+      "eyebrow": "HOE KIES JE",
+      "heading": "Kijk rustig. Vraag door. Kies vrij.",
+      "intro": "Een edelsteen kan mooi zijn voordat hij perfect, zeldzaam of kostbaar is. Begin met wat je opvalt en vraag daarna wat er bekend kan zijn.",
+      "cta": "Bekijk de stenen",
+      "steps": {
+        "1": { "heading": "Begin bij kleur en karakter", "body": "Bekijk de kleur in verschillend licht, de vorm, het slijpsel en de natuurlijke kenmerken die de steen eigen maken." },
+        "2": { "heading": "Lees de beschrijving aandachtig", "body": "Gewicht, afmetingen, behandeling, herkomstoordelen en rapporten beantwoorden verschillende vragen. Onbekende informatie moet zichtbaar onbekend blijven." },
+        "3": { "heading": "Scheid feiten van interpretatie", "body": "Een laboratoriumconclusie, een verklaring van een leverancier en een persoonlijke indruk bieden niet dezelfde zekerheid. Rubiae vermeldt de bron van elke bewering." },
+        "4": { "heading": "Vraag voordat je beslist", "body": "Vraag naar het rapport, de behandeling, zichtbare kenmerken, fotografie of alles wat jouw keuze beïnvloedt. Een zorgvuldige vraag hoort bij goed kiezen." },
+        "5": { "heading": "Kies op jouw voorwaarden", "body": "Je hebt geen groot verhaal nodig. Je kunt kiezen om de kleur, uit nieuwsgierigheid, voor een persoonlijk moment of eenvoudigweg omdat de steen bij je past." }
+      }
+    },
+    "about": {
+      "eyebrow": "OVER RUBIAE",
+      "heading": "Een rustigere manier om een edelsteen te kiezen.",
+      "intro": "",
+      "paragraphs": {
+        "1": "Rubiae brengt natuurlijke edelstenen in beeld zonder er beloften van te maken over de persoon die ze kiest.",
+        "2": "We geloven in rustig kijken, eerlijk beschrijven en ruimte laten voor persoonlijke betekenis. De steen wordt getoond met zijn karakter en het beschikbare bewijs; de keuze blijft van jou.",
+        "3": "Rubiae wordt opgebouwd in Nederland. De openbare website is nu een voorvertoning, terwijl de collectie, rapporten en toekomstige dienstverlening zorgvuldig worden voorbereid."
+      },
+      "cta": "Neem contact op met Rubiae"
+    },
+    "for_trade": {
+      "eyebrow": "VOOR PROFESSIONALS",
+      "heading": "Duidelijke stenen. Duidelijke informatie.",
+      "intro": "Rubiae bereidt een gerichte selectie gekleurde edelstenen voor juweliers, ontwerpers, verzamelaars en andere professionele kopers voor.",
+      "offer_heading": "Huidige aandachtspunten",
+      "offer": { "1": "Geselecteerd slijpruw", "2": "Commerciële partijen slijpruw", "3": "Robijnspecimens met moedergesteente", "4": "Geslepen losse stenen" },
+      "process_heading": "Een professionele aanvraag begint bij de feiten.",
+      "process_body": "Vertel welk materiaal, formaat, volume, kwaliteitsniveau en welke documentatie je nodig hebt. Groothandelsvoorraad, prijzen en voorwaarden worden pas gedeeld nadat de professionele koper is geverifieerd.",
+      "cta": "Beschrijf je aanvraag"
+    },
+    "privacy": {
+      "heading": "Privacy",
+      "intro": "Deze verklaring legt uit hoe {{ legal_name }}, handelend onder de naam Rubiae, persoonsgegevens gebruikt op {{ domain }}.",
+      "data_collected_heading": "Gegevens die we verzamelen",
+      "data_collected": "We verzamelen de gegevens die je zelf invult in contact- en interesseformulieren: naam, e-mailadres, voorkeurstaal, steennummer, optioneel bericht en eventuele afzonderlijke toestemming voor een lanceringsbericht.",
+      "purpose_heading": "Waarom we ze gebruiken",
+      "purpose": "We gebruiken aanvraaggegevens om je vraag te beantwoorden en de correspondentie vast te leggen. Gegevens voor lanceringsberichten gebruiken we alleen na afzonderlijke toestemming en bevestiging per e-mail.",
+      "legal_basis_heading": "Grondslag",
+      "legal_basis": "We verwerken aanvragen om op jouw verzoek stappen te zetten en, waar van toepassing, op basis van ons gerechtvaardigd belang om echte aanvragen te beantwoorden en vast te leggen. Lanceringsberichten sturen we alleen met toestemming.",
+      "sharing_heading": "Delen",
+      "sharing": "We delen gegevens alleen met dienstverleners die nodig zijn voor de website, formulieren, e-mail en beveiliging. Daaronder kunnen Shopify en de leveranciers uit het actuele verwerkingsregister vallen. We verkopen geen persoonsgegevens.",
+      "international_heading": "Internationale verwerking",
+      "international": "Als een dienstverlener gegevens buiten de Europese Economische Ruimte verwerkt, gebruiken we de waarborgen die de leverancier beschrijft en die de toepasselijke wet vereist.",
+      "retention_heading": "Bewaartermijn",
+      "retention": "Aanvragen die niet tot een klantrelatie leiden bewaren we maximaal 12 maanden. Gegevens voor lanceringsberichten verwijderen we na afmelding of na 24 maanden zonder interactie, tenzij een kortere termijn vereist is.",
+      "rights_heading": "Jouw rechten",
+      "rights": "Je kunt vragen om inzage, correctie, verwijdering, beperking of overdraagbaarheid, of bezwaar maken tegen bepaalde verwerkingen. Toestemming kun je altijd intrekken zonder dat dit eerdere rechtmatige verwerking aantast.",
+      "contact_heading": "Contact",
+      "contact": "E-mail {{ privacy_email }}. Je kunt ook een klacht indienen bij de Autoriteit Persoonsgegevens.",
+      "version": "Laatst bijgewerkt: {{ version_date }}"
+    },
+    "cookies": {
+      "heading": "Cookies",
+      "intro": "Rubiae gebruikt noodzakelijke cookies om de website te laten werken en te beveiligen. Optionele analyse- of marketingtechnologie blijft uit totdat je deze actief accepteert.",
+      "choice": "Je kunt optionele categorieën accepteren, weigeren of zelf kiezen. Het weigeren van optionele cookies blokkeert de openbare website of toekomstige checkout niet.",
+      "change": "Je kunt je keuze altijd wijzigen of intrekken via Cookie-instellingen.",
+      "inventory_heading": "Cookieoverzicht",
+      "inventory_pending": "Namen, aanbieders, doelen, categorieën en bewaartermijnen van cookies worden gepubliceerd nadat de website en apps zijn gescand.",
+      "version": "Laatst bijgewerkt: {{ version_date }}"
+    },
+    "not_found": {
+      "heading": "Deze pagina is er niet.",
+      "intro": "De pagina is mogelijk verplaatst of is niet beschikbaar in deze voorvertoning.",
       "cta": "Bekijk de stenen"
     }
   }

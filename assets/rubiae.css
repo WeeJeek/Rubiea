@@ -497,6 +497,97 @@ select:focus-visible {
   clip-path: polygon(12% 0, 90% 13%, 100% 59%, 65% 100%, 12% 83%, 0 36%);
 }
 
+.editorial-page,
+.contact-preview,
+.noindex-confirmation {
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: clamp(3rem, 8vw, 7rem) clamp(1.5rem, 5vw, 3rem);
+}
+
+.editorial-page__intro,
+.contact-preview__intro {
+  max-width: 42rem;
+  margin-bottom: 3rem;
+}
+
+.editorial-page h1,
+.contact-preview h1,
+.noindex-confirmation h1 {
+  margin: 0;
+  font-family: Georgia, serif;
+  font-size: clamp(2.6rem, 5vw, 4.5rem);
+  font-weight: 400;
+  letter-spacing: -0.04em;
+  line-height: 1;
+}
+
+.editorial-page p,
+.contact-preview p,
+.noindex-confirmation p,
+.editorial-page li {
+  line-height: 1.6;
+}
+
+.editorial-page h2 {
+  margin-top: 2.5rem;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+
+.editorial-page__steps {
+  display: grid;
+  gap: 1.5rem;
+  padding-left: 1.5rem;
+}
+
+.editorial-page__steps h2 {
+  margin: 0;
+}
+
+.contact-preview form {
+  max-width: 36rem;
+}
+
+.contact-preview label {
+  display: block;
+  margin-bottom: 0.35rem;
+  font-weight: 700;
+}
+
+.contact-preview input:not([type='checkbox']),
+.contact-preview select,
+.contact-preview textarea {
+  width: 100%;
+  border: 1px solid var(--rubiae-ink);
+  border-radius: 0;
+  padding: 0.7rem;
+  background: var(--rubiae-paper);
+  color: var(--rubiae-ink);
+  font: inherit;
+}
+
+.contact-preview textarea {
+  min-height: 8rem;
+  resize: vertical;
+}
+
+.contact-preview input[type='checkbox'] {
+  margin-right: 0.5rem;
+}
+
+.contact-preview input[type='checkbox'] + label {
+  display: inline;
+  font-weight: 400;
+}
+
+.contact-preview button {
+  border: 0;
+  padding: 0.8rem 1.15rem;
+  background: var(--rubiae-ink);
+  color: var(--rubiae-paper);
+  font: inherit;
+}
+
 @media (max-width: 767px) {
   .home-hero {
     min-height: 44rem;

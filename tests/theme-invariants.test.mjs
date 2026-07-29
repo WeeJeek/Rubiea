@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict';
-import { readFileSync, readdirSync } from 'node:fs';
+import { existsSync, readFileSync, readdirSync } from 'node:fs';
 import { join } from 'node:path';
 import test from 'node:test';
 
@@ -141,4 +141,43 @@ test('homepage hero layers the table above its background and keeps reference di
   assert.match(css, /\.home-hero__table\s*\{[^}]*z-index:\s*0/);
   assert.match(css, /\.home-hero__reference\s*\{[^}]*z-index:\s*1/);
   assert.match(css, /\.home-reference-caption\s*\{[^}]*z-index:\s*2/);
+});
+
+test('contact is non-binding and confirmation is noindex in the document head', () => {
+  assert.ok(existsSync('sections/contact-preview.liquid'), 'contact preview section must exist');
+  assert.ok(existsSync('sections/noindex-confirmation.liquid'), 'confirmation section must exist');
+  const contact = readFileSync('sections/contact-preview.liquid', 'utf8');
+  const confirmation = readFileSync('sections/noindex-confirmation.liquid', 'utf8');
+  const layout = readFileSync('layout/theme.liquid', 'utf8');
+
+  assert.match(contact, /form 'contact'/);
+  assert.match(contact, /id="LaunchConsent"[^>]*type="checkbox"|type="checkbox"[^>]*id="LaunchConsent"/);
+  assert.doesNotMatch(contact, /<input[^>]*id="LaunchConsent"[^>]*\schecked(?:=|\s|>)/);
+  assert.match(contact, /preview\.enquiry_notice/);
+  assert.match(confirmation, /noindex/);
+  assert.match(layout, /page\.handle == 'confirmation'[\s\S]*<meta name="robots" content="noindex">/);
+});
+
+test('public editorial templates select their approved page sections', () => {
+  const editorialPages = {
+    'page.stories.json': 'stories',
+    'page.how-to-choose.json': 'how_to_choose',
+    'page.about.json': 'about',
+    'page.for-trade.json': 'for_trade',
+    'page.privacy.json': 'privacy',
+    'page.cookies.json': 'cookies',
+    '404.json': 'not_found',
+  };
+
+  for (const [file, copyKey] of Object.entries(editorialPages)) {
+    assert.ok(existsSync(`templates/${file}`), `${file} must exist`);
+    const template = JSON.parse(readFileSync(`templates/${file}`, 'utf8'));
+    const section = Object.values(template.sections)[0];
+    assert.equal(section.type, 'editorial-page');
+    assert.equal(section.settings.copy_key, copyKey);
+  }
+  assert.ok(existsSync('templates/page.contact.json'), 'contact template must exist');
+  assert.ok(existsSync('templates/page.confirmation.json'), 'confirmation template must exist');
+  assert.equal(JSON.parse(readFileSync('templates/page.contact.json', 'utf8')).sections.main.type, 'contact-preview');
+  assert.equal(JSON.parse(readFileSync('templates/page.confirmation.json', 'utf8')).sections.main.type, 'noindex-confirmation');
 });

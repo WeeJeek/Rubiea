@@ -1,6 +1,7 @@
 {
   "preview": {
-    "notice": "Rubiae is preparing for launch. Purchasing is not yet available."
+    "notice": "Rubiae is preparing for launch. Purchasing is not yet available.",
+    "enquiry_notice": "We use these details to answer your enquiry. See our Privacy notice."
   },
   "stone": {
     "unknown": "Unknown",
@@ -84,6 +85,101 @@
     },
     "closing": {
       "heading": "Choose on your terms.",
+      "cta": "Explore the stones"
+    }
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "stone_id": "Stone ID",
+    "preferred_language": "Preferred language",
+    "choose_language": "Select a language",
+    "message": "Message (optional)",
+    "launch_consent": "Email me when Rubiae opens for purchasing. I understand that I must confirm this separately by email.",
+    "send": "Send enquiry"
+  },
+  "contact": {
+    "heading": "Ask clearly.",
+    "intro": "Ask about a stone, a report, the future collection, or a professional requirement. Rubiae aims to reply personally within one working day."
+  },
+  "confirmation": {
+    "heading": "Thank you.",
+    "message": "Your message has been received. This does not reserve the stone, create an order, require payment, or give priority. Rubiae aims to reply personally within one working day."
+  },
+  "editorial": {
+    "stories": {
+      "eyebrow": "RUBIAE MOMENTS",
+      "heading": "Stories, shared on her terms.",
+      "intro": "A stone may mark a beginning, a change, a promise, or something that needs no public name. Each story belongs first to the person who lived it.",
+      "empty": "Rubiae Moments is being prepared. No personal story is published without clear permission."
+    },
+    "how_to_choose": {
+      "eyebrow": "HOW TO CHOOSE",
+      "heading": "Look slowly. Ask clearly. Choose freely.",
+      "intro": "A gemstone can be beautiful before it is perfect, rare, or expensive. Start with what you notice, then ask what can be known.",
+      "cta": "Explore the stones",
+      "steps": {
+        "1": { "heading": "Begin with colour and character", "body": "Notice the colour in different light, the shape, the cut, and the natural features that make the stone individual." },
+        "2": { "heading": "Read the description carefully", "body": "Weight, dimensions, treatment, origin opinions, and reports answer different questions. Unknown information should remain visible as unknown." },
+        "3": { "heading": "Separate fact from interpretation", "body": "A laboratory conclusion, a supplier statement, and a personal impression do not carry the same certainty. Rubiae labels the source of each claim." },
+        "4": { "heading": "Ask before deciding", "body": "Ask about the report, treatment, visible features, photography, or anything that affects your choice. A careful question is part of choosing well." },
+        "5": { "heading": "Choose on your terms", "body": "You do not need a dramatic reason. You may choose for colour, curiosity, a private milestone, or simply because the stone feels right to you." }
+      }
+    },
+    "about": {
+      "eyebrow": "ABOUT RUBIAE",
+      "heading": "A quieter way to choose a gemstone.",
+      "intro": "",
+      "paragraphs": {
+        "1": "Rubiae brings natural gemstones into view without turning them into promises about the person who chooses them.",
+        "2": "We believe in looking slowly, describing honestly, and leaving space for personal meaning. The stone is presented with its character and the evidence available; the choice remains yours.",
+        "3": "Rubiae is being built in the Netherlands. The public site is currently a preview, while the collection, reports, and future service are prepared with care."
+      },
+      "cta": "Contact Rubiae"
+    },
+    "for_trade": {
+      "eyebrow": "FOR TRADE",
+      "heading": "Clear stones. Clear information.",
+      "intro": "Rubiae is preparing a focused supply of coloured gemstones for jewellers, designers, collectors, and other professional buyers.",
+      "offer_heading": "Current areas of focus",
+      "offer": { "1": "Selected cutting rough", "2": "Commercial cutting rough parcels", "3": "Ruby specimens with matrix", "4": "Finished loose stones" },
+      "process_heading": "A professional enquiry starts with the facts.",
+      "process_body": "Tell us the material, format, quantity, quality range, and documentation you need. Wholesale inventory, pricing, and terms are shared only after professional-buyer verification.",
+      "cta": "Introduce your requirements"
+    },
+    "privacy": {
+      "heading": "Privacy",
+      "intro": "This notice explains how {{ legal_name }}, trading as Rubiae, uses personal data on {{ domain }}.",
+      "data_collected_heading": "Information we collect",
+      "data_collected": "We collect the information you choose to provide in contact and interest forms: name, email address, preferred language, stone ID, optional message, and any separate launch-notification consent.",
+      "purpose_heading": "Why we use it",
+      "purpose": "We use enquiry data to answer your request and maintain a record of the conversation. We use launch-notification data only after separate consent and email confirmation.",
+      "legal_basis_heading": "Legal basis",
+      "legal_basis": "We process enquiries to take steps at your request and, where applicable, for our legitimate interest in answering and documenting genuine enquiries. We send launch notifications only with consent.",
+      "sharing_heading": "Sharing",
+      "sharing": "We share data only with service providers needed to operate the website, forms, email, and security. They may include Shopify and the providers listed in the current processor register. We do not sell personal data.",
+      "international_heading": "International processing",
+      "international": "If a provider processes data outside the European Economic Area, we use the safeguards described by that provider and required by applicable law.",
+      "retention_heading": "Retention",
+      "retention": "Unconverted enquiries are kept for up to 12 months. Launch-notification data is removed when you unsubscribe or after 24 months without interaction, unless a shorter period is required.",
+      "rights_heading": "Your rights",
+      "rights": "You may ask for access, correction, deletion, restriction, portability, or object to certain processing. You may withdraw consent at any time without affecting earlier lawful processing.",
+      "contact_heading": "Contact",
+      "contact": "Email {{ privacy_email }}. You may also complain to the Dutch Data Protection Authority.",
+      "version": "Last updated: {{ version_date }}"
+    },
+    "cookies": {
+      "heading": "Cookies",
+      "intro": "Rubiae uses necessary cookies to operate and secure the website. Optional analytics or marketing technologies remain off unless you actively accept them.",
+      "choice": "You may accept, reject, or choose optional categories. Refusing optional cookies does not block the public website or future checkout.",
+      "change": "You can change or withdraw your choice at any time through Cookie settings.",
+      "inventory_heading": "Cookie inventory",
+      "inventory_pending": "Cookie names, providers, purposes, categories, and durations will be published after the website and app scan is complete.",
+      "version": "Last updated: {{ version_date }}"
+    },
+    "not_found": {
+      "heading": "This page is not here.",
+      "intro": "The page may have moved or is not available in this preview.",
       "cta": "Explore the stones"
     }
   }

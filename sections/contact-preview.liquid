@@ -1,0 +1,23 @@
+<section class="contact-preview" aria-labelledby="ContactPreviewTitle">
+  <div class="contact-preview__intro">
+    <h1 id="ContactPreviewTitle">{{ 'contact.heading' | t }}</h1>
+    <p>{{ 'contact.intro' | t }}</p>
+  </div>
+
+  {% form 'contact', id: 'PreviewContactForm' %}
+    {% if form.errors %}<div class="contact-preview__errors">{{ form.errors | default_errors }}</div>{% endif %}
+    {% if form.posted_successfully? %}<p class="contact-preview__success">{{ 'confirmation.message' | t }}</p>{% endif %}
+    <p><label for="ContactName">{{ 'form.name' | t }}</label><input id="ContactName" name="contact[name]" required></p>
+    <p><label for="ContactEmail">{{ 'form.email' | t }}</label><input id="ContactEmail" name="contact[email]" type="email" required></p>
+    <p><label for="ContactStoneId">{{ 'form.stone_id' | t }}</label><input id="ContactStoneId" name="contact[stone_id]"></p>
+    <p><label for="ContactLanguage">{{ 'form.preferred_language' | t }}</label><select id="ContactLanguage" name="contact[preferred_language]"><option value="">{{ 'form.choose_language' | t }}</option><option value="en">EN</option><option value="nl">NL</option></select></p>
+    <p><label for="ContactMessage">{{ 'form.message' | t }}</label><textarea id="ContactMessage" name="contact[body]"></textarea></p>
+    <p>{{ 'preview.enquiry_notice' | t }}</p>
+    <p><input id="LaunchConsent" name="contact[launch_notification_consent]" type="checkbox" value="yes"><label for="LaunchConsent">{{ 'form.launch_consent' | t }}</label></p>
+    <button type="submit">{{ 'form.send' | t }}</button>
+  {% endform %}
+</section>
+
+{% schema %}
+{ "name": "Preview contact", "settings": [] }
+{% endschema %}
