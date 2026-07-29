@@ -18,11 +18,20 @@ export function SiteFrame({ locale, onLocaleChange, onNavigate, menuOpen, onMenu
     onMenuChange(false);
   }
 
+  function isModifiedClick(event) {
+    return event.button !== 0 || event.metaKey || event.ctrlKey || event.shiftKey || event.altKey;
+  }
+
+  function changeLanguage(event) {
+    if (isModifiedClick(event)) return;
+    onLocaleChange(alternateLocale);
+  }
+
   return (
     <div onClick={onNavigate}>
       <a className="skip-link" href="#main-content">Skip to content</a>
       <header className="site-header">
-        <a className="brand" href="/" aria-label="Rubiae home" aria-current={routePath === "/" ? "page" : undefined}>Rubiae</a>
+        <a className="brand" href={withLocalePath("/", locale)} aria-label={shared.shared.seo.home.title} aria-current={routePath === "/" ? "page" : undefined}>Rubiae</a>
         <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => onMenuChange((open) => !open)}>
           {menuOpen ? shared.pages.system.menuClose : shared.pages.system.menuOpen}
         </button>
@@ -31,7 +40,7 @@ export function SiteFrame({ locale, onLocaleChange, onNavigate, menuOpen, onMenu
             const isCurrent = routePath === href;
             return <a key={href} href={withLocalePath(href, locale)} aria-current={isCurrent ? "page" : undefined} onClick={closeMenu}>{shared.shared.navigation[key]}</a>;
           })}
-          <a className="language-toggle" href={languagePath} onClick={() => onLocaleChange(alternateLocale)} aria-label={shared.pages.system.changeLanguage}>{shared.shared.languageSwitch}</a>
+          <a className="language-toggle" href={languagePath} onClick={changeLanguage} aria-label={shared.pages.system.changeLanguage}>{shared.shared.languageSwitch}</a>
         </nav>
       </header>
       {children}

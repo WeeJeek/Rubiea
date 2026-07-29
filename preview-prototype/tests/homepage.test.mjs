@@ -15,6 +15,18 @@ test("shared frame preserves route-aware language links and route-change focus",
   assert.match(frame, /aria-current=\{isCurrent/);
 });
 
+test("shared frame waits for route rendering, preserves locale home links, and keeps modified locale clicks native", () => {
+  assert.match(app, /useEffect\(\(\) => \{\s*if \(shouldFocusMain\) document\.getElementById\("main-content"\)\?\.focus\(\);[\s\S]*\}, \[pathname, shouldFocusMain\]\);/);
+  assert.doesNotMatch(app, /function navigate\(event\)[\s\S]*document\.getElementById\("main-content"\)\?\.focus/);
+  assert.match(frame, /href=\{withLocalePath\("\/", locale\)\}/);
+  assert.match(frame, /function isModifiedClick\(event\)/);
+  assert.match(frame, /if \(isModifiedClick\(event\)\) return;/);
+  assert.match(frame, /aria-label=\{shared\.shared\.seo\.home\.title\}/);
+  assert.match(frame, /shared\.pages\.system\.menuClose/);
+  assert.match(frame, /shared\.pages\.system\.changeLanguage/);
+  assert.doesNotMatch(frame, /aria-label="Rubiae home"/);
+});
+
 test("approved v6 homepage keeps visual assets, navigation, language and preview-only boundaries", () => {
   for (const asset of [
     "/assets/rubiae-hero-rain-window.png",

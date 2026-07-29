@@ -19,6 +19,7 @@ function GenericPage({ page, text, stone }) {
 export function App() {
   const [pathname, setPathname] = useState(() => window.location.pathname);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [shouldFocusMain, setShouldFocusMain] = useState(false);
   const locale = localeFromPath(pathname);
   const page = getRoute(pathname);
   const text = content[locale].pages;
@@ -28,10 +29,14 @@ export function App() {
   }, [locale]);
 
   useEffect(() => {
+    if (shouldFocusMain) document.getElementById("main-content")?.focus();
+  }, [pathname, shouldFocusMain]);
+
+  useEffect(() => {
     function handlePopstate() {
       setPathname(window.location.pathname);
       setMenuOpen(false);
-      document.getElementById("main-content")?.focus();
+      setShouldFocusMain(true);
     }
 
     window.addEventListener("popstate", handlePopstate);
@@ -49,7 +54,7 @@ export function App() {
     history.pushState({}, "", `${url.pathname}${url.search}`);
     setPathname(url.pathname);
     setMenuOpen(false);
-    document.getElementById("main-content")?.focus();
+    setShouldFocusMain(true);
   }
 
   function changeLocale(nextLocale) {
