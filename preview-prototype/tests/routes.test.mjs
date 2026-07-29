@@ -30,13 +30,13 @@ test("includes every approved public-preview copy group in both languages", () =
     contact: ["heading", "intro", "fieldLabels", "privacyNote", "launchNotice", "submit", "errors"],
     confirmation: ["heading"],
     privacy: ["title", "intro", "sections"],
-    cookies: ["title", "intro", "choice", "change", "inventoryLabels", "buttons"],
+    cookies: ["title", "intro", "choice", "change", "inventoryLabels", "buttons", "version"],
     notFound: ["heading", "body", "cta"],
     system: ["loading", "noResults", "retry", "menuOpen", "menuClose", "changeLanguage"],
   };
 
   for (const locale of ["en", "nl"]) {
-    for (const field of ["announcement", "enquiryNote", "navigation", "ctas", "footer", "seo", "imageAlt"]) {
+    for (const field of ["announcement", "enquiryNote", "navigation", "languageSwitch", "ctas", "footer", "seo", "imageAlt"]) {
       assert.ok(Object.hasOwn(content[locale].shared, field), `${locale}.shared.${field}`);
     }
     for (const [page, fields] of Object.entries(requiredPageFields)) {

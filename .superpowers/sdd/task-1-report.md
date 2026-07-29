@@ -71,6 +71,24 @@ Result: production build passed; 4 Sites worker tests passed.
 
 Review-fix commit: `d7ec4a9b362ec7f09aefc28484498955f68fc97c` — `fix: complete preview copy data`.
 
+## Review revision: Cookie version and language switch
+
+- Added the documented `cookies.version` strings: `Last updated: {{COOKIE_VERSION_DATE}}` and `Laatst bijgewerkt: {{COOKIE_VERSION_DATE}}`.
+- Added the documented `EN / NL` navigation language-switch label for both locales.
+- Extended the copy completeness schema to require both values in each locale.
+
+### RED
+
+`npm test -- tests/routes.test.mjs` failed as expected: `en.shared.languageSwitch` was absent.
+
+### GREEN
+
+- `npm test -- tests/routes.test.mjs`: 8 passing, 0 failing.
+- `npm test`: 8 passing, 0 failing.
+- `npm run test:sites`: 4 passing, 0 failing.
+
+Review-fix commit: pending at report write time.
+
 ## Commit
 
 `4182284f4065866daf61d739443020685a9e4113` — `feat: add preview route fixtures`
