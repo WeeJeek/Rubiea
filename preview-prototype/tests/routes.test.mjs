@@ -46,5 +46,5 @@ test("includes every approved public-preview copy group in both languages", () =
 
   assert.equal(content.en.pages.stones.fieldLabels.stone_id, "Stone");
   assert.equal(content.nl.pages.stoneDetail.unknown, "Onbekend");
-  assert.equal(content.en.pages.confirmation.heading, "Thank you. Your message has been received. This does not reserve the stone, create an order, require payment, or give priority. Rubiae aims to reply personally within one working day.");
+  assert.equal(content.en.pages.confirmation.heading, "This prototype did not send or save your message. It does not reserve the stone, create an order, require payment, or give priority.");
 });

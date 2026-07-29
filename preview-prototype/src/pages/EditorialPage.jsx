@@ -1,22 +1,18 @@
 import { withLocalePath } from "../routes.js";
 
-function LegalPage({ page, text }) {
-  const fields = page === "privacy" ? [...Object.values(text.sections), text.version] : [text.choice, text.change, text.version];
-
+function LegalPage({ text }) {
   return (
     <main id="main-content" className="editorial-page" tabIndex="-1">
       <article className="editorial-copy">
         <h1>{text.title}</h1>
-        <p>{text.intro}</p>
         <p className="legal-launch-note" aria-live="polite">{text.launchRequirement}</p>
-        {fields.map((field) => <p key={field}>{field}</p>)}
       </article>
     </main>
   );
 }
 
 export function EditorialPage({ page, locale, text }) {
-  if (page === "privacy" || page === "cookies") return <LegalPage page={page} text={text} />;
+  if (page === "privacy" || page === "cookies") return <LegalPage text={text} />;
 
   if (page === "stories") {
     return (

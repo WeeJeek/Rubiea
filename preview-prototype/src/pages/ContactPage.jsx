@@ -6,6 +6,7 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 export function ContactPage({ locale, text }) {
   const [errors, setErrors] = useState({});
   const [launchConsent, setLaunchConsent] = useState(false);
+  const stoneId = new URLSearchParams(window.location.search).get("stone_id") || "";
 
   function validate(event) {
     event.preventDefault();
@@ -13,6 +14,8 @@ export function ContactPage({ locale, text }) {
     const nextErrors = {};
     if (!form.get("name")?.trim()) nextErrors.name = text.errors.name;
     if (!emailPattern.test(form.get("email")?.trim() || "")) nextErrors.email = text.errors.email;
+    if (!form.get("stone_id")?.trim()) nextErrors.stone_id = text.errors.stone_id;
+    if (!form.get("preferred_language")) nextErrors.preferred_language = text.errors.preferred_language;
     setErrors(nextErrors);
     if (Object.keys(nextErrors).length) return;
 
@@ -35,6 +38,20 @@ export function ContactPage({ locale, text }) {
             <label htmlFor="contact-email">{text.fieldLabels.email}</label>
             <input id="contact-email" name="email" type="email" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "contact-email-error" : undefined} />
             {errors.email && <p id="contact-email-error" className="field-error" aria-live="polite">{errors.email}</p>}
+          </div>
+          <div className="form-field">
+            <label htmlFor="contact-stone-id">{text.fieldLabels.stone_id}</label>
+            <input id="contact-stone-id" name="stone_id" type="text" defaultValue={stoneId} aria-invalid={Boolean(errors.stone_id)} aria-describedby={errors.stone_id ? "contact-stone-id-error" : undefined} />
+            {errors.stone_id && <p id="contact-stone-id-error" className="field-error" aria-live="polite">{errors.stone_id}</p>}
+          </div>
+          <div className="form-field">
+            <label htmlFor="contact-preferred-language">{text.fieldLabels.preferred_language}</label>
+            <select id="contact-preferred-language" name="preferred_language" defaultValue="" aria-invalid={Boolean(errors.preferred_language)} aria-describedby={errors.preferred_language ? "contact-preferred-language-error" : undefined}>
+              <option value="" />
+              <option value="en">EN</option>
+              <option value="nl">NL</option>
+            </select>
+            {errors.preferred_language && <p id="contact-preferred-language-error" className="field-error" aria-live="polite">{errors.preferred_language}</p>}
           </div>
           <div className="form-field">
             <label htmlFor="contact-message">{text.fieldLabels.message}</label>
