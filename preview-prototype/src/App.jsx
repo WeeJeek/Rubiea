@@ -4,6 +4,8 @@ import { content } from "./content.js";
 import { previewStones } from "./preview-stones.js";
 import { getRoute, withLocalePath } from "./routes.js";
 import { HomePage } from "./pages/HomePage.jsx";
+import { StonesPage } from "./pages/StonesPage.jsx";
+import { StoneDetailPage } from "./pages/StoneDetailPage.jsx";
 
 function localeFromPath(pathname) {
   return pathname === "/nl" || pathname.startsWith("/nl/") ? "nl" : "en";
@@ -64,9 +66,15 @@ export function App() {
   const stone = page.page === "stone-detail" ? previewStones.find((item) => item.id === page.stoneId) : undefined;
   const pageName = stone ? "stoneDetail" : page.page === "not-found" ? "notFound" : page.page;
 
+  let pageContent;
+  if (page.page === "home") pageContent = <HomePage text={text.home} locale={locale} />;
+  else if (page.page === "stones") pageContent = <StonesPage stones={previewStones} locale={locale} text={text.stones} />;
+  else if (page.page === "stone-detail") pageContent = <StoneDetailPage stoneId={page.stoneId} stone={stone} locale={locale} text={text.stoneDetail} notFound={text.notFound} />;
+  else pageContent = <GenericPage page={pageName} text={text} stone={stone} />;
+
   return (
     <SiteFrame locale={locale} onLocaleChange={changeLocale} onNavigate={navigate} menuOpen={menuOpen} onMenuChange={setMenuOpen} shared={content[locale]}>
-      {page.page === "home" ? <HomePage text={text.home} locale={locale} /> : <GenericPage page={pageName} text={text} stone={stone} />}
+      {pageContent}
     </SiteFrame>
   );
 }
