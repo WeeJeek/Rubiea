@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="{{ request.locale.iso_code }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>{{ page_title | escape }}</title>
+    {{ content_for_header }}
+    {{ 'rubiae.css' | asset_url | stylesheet_tag }}
+  </head>
+  <body><a class="skip-link" href="#MainContent">{{ 'accessibility.skip_to_content' | t }}</a>{% sections 'header-group' %}<main id="MainContent">{{ content_for_layout }}</main>{% sections 'footer-group' %}{{ 'rubiae.js' | asset_url | script_tag }}</body>
+</html>
