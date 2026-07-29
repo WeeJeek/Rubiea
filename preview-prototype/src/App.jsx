@@ -6,17 +6,16 @@ import { getRoute, withLocalePath } from "./routes.js";
 import { HomePage } from "./pages/HomePage.jsx";
 import { StonesPage } from "./pages/StonesPage.jsx";
 import { StoneDetailPage } from "./pages/StoneDetailPage.jsx";
+import { EditorialPage } from "./pages/EditorialPage.jsx";
+import { ContactPage } from "./pages/ContactPage.jsx";
+import { ConfirmationPage } from "./pages/ConfirmationPage.jsx";
+import { NotFoundPage } from "./pages/NotFoundPage.jsx";
 
 function localeFromPath(pathname) {
   return pathname === "/nl" || pathname.startsWith("/nl/") ? "nl" : "en";
 }
 
-function GenericPage({ page, text, stone }) {
-  const pageCopy = stone ? text.stoneDetail : text[page] || text.notFound;
-  const heading = pageCopy.heading || pageCopy.title;
-
-  return <main id="main-content" tabIndex="-1"><section className="section-light"><div className="slow-copy"><p className="eyebrow">{pageCopy.eyebrow}</p><h1>{heading}</h1>{pageCopy.intro && <p>{pageCopy.intro}</p>}{stone && <p>{stone.id}</p>}</div></section></main>;
-}
+const editorialPages = new Set(["stories", "how-to-choose", "about", "for-trade", "privacy", "cookies"]);
 
 export function App() {
   const [pathname, setPathname] = useState(() => window.location.pathname);
@@ -64,13 +63,15 @@ export function App() {
   }
 
   const stone = page.page === "stone-detail" ? previewStones.find((item) => item.id === page.stoneId) : undefined;
-  const pageName = stone ? "stoneDetail" : page.page === "not-found" ? "notFound" : page.page;
-
   let pageContent;
   if (page.page === "home") pageContent = <HomePage text={text.home} locale={locale} />;
   else if (page.page === "stones") pageContent = <StonesPage stones={previewStones} locale={locale} text={text.stones} />;
   else if (page.page === "stone-detail") pageContent = <StoneDetailPage stoneId={page.stoneId} stone={stone} locale={locale} text={text.stoneDetail} notFound={text.notFound} />;
-  else pageContent = <GenericPage page={pageName} text={text} stone={stone} />;
+  else if (editorialPages.has(page.page)) pageContent = <EditorialPage page={page.page} locale={locale} text={text[page.page]} />;
+  else if (page.page === "contact") pageContent = <ContactPage locale={locale} text={text.contact} />;
+  else if (page.page === "confirmation") pageContent = <ConfirmationPage text={text.confirmation} />;
+  else if (page.page === "not-found") pageContent = <NotFoundPage locale={locale} text={text.notFound} />;
+  else pageContent = <NotFoundPage locale={locale} text={text.notFound} />;
 
   return (
     <SiteFrame locale={locale} onLocaleChange={changeLocale} onNavigate={navigate} menuOpen={menuOpen} onMenuChange={setMenuOpen} shared={content[locale]}>
