@@ -69,7 +69,7 @@ Result: production build passed; 4 Sites worker tests passed.
 - `npm test`: 8 passing, 0 failing.
 - `npm run test:sites`: 4 passing, 0 failing.
 
-Review-fix commit: pending at report write time.
+Review-fix commit: `d7ec4a9b362ec7f09aefc28484498955f68fc97c` — `fix: complete preview copy data`.
 
 ## Commit
 
