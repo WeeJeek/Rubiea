@@ -23,7 +23,7 @@ It does not implement frontend code, create customer content, connect a real Sto
 - A title and excerpt may be supplied by the customer or proposed by Rubiae after an explicit request. The customer approves their final directory presentation before publication.
 - Selecting an index entry replaces the right-hand display with that Moment's authorised object or image, attribution, and complete story. It does not require a second click to open or expand the text.
 - Each indexed non-anonymous selection updates to that Moment's independent URL so it can be linked and revisited directly, while retaining the same index-and-display shell.
-- Entries do not use product imagery as their dominant visual. A Stone name, number, or archive link appears only after separate story-to-stone association permission.
+- Entries do not use product imagery as their dominant visual. For a non-anonymous Moment, a Stone name, number, or archive link appears only after separate story-to-stone association permission. Anonymous Moments never expose a public Stone association.
 - The index does not autoplay or cycle between customers.
 
 ## Selected Moment display
@@ -33,7 +33,7 @@ It does not implement frontend code, create customer content, connect a real Sto
 - Customer text and controls remain selectable, screen-reader-readable, and indexable HTML. They are never baked into a photographed or generated paper surface.
 - The full story is available immediately after selecting its summary title. Long stories continue by natural vertical reading rather than artificial page splitting.
 - Pointer, keyboard, and touch selection expose the same Moments. A brief crossfade or small positional transition may connect the index choice to the changed display; `prefers-reduced-motion` uses a direct content change.
-- When story-to-stone association permission exists, a compact Stone archive card may appear after the complete story. Without that permission, no Stone card, product identifier, or indirect archive link appears.
+- For a non-anonymous Moment, a compact Stone archive card may appear after the complete story only when story-to-stone association permission exists. An anonymous Moment never renders a Stone card, Stone image, public name, product number, gemstone-type association, or archive link, even when Rubiae retains an internal story-to-Stone relationship record.
 
 ## Mobile composition
 
@@ -56,10 +56,20 @@ It does not implement frontend code, create customer content, connect a real Sto
 - When at least two eligible anonymous Moments exist, the next selection must not immediately repeat the currently displayed Moment. Repeated encounters retain the original indexed non-anonymous return target for `Back to stories / Terug naar verhalen`.
 - When exactly one anonymous Moment is eligible, the main invitation remains available and opens that story. The end-of-story `Encounter another anonymous Moment / Ontmoet nog een anoniem moment` control is absent rather than disabled, leaving only `Back to stories / Terug naar verhalen` as the anonymous-story exit.
 - When no anonymous Moment is eligible, the anonymous-discovery invitation is not rendered. The ordinary Stories interface remains unchanged; no disabled invitation or empty anonymous-story message is shown.
+- An anonymous Moment has no public permalink or routable story URL. Opening one does not change the current indexed non-anonymous Moment URL; refreshing reloads that ordinary indexed Moment rather than restoring the anonymous content.
+- Anonymous Moment bodies are excluded from public sitemaps, page metadata, and search-engine indexing. This limits deliberate rediscovery but is not a confidentiality guarantee: visitors can still copy, save, or screenshot public content.
+- The visible byline for an anonymous Moment is exactly `Anonymous` on the English page and `Anoniem` on the Dutch page. It does not expose a name, initials, customer-chosen pseudonym, city, age, or purchase date.
+- Every anonymous Moment uses the same heading: `A Rubiae Moment` on the English page and `Een Rubiae Moment` on the Dutch page. A customer-specific or story-specific title is not displayed, even when separately approved, because distinctive wording can aid recognition.
+- Before anonymous publication, Rubiae reviews the original-language story for direct identifiers including names, initials, contact details, social handles, precise addresses or locations, employers or schools, and customer, order, or Stone identifiers. Exact dates and rare combinations of life details are removed or generalised when they create a reasonably foreseeable recognition risk.
+- Rubiae proposes only the minimum meaning-preserving redactions. The customer reviews and explicitly approves the final redacted original-language text and its final page preview; automated redaction or a customer self-check alone does not replace this review.
+- If the recognition risk cannot be reduced without materially changing the customer's experience, voice, or meaning, the story is not published as anonymous. It remains unpublished unless the customer later approves a sufficiently revised anonymous version or separately chooses non-anonymous publication.
+- Each proposed anonymous-story image receives a separate visual and file review. Rubiae removes EXIF, IPTC, XMP, GPS, embedded previews, and the original public filename, and checks visible faces, names, addresses, licence plates, screens, documents, distinctive body marks, and recognisable home or workplace details.
+- Rubiae may crop or mask only the identifying region when that treatment preserves the image's meaning and does not misrepresent its contents. The customer approves every final processed image and its page preview.
+- If an image cannot be made safe without materially changing or misleading the scene, it is omitted and the approved intentionally empty plinth is used. Rubiae does not add generic or generated replacement imagery.
 - Discovery never depends on hovering over a scene object, noticing a timed animation, or acting before an ambient event disappears.
 - The invitation supports pointer, touch, and keyboard activation with visible focus. It remains understandable without motion; any later decorative animation must respect reduced-motion preferences.
-- The entry's final visual form, exact placement of the back and repeat controls, destination URL behaviour, search indexing, and redaction standard remain open decisions.
-- Random discovery creates a feeling of an unplanned encounter; it is not a privacy mechanism. Publication review must still remove identifying text, image details, metadata, and Stone associations that the customer has not authorised.
+- The entry's final visual form and exact placement of the back and repeat controls remain open decisions.
+- Random discovery creates a feeling of an unplanned encounter; it is not a privacy mechanism. Publication review must still remove identifying text, image details, metadata, and every public Stone association.
 
 ## Customer story images
 
@@ -91,6 +101,7 @@ It does not implement frontend code, create customer content, connect a real Sto
 
 - Story publication, public or anonymous attribution, customer image publication, AI-assisted translation, public naming, marketing, and story-to-stone association remain separately recorded choices.
 - Publishing a customer image that contains a stone does not automatically permit an official Stone archive link.
+- Anonymous mode never publicly exposes the story-to-Stone relationship, even when Rubiae holds an internal association record or separate association permission. Public Stone association requires the customer to separately approve the Moment as non-anonymous and to grant story-to-stone association permission; until both conditions are met, the relationship remains internal.
 - Withdrawing story-to-stone association removes the links and Stone identifiers without deleting an otherwise authorised story.
 - Withdrawing story publication removes the public Moment and its directory entry according to the recorded permission terms; it does not delete the permanent factual Stone archive.
 
@@ -111,7 +122,7 @@ It does not implement frontend code, create customer content, connect a real Sto
 4. Pointer, keyboard, touch, and reduced-motion modes expose the same story content and navigation; the index never autoplays.
 5. Text, translation labels, original-language controls, attribution, and index controls remain semantic HTML.
 6. A no-image story renders as an intentionally empty plinth with the story paper as its sole exhibit; it contains no generic or fabricated substitute imagery.
-7. No Stone identifier or archive link appears without association permission.
+7. A non-anonymous Moment shows no Stone identifier or archive link without association permission.
 8. Customer-provided images are not presented as product evidence or as proof that Rubiae made any depicted jewellery.
 9. No edited text, processed image, translation, or final page is published before its required review and approval gates pass.
 10. The ordinary mobile Stories view displays the first or URL-selected indexed non-anonymous story immediately and uses the current-title plus `All stories / Alle verhalen` bottom sheet only for switching those Moments.
@@ -121,3 +132,9 @@ It does not implement frontend code, create customer content, connect a real Sto
 14. The end-of-story `Encounter another anonymous Moment / Ontmoet nog een anoniem moment` control changes the anonymous story only after visitor activation, never immediately repeats the current story when at least two are eligible, and preserves the original indexed-story return target through repeated encounters.
 15. With exactly one eligible anonymous Moment, the main invitation opens it, the end-of-story repeat control is not rendered, and the visible back control remains available.
 16. With no eligible anonymous Moment, the invitation is absent and ordinary Stories presents neither a disabled anonymous control nor an empty anonymous-story message.
+17. An anonymous Moment neither changes the current public URL nor receives an indexable permalink; refresh returns to the indexed non-anonymous Moment, while the published anonymous content remains subject to copying and screenshots.
+18. Anonymous attribution renders only as `Anonymous / Anoniem` and contains no initials, pseudonym, city, age, or purchase date.
+19. Anonymous Moments render the shared heading `A Rubiae Moment / Een Rubiae Moment` rather than a unique story title.
+20. Anonymous publication requires Rubiae review plus customer approval of the final redacted original-language story; if reasonably foreseeable recognition risk cannot be reduced without changing its meaning, it is not published anonymously.
+21. Every anonymous image is cleared of identifying metadata and reviewed for visible identifiers; an unsafe image is omitted in favour of the intentionally empty plinth, never replaced with generic or generated imagery.
+22. An anonymous Moment exposes no public Stone association, even when an internal relationship exists; a public Stone card, identifier, image, gemstone type, or link requires both non-anonymous publication approval and separate story-to-stone association permission.
