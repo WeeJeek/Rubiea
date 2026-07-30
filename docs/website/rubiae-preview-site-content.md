@@ -158,6 +158,22 @@
 - Intro: `Elke steen wordt getoond met de feiten die nu bekend zijn. Kijk rustig, vergelijk wat voor jou telt en stel vragen voordat je beslist.`
 - Preview note: `De collectie is nu een voorvertoning. Prijzen en aankoopmogelijkheden volgen pas wanneer Rubiae klaar is om te verkopen.`
 
+### 列表分区
+
+当前宝石先显示，标题为 `Stones to discover / Stenen om te ontdekken`。售罄宝石随后作为事实档案显示，标题为 `Chosen stones / Gekozen stenen`。任一区域没有商品时不显示该区域及标题。
+
+获得名称公开授权的售罄宝石以顾客赋名作为卡片标题，并显示 `Named by its owner / Genoemd door de eigenaar`、石种、商品编号和 `Sold / Verkocht`。未公开命名的售罄宝石仍以石种和商品编号作为事实身份，不虚构名称。
+
+首批 3–5 颗当前宝石在同一页面连续展示。每颗宝石使用一个宽幅故事版块，把真实商品摄影与纸页式事实资料组合为完整画面；相邻宝石在桌面端左右反转，点击进入独立详情页。手机端按照片、事实资料顺序逐颗纵向排列。该页面不是普通商品卡网格，也不要求顾客逐页打开才能发现下一颗宝石。
+
+列表顶部不重复展示包含全部商品的缩略目录，也不提供横向滑动商品条。标题附近只显示当前分类与筛选后的结果数量，随后提供 `Weight`、`Treatment` 与 `Clear filters`。未来独立增加饰品目录时，以分类入口切换宝石和饰品；只有实际存在对应商品时才显示该分类。
+
+下方故事版块共享连续的冷灰环境，不使用整屏底色交替、独立卡片背景或强制滚动吸附来切开产品。每颗宝石的照片与事实纸必须紧邻、对齐并作为同一阅读组出现；事实纸不得跨到下一颗、遮挡下一颗或与下一颗画面形成错误归属。跨产品的柔和过渡只使用背景光线、桌面材质和色调延续。桌面端每次应能看见当前宝石及下一颗的明确线索；手机端保留一行一颗，但优先展示照片和用于初步判断的核心事实，使顾客无需记住上一颗的版式位置。
+
+每颗宝石可在自己的摄影区域内显示对应实物短视频入口 `Play video / Video afspelen`。视频必须使用该宝石的真实影像与真实静态封面，由顾客主动播放，默认不自动播放；视频、封面、标题、事实纸和商品编号必须保持在同一阅读组内，不能成为跨产品背景或独立漂浮内容。
+
+当筛选结果超过 6 件时，首批显示 6 件；列表底部显示 `Showing 6 of 24 / 6 van 24 weergegeven` 一类的当前数量与总数，并提供 `View more / Meer bekijken`。每次点击再显示 6 件，不自动无限载入，也不要求横向滑动。
+
 ### 商品卡字段
 
 | 数据字段 | English label | Nederlands label |
