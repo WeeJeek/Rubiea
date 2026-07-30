@@ -49,9 +49,12 @@ It does not implement frontend code, create customer content, connect a real Sto
 
 - An anonymous Moment does not appear in the desktop left-hand index or the mobile `All stories / Alle verhalen` bottom sheet. Its title and synopsis are not exposed as ordinary directory entries.
 - Anonymous Moments are discovered only through a separate, visitor-initiated random-discovery entry. The entry is always visible as explicit text: `Encounter an anonymous Moment / Ontmoet een anoniem moment`.
-- Activating the invitation selects one eligible anonymous Moment. Discovery never depends on hovering over a scene object, noticing a timed animation, or acting before an ambient event disappears.
+- Activating the invitation selects one eligible anonymous Moment and replaces the current object or image and story inside the existing reading surface. Desktop uses the same right-hand display; mobile uses the same single-column surface. The anonymous story does not open in a modal or require a separate intermediate page.
+- The ordinary desktop index remains visible and unchanged while the anonymous Moment is open, but no indexed story is highlighted as though it represented the anonymous content. The mobile bottom sheet remains unchanged and still contains no anonymous entry.
+- A visible `Back to stories / Terug naar verhalen` control restores the indexed non-anonymous Moment that was visible before random discovery.
+- Discovery never depends on hovering over a scene object, noticing a timed animation, or acting before an ambient event disappears.
 - The invitation supports pointer, touch, and keyboard activation with visible focus. It remains understandable without motion; any later decorative animation must respect reduced-motion preferences.
-- The entry's final visual form, where the selected anonymous Moment opens, repeat-random behaviour, destination URL behaviour, search indexing, empty state, and redaction standard remain open decisions.
+- The entry's final visual form, exact placement of the back control, repeat-random behaviour, destination URL behaviour, search indexing, empty state, and redaction standard remain open decisions.
 - Random discovery creates a feeling of an unplanned encounter; it is not a privacy mechanism. Publication review must still remove identifying text, image details, metadata, and Stone associations that the customer has not authorised.
 
 ## Customer story images
@@ -110,3 +113,4 @@ It does not implement frontend code, create customer content, connect a real Sto
 10. The ordinary mobile Stories view displays the first or URL-selected indexed non-anonymous story immediately and uses the current-title plus `All stories / Alle verhalen` bottom sheet only for switching those Moments.
 11. Anonymous Moments are absent from both ordinary story directories and can be reached only through the separate visitor-initiated random-discovery entry.
 12. The random-discovery entry is persistently visible with its explicit bilingual invitation and does not require hover discovery or a timed ambient event.
+13. Activating the invitation replaces the existing reading surface with one eligible anonymous Moment; `Back to stories / Terug naar verhalen` restores the previously visible indexed story without adding the anonymous Moment to either directory.
