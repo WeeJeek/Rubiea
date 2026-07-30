@@ -12,15 +12,9 @@ button, a { font: inherit; }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
 a:focus-visible, button:focus-visible { outline: 3px solid #a5203f; outline-offset: 4px; }
-input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #a5203f; outline-offset: 2px; }
 
 .skip-link { position: fixed; z-index: 5; top: 0.75rem; left: 0.75rem; padding: 0.7rem 0.9rem; transform: translateY(-160%); background: #251f24; color: #fffafa; font-size: 0.8rem; text-decoration: none; }
 .skip-link:focus { transform: translateY(0); }
-
-@media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
-}
 
 .site-header {
   position: absolute;
@@ -44,9 +38,8 @@ input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px
 
 .site-nav { display: flex; align-items: center; gap: clamp(1rem, 2vw, 2rem); }
 .site-nav a, .language-toggle { border: 0; padding: 0; background: none; color: inherit; font-size: 0.72rem; text-decoration: none; }
-.site-nav a[aria-current="page"] { color: #9e4350; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.45em; }
 .site-nav a:hover, .site-nav a:focus-visible, .language-toggle:hover, .language-toggle:focus-visible, .text-link:hover, .text-link:focus-visible { color: #9e4350; }
-.menu-toggle { display: none; cursor: pointer; }
+.menu-toggle { display: none; }
 
 .hero { position: relative; min-height: 52rem; overflow: hidden; color: #261e25; }
 .hero-image { width: 100%; height: 52rem; object-fit: cover; object-position: center; }
@@ -96,48 +89,6 @@ h1, h2 { margin: 0; font-family: Georgia, serif; font-weight: 400; letter-spacin
 .text-link { display: inline-block; margin-top: 1.6rem; color: #86444d; font-size: 0.78rem; text-underline-offset: 0.45em; }
 
 .section-light { background: #efeded; }
-.page-hero { max-width: 65ch; }
-.page-hero > p { max-width: 65ch; line-height: 1.65; }
-.page-grid, .editorial-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(2rem, 6vw, 7rem); }
-.fact-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); margin: 2.5rem 0; border-top: 1px solid #c4bec0; }
-.fact-list > * { padding: 0.85rem 0.75rem 0.85rem 0; border-bottom: 1px solid #c4bec0; }
-.utility-page { min-height: 100vh; padding: 10rem clamp(1.5rem, 15vw, 15rem) 6rem; background: #efeded; }
-.editorial-page { min-height: 100vh; padding: 10rem clamp(1.5rem, 15vw, 15rem) 6rem; background: #efeded; }
-.editorial-copy { max-width: 65ch; }
-.editorial-copy > h1 { font-size: clamp(3.5rem, 7vw, 6.6rem); }
-.editorial-copy h2 { margin-top: 3rem; font-size: clamp(2rem, 4vw, 3.25rem); }
-.editorial-copy p, .editorial-copy li { font-size: 0.98rem; line-height: 1.7; }
-.editorial-empty, .legal-launch-note { margin: 2rem 0; padding: 1rem 1.15rem; border-left: 3px solid #86444d; background: #e3dddd; }
-.editorial-sections { padding-left: 1.25rem; }
-.editorial-sections li { padding-left: 0.5rem; }
-.editorial-sections h2 { margin: 2.5rem 0 0; }
-.contact-page form { display: grid; gap: 1.25rem; margin-top: 2rem; }
-.form-field { display: grid; gap: 0.45rem; }
-.form-field input, .form-field textarea, .form-field select { width: 100%; min-height: 44px; border: 1px solid #8f878a; padding: 0.75rem; background: #fffafa; color: #251f24; }
-.form-field select, .LaunchConsent input { cursor: pointer; }
-.field-error { margin: 0; color: #8d1935; }
-.LaunchConsent { display: flex; gap: 0.65rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.5; }
-.LaunchConsent input { margin-top: 0.2rem; }
-.contact-page button { min-height: 44px; justify-self: start; border: 0; padding: 0.85rem 1rem; background: #271f26; color: #fffafa; cursor: pointer; }
-.site-header:has(+ main .catalogue-page), .site-header:has(+ main .editorial-page) { color: #251f24; }
-.catalogue-page { min-height: 100vh; padding: 9rem clamp(1.5rem, 7vw, 9rem) clamp(5rem, 10vw, 10rem); }
-.catalogue-heading { max-width: 43rem; }
-.catalogue-heading h1 { font-size: clamp(3.6rem, 7vw, 7rem); }
-.catalogue-heading > p:not(.eyebrow) { max-width: 36rem; font-size: 0.98rem; line-height: 1.65; }
-.preview-notice { max-width: 37rem; margin: 2rem 0 0; padding: 1rem 1.15rem; border-left: 3px solid #86444d; background: #e3dddd; font-size: 0.85rem; line-height: 1.5; }
-.stone-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(1.5rem, 4vw, 4rem); margin-top: 4rem; }
-.stone-card { background: #e3dddd; }
-.stone-card img, .stone-detail-image { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; }
-.stone-card-copy { padding: 1.5rem; }
-.stone-card-copy .text-link { margin-top: 1rem; }
-.stone-status { margin: 0; font-size: 0.82rem; }
-.stone-detail-layout { display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(18rem, 1fr); gap: clamp(2.5rem, 7vw, 8rem); align-items: start; margin-top: 4rem; }
-.stone-detail-layout h2 { font-size: clamp(2.6rem, 4vw, 4.5rem); }
-.stone-detail-layout > section > p { line-height: 1.65; }
-.stone-facts { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0; margin: 2.5rem 0; border-top: 1px solid #c4bec0; }
-.stone-facts > div { padding: 0.85rem 0.75rem 0.85rem 0; border-bottom: 1px solid #c4bec0; }
-.stone-facts dt { color: #86444d; font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-.stone-facts dd { margin: 0.35rem 0 0; font-size: 0.9rem; }
 .slow-look { display: grid; grid-template-columns: 0.9fr 1.25fr; grid-template-rows: auto auto; gap: clamp(2rem, 6vw, 7rem); padding: clamp(5rem, 10vw, 11rem) clamp(1.5rem, 7vw, 9rem); }
 .slow-display { align-self: start; padding-top: 4rem; font-family: Georgia, serif; font-size: clamp(3.5rem, 6vw, 7rem); letter-spacing: -0.06em; line-height: 0.95; }
 .slow-pendant { width: 100%; aspect-ratio: 1.5; object-fit: cover; }
@@ -208,11 +159,6 @@ h1, h2 { margin: 0; font-family: Georgia, serif; font-weight: 400; letter-spacin
   .hero-story h2 { max-width: 7ch; font-size: 2rem; }
   .hero-story .text-link { margin-top: 1rem; }
   .slow-look, .moments, .facts { grid-template-columns: 1fr; }
-  .catalogue-page { padding: 7rem 1.5rem 5rem; }
-  .editorial-page, .utility-page { padding: 7rem 1.5rem 5rem; }
-  .page-grid, .editorial-layout, .fact-list { grid-template-columns: 1fr; }
-  .stone-grid, .stone-detail-layout { grid-template-columns: 1fr; }
-  .stone-facts { grid-template-columns: 1fr; }
   .slow-look { gap: 2.5rem; padding: 5rem 1.5rem; }
   .slow-display { padding: 0; font-size: clamp(3rem, 16vw, 4.5rem); }
   .slow-pendant { order: 1; }
