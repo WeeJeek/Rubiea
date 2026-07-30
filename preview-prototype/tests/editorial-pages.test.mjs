@@ -13,6 +13,12 @@ test("all inner-page layouts remain responsive and accessible", () => {
   assert.doesNotMatch(styles, /overflow-x:\s*auto/);
 });
 
+test("shared inner-page layout tokens remain available", () => {
+  for (const selector of ["page-hero", "page-grid", "fact-list", "editorial-layout", "utility-page"]) {
+    assert.match(styles, new RegExp(`\\.${selector}\\b`));
+  }
+});
+
 test("editorial and utility routes are bilingual, honest, and client-only", () => {
   const app = readSource("../src/App.jsx");
   const content = readSource("../src/content.js");
