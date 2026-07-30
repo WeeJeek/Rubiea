@@ -5,7 +5,7 @@
 
 ## Purpose
 
-Give authorised Rubiae Moments a distinctive editorial home without turning customer stories into product cards or making Rubiae the interpreter of a customer's life. `Stories` is one immediately readable interface: a summary-title index on the left and the selected customer's authorised object or image with the complete story on the right. Every Moment keeps its own URL, but a visitor does not pass through a separate cover or preview before reading it.
+Give authorised Rubiae Moments a distinctive editorial home without turning customer stories into product cards or making Rubiae the interpreter of a customer's life. `Stories` is one immediately readable interface: a summary-title index on the left and the selected customer's authorised object or image with the complete story on the right. Every indexed non-anonymous Moment keeps its own URL, but a visitor does not pass through a separate cover or preview before reading it.
 
 The earlier [Rubiae Stories and Moment book reference](../../brand/rubiae-stories-moment-book-approved-reference.png) is retained as historical design evidence only. Its separate cover, directory, and page-turn model was superseded by the unified editorial-display decision on 2026-07-30. Its placeholder image and text are not customer content, product evidence, or publication-ready assets.
 
@@ -18,8 +18,8 @@ It does not implement frontend code, create customer content, connect a real Sto
 ## Unified Stories index and reading surface
 
 - `Stories` does not open with a separate cover, grid, or preview-only directory. On first load, the first or URL-selected authorised Moment is already readable.
-- The first Moment that has complete publication permission and passes the publication check is enough to replace the no-story state. Rubiae does not wait for three stories or promise a publishing cadence.
-- A persistent left-hand index gives an overview of every published Moment. Each entry uses a customer-approved summary title and one concise synopsis; the selected entry is visibly identified.
+- The first indexed non-anonymous Moment that has complete publication permission and passes the publication check is enough to replace the ordinary Stories no-story state. Rubiae does not wait for three stories or promise a publishing cadence. Behaviour when only anonymous Moments exist remains part of the random-entry decision.
+- A persistent left-hand index gives an overview of every indexed non-anonymous published Moment. Each entry uses a customer-approved summary title and one concise synopsis; the selected entry is visibly identified.
 - A title and excerpt may be supplied by the customer or proposed by Rubiae after an explicit request. The customer approves their final directory presentation before publication.
 - Selecting an index entry replaces the right-hand display with that Moment's authorised object or image, attribution, and complete story. It does not require a second click to open or expand the text.
 - Each selection updates to that Moment's independent URL so it can be linked and revisited directly, while retaining the same index-and-display shell.
@@ -43,7 +43,13 @@ It does not implement frontend code, create customer content, connect a real Sto
 - The bottom sheet is a switching control, not a reading gate: closing it returns to the unchanged current story, and a visitor never needs to open it to read the initially selected Moment.
 - The authorised object or image, or the approved intentionally empty plinth, and the complete story use one vertical flow. Mobile does not shrink the desktop left-index/right-display composition or require horizontal swiping.
 - The selector and bottom sheet support touch and keyboard operation, visible focus, explicit close, and reduced motion. Opening the sheet moves focus into it; closing or selecting a Moment returns focus to the selector or the newly selected story heading.
-- The deferred anonymous random-discovery concepts do not determine which anonymous stories appear in the bottom sheet until that separate decision is approved.
+- Anonymous Moments are excluded from the bottom sheet and use the separate random-discovery path defined below.
+
+## Anonymous discovery boundary
+
+- An anonymous Moment does not appear in the desktop left-hand index or the mobile `All stories / Alle verhalen` bottom sheet. Its title and synopsis are not exposed as ordinary directory entries.
+- Anonymous Moments are discovered only through a separate, visitor-initiated random-discovery entry. Its final visual form, trigger behaviour, destination URL behaviour, search indexing, and redaction standard remain open decisions.
+- Random discovery creates a feeling of an unplanned encounter; it is not a privacy mechanism. Publication review must still remove identifying text, image details, metadata, and Stone associations that the customer has not authorised.
 
 ## Customer story images
 
@@ -90,12 +96,13 @@ It does not implement frontend code, create customer content, connect a real Sto
 ## Acceptance criteria
 
 1. One fully authorised Moment can populate `Stories` without empty filler entries.
-2. The first or URL-selected Moment is readable immediately; there is no cover-to-preview-to-story sequence.
-3. Selecting a left summary title updates the right-hand authorised object or image, attribution, and complete story, and gives the Moment a unique URL.
+2. The first or URL-selected indexed non-anonymous Moment is readable immediately in the ordinary Stories view; there is no cover-to-preview-to-story sequence.
+3. Selecting a left summary title updates the right-hand authorised object or image, attribution, and complete story, and gives that indexed non-anonymous Moment a unique URL.
 4. Pointer, keyboard, touch, and reduced-motion modes expose the same story content and navigation; the index never autoplays.
 5. Text, translation labels, original-language controls, attribution, and index controls remain semantic HTML.
 6. A no-image story renders as an intentionally empty plinth with the story paper as its sole exhibit; it contains no generic or fabricated substitute imagery.
 7. No Stone identifier or archive link appears without association permission.
 8. Customer-provided images are not presented as product evidence or as proof that Rubiae made any depicted jewellery.
 9. No edited text, processed image, translation, or final page is published before its required review and approval gates pass.
-10. Mobile displays the first or URL-selected complete story immediately and uses the current-title plus `All stories / Alle verhalen` bottom sheet only for switching Moments.
+10. The ordinary mobile Stories view displays the first or URL-selected indexed non-anonymous story immediately and uses the current-title plus `All stories / Alle verhalen` bottom sheet only for switching those Moments.
+11. Anonymous Moments are absent from both ordinary story directories and can be reached only through the separate visitor-initiated random-discovery entry.
