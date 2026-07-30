@@ -11,9 +11,9 @@ The earlier [Rubiae Stories and Moment book reference](../../brand/rubiae-storie
 
 ## Scope
 
-This decision covers the desktop `Stories` index and selected-Moment reading experience, their content ownership, image handling, translation presentation, permission boundaries, and accessible story switching.
+This decision covers the desktop and mobile `Stories` index and selected-Moment reading experience, their content ownership, image handling, translation presentation, permission boundaries, and accessible story switching.
 
-It does not approve a mobile composition, implement frontend code, create customer content, connect a real Stone archive, or authorise public hosting. Mobile composition requires separate approval before implementation.
+It does not implement frontend code, create customer content, connect a real Stone archive, or authorise public hosting.
 
 ## Unified Stories index and reading surface
 
@@ -34,6 +34,16 @@ It does not approve a mobile composition, implement frontend code, create custom
 - The full story is available immediately after selecting its summary title. Long stories continue by natural vertical reading rather than artificial page splitting.
 - Pointer, keyboard, and touch selection expose the same Moments. A brief crossfade or small positional transition may connect the index choice to the changed display; `prefers-reduced-motion` uses a direct content change.
 - When story-to-stone association permission exists, a compact Stone archive card may appear after the complete story. Without that permission, no Stone card, product identifier, or indirect archive link appears.
+
+## Mobile composition
+
+- Mobile opens with the first or URL-selected Moment already visible. It does not open on a separate story directory or require the visitor to choose a title before reading.
+- A compact selector above the Moment shows the current customer-approved title and `All stories / Alle verhalen`.
+- Activating `All stories / Alle verhalen` opens a bottom sheet containing the titles and concise synopses that the current publication and anonymity rules allow in the index. Selecting one closes the sheet, loads that complete Moment in the same vertical reading surface, and updates its independent URL.
+- The bottom sheet is a switching control, not a reading gate: closing it returns to the unchanged current story, and a visitor never needs to open it to read the initially selected Moment.
+- The authorised object or image, or the approved intentionally empty plinth, and the complete story use one vertical flow. Mobile does not shrink the desktop left-index/right-display composition or require horizontal swiping.
+- The selector and bottom sheet support touch and keyboard operation, visible focus, explicit close, and reduced motion. Opening the sheet moves focus into it; closing or selecting a Moment returns focus to the selector or the newly selected story heading.
+- The deferred anonymous random-discovery concepts do not determine which anonymous stories appear in the bottom sheet until that separate decision is approved.
 
 ## Customer story images
 
@@ -88,3 +98,4 @@ It does not approve a mobile composition, implement frontend code, create custom
 7. No Stone identifier or archive link appears without association permission.
 8. Customer-provided images are not presented as product evidence or as proof that Rubiae made any depicted jewellery.
 9. No edited text, processed image, translation, or final page is published before its required review and approval gates pass.
+10. Mobile displays the first or URL-selected complete story immediately and uses the current-title plus `All stories / Alle verhalen` bottom sheet only for switching Moments.
