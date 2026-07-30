@@ -15,7 +15,14 @@ function localeFromPath(pathname) {
   return pathname === "/nl" || pathname.startsWith("/nl/") ? "nl" : "en";
 }
 
-const editorialPages = new Set(["stories", "how-to-choose", "about", "for-trade", "privacy", "cookies"]);
+const editorialContentKeys = {
+  stories: "stories",
+  "how-to-choose": "howToChoose",
+  about: "about",
+  "for-trade": "forTrade",
+  privacy: "privacy",
+  cookies: "cookies",
+};
 
 export function App() {
   const [pathname, setPathname] = useState(() => window.location.pathname);
@@ -67,7 +74,7 @@ export function App() {
   if (page.page === "home") pageContent = <HomePage text={text.home} locale={locale} />;
   else if (page.page === "stones") pageContent = <StonesPage stones={previewStones} locale={locale} text={text.stones} />;
   else if (page.page === "stone-detail") pageContent = <StoneDetailPage stoneId={page.stoneId} stone={stone} locale={locale} text={text.stoneDetail} notFound={text.notFound} />;
-  else if (editorialPages.has(page.page)) pageContent = <EditorialPage page={page.page} locale={locale} text={text[page.page]} />;
+  else if (editorialContentKeys[page.page]) pageContent = <EditorialPage page={page.page} locale={locale} text={text[editorialContentKeys[page.page]]} />;
   else if (page.page === "contact") pageContent = <ContactPage locale={locale} text={text.contact} />;
   else if (page.page === "confirmation") pageContent = <ConfirmationPage text={text.confirmation} />;
   else if (page.page === "not-found") pageContent = <NotFoundPage locale={locale} text={text.notFound} />;

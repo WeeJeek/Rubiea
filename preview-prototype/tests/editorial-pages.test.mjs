@@ -3,6 +3,15 @@ import { readFileSync } from "node:fs";
 import test from "node:test";
 
 const readSource = (path) => readFileSync(new URL(path, import.meta.url), "utf8");
+const styles = readSource("../src/styles.css");
+
+test("all inner-page layouts remain responsive and accessible", () => {
+  assert.match(styles, /@media \(max-width: 760px\)/);
+  assert.match(styles, /@media \(prefers-reduced-motion: reduce\)/);
+  assert.match(styles, /\.form-field input[^}]*min-height: 44px/);
+  assert.match(styles, /\.site-nav a\[aria-current="page"\]/);
+  assert.doesNotMatch(styles, /overflow-x:\s*auto/);
+});
 
 test("editorial and utility routes are bilingual, honest, and client-only", () => {
   const app = readSource("../src/App.jsx");

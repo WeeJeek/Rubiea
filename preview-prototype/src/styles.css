@@ -12,12 +12,14 @@ button, a { font: inherit; }
 a { color: inherit; }
 img { display: block; max-width: 100%; }
 a:focus-visible, button:focus-visible { outline: 3px solid #a5203f; outline-offset: 4px; }
+input:focus-visible, textarea:focus-visible, select:focus-visible { outline: 3px solid #a5203f; outline-offset: 2px; }
 
 .skip-link { position: fixed; z-index: 5; top: 0.75rem; left: 0.75rem; padding: 0.7rem 0.9rem; transform: translateY(-160%); background: #251f24; color: #fffafa; font-size: 0.8rem; text-decoration: none; }
 .skip-link:focus { transform: translateY(0); }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
 
 .site-header {
@@ -42,8 +44,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid #a5203f; outline-offs
 
 .site-nav { display: flex; align-items: center; gap: clamp(1rem, 2vw, 2rem); }
 .site-nav a, .language-toggle { border: 0; padding: 0; background: none; color: inherit; font-size: 0.72rem; text-decoration: none; }
+.site-nav a[aria-current="page"] { color: #9e4350; text-decoration: underline; text-decoration-thickness: 2px; text-underline-offset: 0.45em; }
 .site-nav a:hover, .site-nav a:focus-visible, .language-toggle:hover, .language-toggle:focus-visible, .text-link:hover, .text-link:focus-visible { color: #9e4350; }
-.menu-toggle { display: none; }
+.menu-toggle { display: none; cursor: pointer; }
 
 .hero { position: relative; min-height: 52rem; overflow: hidden; color: #261e25; }
 .hero-image { width: 100%; height: 52rem; object-fit: cover; object-position: center; }
@@ -94,7 +97,7 @@ h1, h2 { margin: 0; font-family: Georgia, serif; font-weight: 400; letter-spacin
 
 .section-light { background: #efeded; }
 .editorial-page { min-height: 100vh; padding: 10rem clamp(1.5rem, 15vw, 15rem) 6rem; background: #efeded; }
-.editorial-copy { max-width: 44rem; }
+.editorial-copy { max-width: 65ch; }
 .editorial-copy > h1 { font-size: clamp(3.5rem, 7vw, 6.6rem); }
 .editorial-copy h2 { margin-top: 3rem; font-size: clamp(2rem, 4vw, 3.25rem); }
 .editorial-copy p, .editorial-copy li { font-size: 0.98rem; line-height: 1.7; }
@@ -104,11 +107,12 @@ h1, h2 { margin: 0; font-family: Georgia, serif; font-weight: 400; letter-spacin
 .editorial-sections h2 { margin: 2.5rem 0 0; }
 .contact-page form { display: grid; gap: 1.25rem; margin-top: 2rem; }
 .form-field { display: grid; gap: 0.45rem; }
-.form-field input, .form-field textarea, .form-field select { width: 100%; border: 1px solid #8f878a; padding: 0.75rem; background: #fffafa; color: #251f24; }
+.form-field input, .form-field textarea, .form-field select { width: 100%; min-height: 44px; border: 1px solid #8f878a; padding: 0.75rem; background: #fffafa; color: #251f24; }
+.form-field select, .LaunchConsent input { cursor: pointer; }
 .field-error { margin: 0; color: #8d1935; }
 .LaunchConsent { display: flex; gap: 0.65rem; align-items: flex-start; font-size: 0.88rem; line-height: 1.5; }
 .LaunchConsent input { margin-top: 0.2rem; }
-.contact-page button { justify-self: start; border: 0; padding: 0.85rem 1rem; background: #271f26; color: #fffafa; cursor: pointer; }
+.contact-page button { min-height: 44px; justify-self: start; border: 0; padding: 0.85rem 1rem; background: #271f26; color: #fffafa; cursor: pointer; }
 .site-header:has(+ main .catalogue-page), .site-header:has(+ main .editorial-page) { color: #251f24; }
 .catalogue-page { min-height: 100vh; padding: 9rem clamp(1.5rem, 7vw, 9rem) clamp(5rem, 10vw, 10rem); }
 .catalogue-heading { max-width: 43rem; }
