@@ -43,7 +43,7 @@ It does not approve a mobile composition, implement frontend code, create custom
 - The image does not become product evidence and does not itself create public Stone association permission.
 - Rubiae may crop, resize, make light exposure or white-balance corrections, and hide accidentally exposed personal data. It does not add or remove objects, reconstruct the scene, or apply AI restyling.
 - The customer approves the final processed image in the page preview before publication.
-- A no-image Moment remains valid. Its reading layout uses typography and paper space without a fabricated substitute photograph.
+- A no-image Moment remains valid. Its right-hand plinth stays intentionally empty and the story's paper-white reading surface becomes the sole exhibited object. Rubiae does not add a generic gemstone image, generated symbol, decorative object, or substitute photograph.
 
 ## Customer text and editorial control
 
@@ -84,7 +84,7 @@ It does not approve a mobile composition, implement frontend code, create custom
 3. Selecting a left summary title updates the right-hand authorised object or image, attribution, and complete story, and gives the Moment a unique URL.
 4. Pointer, keyboard, touch, and reduced-motion modes expose the same story content and navigation; the index never autoplays.
 5. Text, translation labels, original-language controls, attribution, and index controls remain semantic HTML.
-6. A no-image story renders without fabricated imagery.
+6. A no-image story renders as an intentionally empty plinth with the story paper as its sole exhibit; it contains no generic or fabricated substitute imagery.
 7. No Stone identifier or archive link appears without association permission.
 8. Customer-provided images are not presented as product evidence or as proof that Rubiae made any depicted jewellery.
 9. No edited text, processed image, translation, or final page is published before its required review and approval gates pass.
