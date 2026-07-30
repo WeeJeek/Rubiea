@@ -34,3 +34,16 @@
 - **Visual verification:** Rejected the first broken stitched preview, then iterated through independent subagent reviews. Final 1440 × 900 desktop and 390 × 844 mobile checks passed with all images loaded, no overlap or horizontal overflow, working EN/NL and mobile menu, synchronized `html.lang`, visible keyboard focus and skip link. The approved Hero revision restores the right-side Moments feature as a large paper sheet rotated `3deg` clockwise on desktop and unrotated in mobile flow. `npm run build`, `npm test` (1/1), and `npm run test:sites` (4/4) passed; no price, cart, checkout, payment, reservation, inventory, availability, product form, or Offer schema was found. Independent final review: PASS, no blockers.
 - **Open status:** `GEM-005` remains open for real business/contact/privacy values, real inventory facts and photography, Shopify Admin template assignment, and public hosting. The user approved the local prototype and Hero letter revision for commit.
 - **Next action after approval:** Keep all transaction functionality disabled. Replace demonstration facts and imagery with verified real content before any public hosting or Shopify Admin assignment.
+
+## 2026-07-30
+
+### Stories and Moment desktop design approval
+
+- **Completed:** Approved `Stories` as a Letter Archive-style cover and directory that publishes from the first fully authorised Moment. Each Moment keeps an independent URL; book-page transitions occur only inside one customer's Moment and never across customers.
+- **Completed:** Defined `顾客故事影像` and `Rubiae Moment 文稿`. Customers choose whether and how to provide story imagery; Rubiae may only make customer-approved technical image adjustments. Customer text may receive meaning-preserving light edits and customer-approved title or excerpt proposals.
+- **Completed:** Preserved original-language text alongside reviewed EN/NL translations. AI may create a translation draft only after separate consent, followed by target-language human review; it may not auto-publish. When the customer cannot read the target language, ambiguous choices are explained in a language they understand.
+- **Approved reference:** `docs/brand/rubiae-stories-moment-book-approved-reference.png`; review-only design evidence, not customer content or product evidence.
+- **Design record:** `docs/superpowers/specs/2026-07-30-stories-moment-book-design.md`.
+- **Verification:** Documentation and approved-reference step only; no production code or automated product tests. Checked document links, image readability and dimensions, placeholder semantics, decision consistency, and `git diff --check` before commit.
+- **Open:** `GEM-009` remains open for mobile composition, no-image Moment layout, authorised Stone association card, permission workflow implementation, and accessibility or interaction testing.
+- **Next action:** Define and approve the mobile Moment reading composition before any Stories or Moment implementation.
