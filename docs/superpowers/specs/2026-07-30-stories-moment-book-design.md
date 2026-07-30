@@ -17,12 +17,12 @@ It does not implement frontend code, create customer content, connect a real Sto
 
 ## Unified Stories index and reading surface
 
-- `Stories` does not open with a separate cover, grid, or preview-only directory. On first load, the first or URL-selected authorised Moment is already readable.
+- The ordinary `Stories` view does not open with a separate cover, grid, or preview-only directory. On first load, the first or URL-selected indexed non-anonymous Moment is already readable.
 - The first indexed non-anonymous Moment that has complete publication permission and passes the publication check is enough to replace the ordinary Stories no-story state. Rubiae does not wait for three stories or promise a publishing cadence. Behaviour when only anonymous Moments exist remains part of the random-entry decision.
 - A persistent left-hand index gives an overview of every indexed non-anonymous published Moment. Each entry uses a customer-approved summary title and one concise synopsis; the selected entry is visibly identified.
 - A title and excerpt may be supplied by the customer or proposed by Rubiae after an explicit request. The customer approves their final directory presentation before publication.
 - Selecting an index entry replaces the right-hand display with that Moment's authorised object or image, attribution, and complete story. It does not require a second click to open or expand the text.
-- Each selection updates to that Moment's independent URL so it can be linked and revisited directly, while retaining the same index-and-display shell.
+- Each indexed non-anonymous selection updates to that Moment's independent URL so it can be linked and revisited directly, while retaining the same index-and-display shell.
 - Entries do not use product imagery as their dominant visual. A Stone name, number, or archive link appears only after separate story-to-stone association permission.
 - The index does not autoplay or cycle between customers.
 
@@ -37,7 +37,7 @@ It does not implement frontend code, create customer content, connect a real Sto
 
 ## Mobile composition
 
-- Mobile opens with the first or URL-selected Moment already visible. It does not open on a separate story directory or require the visitor to choose a title before reading.
+- The ordinary mobile Stories view opens with the first or URL-selected indexed non-anonymous Moment already visible. It does not open on a separate story directory or require the visitor to choose a title before reading.
 - A compact selector above the Moment shows the current customer-approved title and `All stories / Alle verhalen`.
 - Activating `All stories / Alle verhalen` opens a bottom sheet containing the titles and concise synopses that the current publication and anonymity rules allow in the index. Selecting one closes the sheet, loads that complete Moment in the same vertical reading surface, and updates its independent URL.
 - The bottom sheet is a switching control, not a reading gate: closing it returns to the unchanged current story, and a visitor never needs to open it to read the initially selected Moment.
@@ -48,7 +48,10 @@ It does not implement frontend code, create customer content, connect a real Sto
 ## Anonymous discovery boundary
 
 - An anonymous Moment does not appear in the desktop left-hand index or the mobile `All stories / Alle verhalen` bottom sheet. Its title and synopsis are not exposed as ordinary directory entries.
-- Anonymous Moments are discovered only through a separate, visitor-initiated random-discovery entry. Its final visual form, trigger behaviour, destination URL behaviour, search indexing, and redaction standard remain open decisions.
+- Anonymous Moments are discovered only through a separate, visitor-initiated random-discovery entry. The entry is always visible as explicit text: `Encounter an anonymous Moment / Ontmoet een anoniem moment`.
+- Activating the invitation selects one eligible anonymous Moment. Discovery never depends on hovering over a scene object, noticing a timed animation, or acting before an ambient event disappears.
+- The invitation supports pointer, touch, and keyboard activation with visible focus. It remains understandable without motion; any later decorative animation must respect reduced-motion preferences.
+- The entry's final visual form, where the selected anonymous Moment opens, repeat-random behaviour, destination URL behaviour, search indexing, empty state, and redaction standard remain open decisions.
 - Random discovery creates a feeling of an unplanned encounter; it is not a privacy mechanism. Publication review must still remove identifying text, image details, metadata, and Stone associations that the customer has not authorised.
 
 ## Customer story images
@@ -106,3 +109,4 @@ It does not implement frontend code, create customer content, connect a real Sto
 9. No edited text, processed image, translation, or final page is published before its required review and approval gates pass.
 10. The ordinary mobile Stories view displays the first or URL-selected indexed non-anonymous story immediately and uses the current-title plus `All stories / Alle verhalen` bottom sheet only for switching those Moments.
 11. Anonymous Moments are absent from both ordinary story directories and can be reached only through the separate visitor-initiated random-discovery entry.
+12. The random-discovery entry is persistently visible with its explicit bilingual invitation and does not require hover discovery or a timed ambient event.
