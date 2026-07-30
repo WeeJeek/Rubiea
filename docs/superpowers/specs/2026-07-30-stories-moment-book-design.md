@@ -1,37 +1,38 @@
-# Rubiae Stories and Moment Book Design
+# Rubiae Stories and Moment Editorial Display Design
 
-**Status:** Desktop direction approved on 2026-07-30
+**Status:** Desktop information architecture revised and approved on 2026-07-30; final visual composition remains open
 **Feature:** `GEM-009`
 
 ## Purpose
 
-Give authorised Rubiae Moments a distinctive editorial home without turning customer stories into product cards or making Rubiae the interpreter of a customer's life. `Stories` acts as the cover and directory. Every Moment keeps its own URL and uses a book-page transition only within that customer's story.
+Give authorised Rubiae Moments a distinctive editorial home without turning customer stories into product cards or making Rubiae the interpreter of a customer's life. `Stories` is one immediately readable interface: a summary-title index on the left and the selected customer's authorised object or image with the complete story on the right. Every Moment keeps its own URL, but a visitor does not pass through a separate cover or preview before reading it.
 
-The approved visual reference is [Rubiae Stories and Moment book reference](../../brand/rubiae-stories-moment-book-approved-reference.png). It is design evidence only. Its placeholder image and placeholder text are not customer content, product evidence, or publication-ready assets.
+The earlier [Rubiae Stories and Moment book reference](../../brand/rubiae-stories-moment-book-approved-reference.png) is retained as historical design evidence only. Its separate cover, directory, and page-turn model was superseded by the unified editorial-display decision on 2026-07-30. Its placeholder image and text are not customer content, product evidence, or publication-ready assets.
 
 ## Scope
 
-This decision covers the desktop `Stories` directory and desktop Moment reading experience, their content ownership, image handling, translation presentation, permission boundaries, and accessible page-turn behaviour.
+This decision covers the desktop `Stories` index and selected-Moment reading experience, their content ownership, image handling, translation presentation, permission boundaries, and accessible story switching.
 
 It does not approve a mobile composition, implement frontend code, create customer content, connect a real Stone archive, or authorise public hosting. Mobile composition requires separate approval before implementation.
 
-## Stories cover and directory
+## Unified Stories index and reading surface
 
-- `Stories` remains a cover and table of contents, not one continuous book containing multiple customers.
+- `Stories` does not open with a separate cover, grid, or preview-only directory. On first load, the first or URL-selected authorised Moment is already readable.
 - The first Moment that has complete publication permission and passes the publication check is enough to replace the no-story state. Rubiae does not wait for three stories or promise a publishing cadence.
-- Each directory entry uses the authorised story title, a customer-approved short excerpt, public attribution or `Anonymous / Anoniem`, and an optional customer story image.
+- A persistent left-hand index gives an overview of every published Moment. Each entry uses a customer-approved summary title and one concise synopsis; the selected entry is visibly identified.
 - A title and excerpt may be supplied by the customer or proposed by Rubiae after an explicit request. The customer approves their final directory presentation before publication.
+- Selecting an index entry replaces the right-hand display with that Moment's authorised object or image, attribution, and complete story. It does not require a second click to open or expand the text.
+- Each selection updates to that Moment's independent URL so it can be linked and revisited directly, while retaining the same index-and-display shell.
 - Entries do not use product imagery as their dominant visual. A Stone name, number, or archive link appears only after separate story-to-stone association permission.
-- Selecting an entry opens that Moment's independent URL. Page turning does not move between different customers.
+- The index does not autoplay or cycle between customers.
 
-## Individual Moment
+## Selected Moment display
 
-- The Moment opens as a calm paper-white book within the approved cool-grey editorial system.
+- The selected Moment appears on the right as an editorial display: an authorised customer object or image occupies the stage and a paper-white information surface contains the complete story.
 - The customer story remains the primary content. Product facts, enquiry actions, and the Stone Detail 65/35 fact rail do not appear in the story opening or body.
 - Customer text and controls remain selectable, screen-reader-readable, and indexable HTML. They are never baked into a photographed or generated paper surface.
-- One Moment may occupy one or more pages according to the real text and image content. Rubiae does not split a short story merely to create more turns.
-- The page-turn transition works with pointer, keyboard, and touch controls. `prefers-reduced-motion` replaces the turn with a direct page change without removing content or navigation.
-- The interface exposes previous and next controls and a current-page indicator. It does not expose a next-customer control inside the book.
+- The full story is available immediately after selecting its summary title. Long stories continue by natural vertical reading rather than artificial page splitting.
+- Pointer, keyboard, and touch selection expose the same Moments. A brief crossfade or small positional transition may connect the index choice to the changed display; `prefers-reduced-motion` uses a direct content change.
 - When story-to-stone association permission exists, a compact Stone archive card may appear after the complete story. Without that permission, no Stone card, product identifier, or indirect archive link appears.
 
 ## Customer story images
@@ -69,8 +70,9 @@ It does not approve a mobile composition, implement frontend code, create custom
 
 ## Desktop visual direction
 
-- `Stories` uses the approved Letter Archive atmosphere: rain-window darkness, restrained textile and writing materials, and one prominent paper folio.
-- The Moment moves into a lighter open-book field so the customer's words become easier to read than the surrounding scenery.
+- The desktop composition uses a narrow editorial index on the left and a larger selected-Moment display on the right. It is neither a dense newspaper grid nor a jewellery catalogue.
+- The right side may resemble a quiet exhibition plinth or editorial still-life, but “display” describes composition only. It does not imply that Rubiae made or currently sells jewellery shown in customer-authorised imagery.
+- The complete story remains visually paired with its selected object or image without becoming a floating product-specification card.
 - Fog grey, paper white, smoke charcoal, and deep plum remain dominant. Berry red is limited to small rules, labels, or text accents.
 - Customer images accept varied aspect ratios through a flexible paper mat. The system does not force every customer image into the same photographic crop.
 - No gemstone, jewellery, person, quotation, or personal event is invented to fill missing content.
@@ -78,10 +80,11 @@ It does not approve a mobile composition, implement frontend code, create custom
 ## Acceptance criteria
 
 1. One fully authorised Moment can populate `Stories` without empty filler entries.
-2. Every directory entry opens a unique Moment URL; page turns stay inside that Moment.
-3. Pointer, keyboard, touch, and reduced-motion modes expose the same story content and navigation.
-4. Text, translation labels, original-language controls, attribution, and page controls remain semantic HTML.
-5. A no-image story renders without fabricated imagery.
-6. No Stone identifier or archive link appears without association permission.
-7. Customer-provided images are not presented as product evidence or as proof that Rubiae made any depicted jewellery.
-8. No edited text, processed image, translation, or final page is published before its required review and approval gates pass.
+2. The first or URL-selected Moment is readable immediately; there is no cover-to-preview-to-story sequence.
+3. Selecting a left summary title updates the right-hand authorised object or image, attribution, and complete story, and gives the Moment a unique URL.
+4. Pointer, keyboard, touch, and reduced-motion modes expose the same story content and navigation; the index never autoplays.
+5. Text, translation labels, original-language controls, attribution, and index controls remain semantic HTML.
+6. A no-image story renders without fabricated imagery.
+7. No Stone identifier or archive link appears without association permission.
+8. Customer-provided images are not presented as product evidence or as proof that Rubiae made any depicted jewellery.
+9. No edited text, processed image, translation, or final page is published before its required review and approval gates pass.

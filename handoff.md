@@ -47,3 +47,10 @@
 - **Verification:** Documentation and approved-reference step only; no production code or automated product tests. Checked document links, image readability and dimensions, placeholder semantics, decision consistency, and `git diff --check` before commit.
 - **Open:** `GEM-009` remains open for mobile composition, no-image Moment layout, authorised Stone association card, permission workflow implementation, and accessibility or interaction testing.
 - **Next action:** Define and approve the mobile Moment reading composition before any Stories or Moment implementation.
+
+### Stories interaction direction revised
+
+- **Supersedes:** The separate Letter Archive cover and internal page-turn interaction recorded above. The old reference remains historical design evidence and is no longer the implementation baseline.
+- **Confirmed:** Stories now uses one directly readable desktop interface. A narrow left index uses customer-approved summary titles and one-line synopses to survey all published Moments; selecting one synchronously replaces the right-hand authorised object or image, attribution, and complete story without a second read-more step.
+- **Confirmed:** Every Moment retains its independent URL within the shared interface. Switching does not autoplay and must support pointer, keyboard, touch, and reduced-motion use. The right-hand display is editorial composition, not evidence that Rubiae made or sells depicted jewellery.
+- **Open:** Final desktop visual composition, mobile adaptation, no-image Moment treatment, authorised Stone archive card, implementation, and interaction tests remain under `GEM-009`.

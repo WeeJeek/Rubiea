@@ -271,15 +271,13 @@
 
 ## Stories / Rubiae Moments
 
-公开内容采用三层结构：`Stories` 列表聚合全部已获发布授权的 Rubiae Moments；每个 Moment 使用独立详情页承载完整故事；永久 Stone 档案保存对应宝石的事实与售罄状态。Story 与 Stone 只有取得独立的“故事与宝石关联授权”时才互相链接；匿名发布默认不包含该授权。故事内容与商品事实始终分区呈现。
+公开内容仍区分 Stories 聚合界面、具有独立 URL 的 Moment 和永久 Stone 档案，但 Stories 与 Moment 在视觉上共用一个直接可读的界面。左侧纵览全部已授权故事，右侧立即显示当前 Moment 的获授权物品／影像与完整故事，不经过独立封面或摘要中间页。Story 与 Stone 只有取得独立的“故事与宝石关联授权”时才互相链接；匿名发布默认不包含该授权。故事内容与商品事实始终分区呈现。
 
-### 列表页
+### 左侧故事纵览
 
-故事卡以顾客故事为主，包含获授权图片、故事标题、顾客本人确认的短摘录，以及公开署名或 `Anonymous / Anoniem`。宝石不得成为卡片主视觉；只有取得故事与宝石关联授权时，卡片底部才以次级文字显示对应宝石的获授权公开名称或石种、编号及档案链接。
+左侧窄栏以顾客确认的总结性标题和一句概括纵览所有故事，当前选择清楚高亮；不使用商品卡或缩略图网格。标题与概括可由顾客提供，也可由顾客明确委托 Rubiae 提议。Rubiae 的提议不得冒充顾客原话；顾客必须在发布前确认它们在 Stories 目录中的最终预览。
 
 只要第一篇 Rubiae Moment 已取得完整发布授权并通过发布检查，`Stories` 就由无故事状态切换为公开故事列表；不等待凑满三篇或形成固定发布频率。
-
-故事标题与列表短摘录可由顾客自行提供，也可由顾客明确委托 Rubiae 提议。Rubiae 的提议不得冒充顾客原话；顾客必须在发布前确认标题、摘录及它们在 Stories 目录中的最终预览。
 
 **English**
 
@@ -295,7 +293,7 @@
 - Intro: `Een steen kan een begin, een verandering, een belofte of iets zonder openbare naam markeren. Elk verhaal behoort in de eerste plaats toe aan degene die het heeft geleefd.`
 - No-story state: `Rubiae Moments wordt voorbereid. Geen persoonlijk verhaal wordt zonder duidelijke toestemming gepubliceerd.`
 
-### 详情页模板
+### 右侧 Moment 展台与全文
 
 - 必须由真实授权内容填入：`{{story_title}}`、`{{story_text}}`、`{{display_name_or_anonymous}}`、`{{approved_images}}`、`{{permission_record}}`。
 - `{{approved_images}}` 使用顾客自愿提供并授权的“顾客故事影像”。顾客决定呈现形式：可以是裸石、后来自行镶嵌的首饰、手、物件、地点或抽象画面，也可以完全不提供图片。该影像只用于故事表达，不作为商品证据，也不自动建立与 Stone 档案的链接。
@@ -305,8 +303,9 @@
 - 只有顾客对“将 Moment 文稿交由 AI 生成翻译初稿”单独给予明确同意时，Rubiae 才可使用该流程。AI 输出只是初稿，必须经目标语言的人工复核后才能进入发布预览；禁止将 AI 译文自动发布。未取得该同意时，使用纯人工翻译流程或暂不提供译文。
 - 顾客无法阅读目标语言时，由具备目标语言能力的人工复核者对译文准确性与语气负责。顾客仍确认原文；涉及意义选择、敏感表达或无法直译的地方，Rubiae 必须以顾客能理解的语言说明处理方式并取得确认。
 - 每个已发布 Moment 使用独立 URL；只有授权允许公开关联时，才显示对应 Stone 档案链接。完整故事只保存在 Moment 详情页，Stone 档案使用摘要卡链接，不重复全文。
-- Moment 页面沿用全站冷灰、纸白、编辑式衬线标题与克制非对称摄影，但正文使用更窄、更安静的阅读列，不复制 Stone 页的 65/35 首屏、商品事实栏或询问 CTA。页面先完整呈现故事；取得故事与宝石关联授权时，在全文结束后显示紧凑 Stone 档案卡，包含真实宝石照片、获授权公开名称或石种、商品编号、`Sold` 和档案链接。宝石不进入故事首屏，也不穿插进正文事实。
-- `Stories` 是公开 Moment 的封面与目录；点击目录项后进入该顾客的独立 Moment URL。翻书页式阅读过渡只用于单个 Moment 内部，不把不同顾客的故事连成一本长书。正文与控件仍使用 HTML，不烙入纸张图片；支持鼠标点击、键盘和手机触摸，在 `prefers-reduced-motion` 下改为无翻动的直接切换。正文只按真实内容长度自然分页，不为制造翻页数拆碎顾客表达。
+- 右侧沿用全站冷灰、纸白、编辑式衬线标题与克制非对称摄影，以安静展台呈现顾客授权的物品／影像，并在同一区域直接给出完整故事；不复制 Stone 页的 65/35 首屏、商品事实栏或询问 CTA。“展台”只描述页面构图，不暗示 Rubiae 制作或销售顾客图片中的饰品。
+- 点击左侧总结性标题后，展台物品／影像、署名与完整故事同步切换，同时更新到该 Moment 的独立 URL，不再出现第二次“阅读全文”点击。切换不自动播放，支持鼠标、键盘与手机触摸；普通模式可使用克制淡换和轻位移，`prefers-reduced-motion` 下直接替换。长故事自然纵向阅读，不人为拆成翻书页。
+- 取得故事与宝石关联授权时，在全文结束后显示紧凑 Stone 档案卡，包含真实宝石照片、获授权公开名称或石种、商品编号、`Sold` 和档案链接。未授权时宝石不进入故事展台，也不穿插进正文事实。
 - English label: `Shared in her own words.`
 - Nederlands label: `Verteld in haar eigen woorden.`
 - 不补写经历、不制造引语、不暗示购买是成长的证明。
