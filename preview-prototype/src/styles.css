@@ -29,6 +29,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #a5203f; outline-offs
   color: #fffafa;
 }
 .site-header--paper { position: relative; color: #251f24; background: #fffdfa; }
+.site-header--stone { position: absolute; width: 100%; color: #fffafa; }
 
 .brand {
   font-family: Georgia, serif;
@@ -41,6 +42,10 @@ a:focus-visible, button:focus-visible { outline: 3px solid #a5203f; outline-offs
 .site-nav a, .language-toggle { border: 0; padding: 0; background: none; color: inherit; font-size: 0.72rem; text-decoration: none; }
 .site-nav a:hover, .site-nav a:focus-visible, .language-toggle:hover, .language-toggle:focus-visible, .text-link:hover, .text-link:focus-visible { color: #9e4350; }
 .menu-toggle { display: none; }
+
+@media (min-width: 761px) {
+  .site-header--stone .site-nav { color: #251f24; }
+}
 
 .hero { position: relative; min-height: 52rem; overflow: hidden; color: #261e25; }
 .hero-image { width: 100%; height: 52rem; object-fit: cover; object-position: center; }
@@ -121,34 +126,39 @@ h1, h2 { margin: 0; font-family: Georgia, serif; font-weight: 400; letter-spacin
 .footer-bottom a { font-size: 0.7rem; text-decoration: none; }
 
 .stone-detail, .stories-page { background: #fffdfa; color: #251f24; }
-.stone-top { display: grid; grid-template-columns: minmax(0, 1.85fr) minmax(22rem, 1fr); min-height: 44rem; }
-.stone-lifestyle { min-height: 44rem; margin: 0; overflow: hidden; background: #202125; }
+.stone-detail-hero {
+  display: grid;
+  grid-template-areas: "photo identity" "photo facts";
+  grid-template-columns: minmax(0, 65fr) minmax(18rem, 35fr);
+  grid-template-rows: auto 1fr;
+  min-height: 43.75rem;
+}
+.stone-lifestyle { grid-area: photo; min-height: 43.75rem; margin: 0; overflow: hidden; background: #202125; }
 .stone-lifestyle img { width: 100%; height: 100%; object-fit: cover; }
-.stone-rail { padding: clamp(6rem, 9vw, 10rem) clamp(2rem, 4.5vw, 5rem) 3rem; background: #fffdfa; }
-.stone-rail h1, .stories-intro h1 { font-size: clamp(3.1rem, 4.8vw, 5.8rem); }
-.stone-reference { margin: 0.9rem 0 2.25rem; color: #615a5e; font-size: 0.78rem; }
-.stone-intro { max-width: 31rem; margin: 0 0 2.2rem; color: #615a5e; font-size: 0.9rem; line-height: 1.55; }
-.stone-rail section { margin-top: 2.8rem; }
-.stone-rail section h2, .stone-evidence h2, .stone-inquiry h2, .stories-empty h2 { font-family: Georgia, serif; font-size: 1.2rem; font-weight: 400; }
+.stone-identity { grid-area: identity; padding: 6.8rem clamp(2.25rem, 3.7vw, 3.5rem) 1.4rem; background: #fffdfa; }
+.stone-identity h1, .stories-intro h1 { font-size: clamp(2.35rem, 3vw, 3.5rem); }
+.stone-reference { margin: 0.75rem 0 0; color: #615a5e; font-size: 0.76rem; letter-spacing: 0.04em; }
+.stone-fact-rail { grid-area: facts; padding: 0 clamp(2.25rem, 3.7vw, 3.5rem) 2.5rem; background: #fffdfa; }
+.stone-fact-rail section + section { margin-top: 2.2rem; }
+.stone-fact-rail section h2, .stone-evidence h2, .stone-inquiry h2, .stories-empty h2 { font-family: Georgia, serif; font-size: 1.2rem; font-weight: 400; }
 .stone-facts { margin: 0.75rem 0 0; border-top: 1px solid #d4ceca; }
 .stone-facts div { display: flex; justify-content: space-between; gap: 1rem; padding: 0.56rem 0; font-size: 0.77rem; line-height: 1.35; }
 .stone-facts dt, .stone-facts dd { margin: 0; }
 .stone-facts dt { color: #665e62; }
 .stone-facts dd { text-align: right; }
-.stone-preview-note { margin: 2rem 0 0; color: #9e4350; font-size: 0.68rem; line-height: 1.45; }
-.stone-evidence { display: grid; grid-template-columns: 0.9fr 1.25fr 1.25fr 1fr; gap: 0.8rem; padding: 1.6rem clamp(1.5rem, 5vw, 6rem) 2.8rem; border-top: 1px solid #d4ceca; background: #fffdfa; }
+.stone-preview-notice { margin: 1.6rem 0 0; color: #9e4350; font-size: 0.7rem; line-height: 1.45; }
+.stone-preview-note { margin: 0.45rem 0 0; color: #665e62; font-size: 0.66rem; line-height: 1.45; }
+.stone-evidence { display: grid; grid-template-columns: 0.6fr 1.1fr 1.1fr 1fr; gap: 0.8rem; padding: 1.65rem clamp(1.5rem, 5vw, 5rem) 2rem; border-top: 1px solid #d4ceca; background: #fffdfa; }
 .evidence-heading { padding: 0.7rem 1rem 0 0; }
-.evidence-heading p { max-width: 12rem; color: #665e62; font-size: 0.72rem; line-height: 1.5; }
-.stone-evidence > img, .evidence-disclosure { width: 100%; aspect-ratio: 1.38; min-height: 11rem; }
-.stone-evidence > img { object-fit: cover; }
-.evidence-disclosure { display: flex; align-items: center; justify-content: space-between; border: 0; padding: 1.4rem; background: #f0edeb; color: #251f24; font-size: 0.8rem; text-align: left; cursor: pointer; }
-.evidence-disclosure span:last-child { font-size: 1.8rem; font-weight: 300; }
+.evidence-heading p { max-width: 13rem; color: #665e62; font-size: 0.72rem; line-height: 1.5; }
+.evidence-view { margin: 0; }
+.evidence-view img, .evidence-disclosure { width: 100%; aspect-ratio: 2 / 1; min-height: 10.5rem; }
+.evidence-view img { object-fit: cover; }
+.evidence-view figcaption { margin-top: 0.45rem; color: #665e62; font-size: 0.66rem; }
+.evidence-disclosure { display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 1.05rem; border: 0; padding: 1.5rem; background: #f0edeb; color: #251f24; font-family: Georgia, serif; font-size: 1rem; text-align: left; cursor: pointer; }
+.evidence-disclosure small { color: #665e62; font-family: Arial, Helvetica, sans-serif; font-size: 0.7rem; line-height: 1.4; }
 .evidence-more { grid-column: 2 / -1; display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.8rem; }
-.evidence-more figure { position: relative; margin: 0; }
-.evidence-more img { width: 100%; aspect-ratio: 1.45; object-fit: cover; }
-.evidence-more figcaption { margin-top: 0.5rem; font-size: 0.7rem; }
-.video-mark { position: absolute; top: 50%; left: 50%; display: grid; width: 3.5rem; height: 3.5rem; place-items: center; border: 1px solid #fffdfa; border-radius: 50%; color: #fffdfa; font-size: 1.35rem; transform: translate(-50%, -50%); }
-.stone-inquiry { display: flex; align-items: end; justify-content: space-between; gap: 2rem; max-width: 72rem; margin: 0 auto; padding: 2.5rem 0 3.5rem; border-top: 1px solid #d4ceca; }
+.stone-inquiry { display: flex; align-items: end; justify-content: space-between; gap: 2rem; margin: 0 clamp(1.5rem, 5vw, 5rem); padding: 1.75rem 0 2.5rem; border-top: 1px solid #d4ceca; }
 .stone-inquiry p { margin: 0.55rem 0 0; color: #665e62; font-size: 0.78rem; }
 .inquiry-link { display: flex; gap: 2.6rem; padding-bottom: 0.35rem; border-bottom: 1px solid #251f24; font-size: 0.8rem; text-decoration: none; }
 .stories-page { min-height: calc(100vh - 6rem); padding: clamp(2rem, 5vw, 5rem); background: #efeded; }
@@ -177,10 +187,22 @@ h1, h2 { margin: 0; font-family: Georgia, serif; font-weight: 400; letter-spacin
   .site-header { padding: 1.25rem; color: #251f24; }
   .site-header--paper { position: relative; }
   .brand { font-size: 1.35rem; }
-  .menu-toggle { display: block; border: 1px solid currentColor; padding: 0.45rem 0.65rem; background: #f6f4f1; color: #251f24; font-size: 0.72rem; }
-  .site-nav { position: absolute; top: 100%; right: 1.25rem; left: 1.25rem; display: none; padding: 1.25rem; background: #251f24; color: #fffafa; }
-  .site-nav.is-open { display: grid; gap: 1.1rem; }
-  .site-nav a, .language-toggle { font-size: 0.86rem; text-align: left; }
+  .menu-toggle { display: block; border: 0; padding: 0.45rem 0; background: none; color: #251f24; font-size: 0.72rem; }
+  .site-nav {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    left: 0;
+    display: none;
+    padding: 0.55rem 1.25rem 1.4rem;
+    border-top: 1px solid #d4ceca;
+    border-bottom: 1px solid #d4ceca;
+    background: #fffdfa;
+    color: #251f24;
+  }
+  .site-nav.is-open { display: grid; gap: 0; }
+  .site-nav a, .language-toggle { width: 100%; padding: 0.75rem 0; font-size: 0.86rem; text-align: left; }
+  .language-toggle { margin-top: 0.45rem; border-top: 1px solid #d4ceca; padding-top: 1rem; color: #665e62; font-size: 0.7rem; letter-spacing: 0.06em; }
   .hero { min-height: 0; padding-top: 31.5rem; background: #efeded; }
   .hero-image { height: 24rem; object-position: 65% center; }
   .hero-copy { top: 6.75rem; left: 1.5rem; width: calc(100% - 3rem); }
@@ -231,13 +253,17 @@ h1, h2 { margin: 0; font-family: Georgia, serif; font-weight: 400; letter-spacin
   .site-footer > section { display: block; width: auto; margin-right: 0; }
   .footer-bottom { display: block; }
   .footer-bottom nav { justify-content: start; margin-top: 2rem; }
-  .stone-top { grid-template-columns: 1fr; }
-  .stone-lifestyle { min-height: 24rem; }
-  .stone-rail { padding: 3.5rem 1.5rem; }
-  .stone-evidence { grid-template-columns: 1fr 1fr; padding: 1.25rem 1.5rem 2.5rem; }
-  .evidence-heading { grid-column: 1 / -1; }
-  .stone-evidence > img, .evidence-disclosure { min-height: 9rem; }
-  .evidence-more { grid-column: 1 / -1; }
+  .site-header--stone { position: relative; width: 100%; background: #fffdfa; color: #251f24; }
+  .stone-detail-hero { grid-template-areas: "identity" "photo" "facts"; grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
+  .stone-identity { padding: 3rem 1.5rem 2rem; }
+  .stone-identity h1 { font-size: clamp(2.7rem, 13vw, 4rem); }
+  .stone-lifestyle { min-height: 26rem; }
+  .stone-fact-rail { padding: 2.5rem 1.5rem 3rem; }
+  .stone-evidence { grid-template-columns: 1fr; padding: 2.5rem 1.5rem; }
+  .evidence-heading, .evidence-more { grid-column: 1; }
+  .evidence-heading { padding-right: 0; }
+  .evidence-view img, .evidence-disclosure { min-height: 11rem; }
+  .evidence-more { grid-template-columns: 1fr; }
   .stone-inquiry { display: block; margin: 0 1.5rem; padding: 2rem 0 3rem; }
   .inquiry-link { width: fit-content; margin-top: 2rem; }
   .stories-page { padding: 0; }
@@ -254,4 +280,9 @@ h1, h2 { margin: 0; font-family: Georgia, serif; font-weight: 400; letter-spacin
   .stories-paper { width: calc(100% - 2.5rem); margin: 6rem 0 2rem; padding: 3rem 1.5rem; }
   .stories-demo-layout .stories-paper { width: 100%; margin: 0; }
   .stories-empty { margin-top: 3rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
 }
