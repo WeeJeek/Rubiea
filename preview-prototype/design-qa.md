@@ -41,3 +41,14 @@
 ## Final result
 
 passed
+
+## CTA placement addendum — 2026-07-31
+
+- **Scope:** Desktop `How to choose` image section.
+- **Evidence:** User-provided screenshot showed the CTA obscuring `Choose freely.`
+- **Local capture:** In-app browser at 1280 × 720 after the fix.
+- **Result:** Headline stays upper-left; CTA is lower-right, inside the photo, with no overlap.
+
+### Result
+
+passed
