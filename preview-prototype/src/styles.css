@@ -98,7 +98,7 @@ h1, h2 { margin: 0; font-family: Georgia, serif; font-weight: 400; letter-spacin
 .slow-copy h2, .moments h2, .facts h2, .site-footer h2 { font-size: clamp(2.7rem, 4.6vw, 5.1rem); }
 .slow-copy p, .moments p, .site-footer p { font-size: 0.94rem; line-height: 1.65; }
 
-.choose-section { position: relative; min-height: 41rem; color: #fffafa; }
+.choose-section { position: relative; height: 41rem; overflow: hidden; color: #fffafa; }
 .choose-section img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 .choose-section div { position: absolute; z-index: 1; top: 21%; left: clamp(1.5rem, 7vw, 8rem); width: min(31rem, 55vw); }
 .choose-section h2 { margin-bottom: 2rem; font-size: clamp(3.2rem, 6.8vw, 7.4rem); }

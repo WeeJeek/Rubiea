@@ -32,6 +32,7 @@ test("approved v6 homepage keeps visual assets, navigation, language and preview
   assert.doesNotMatch(app, /price|cart|checkout|payment|add to cart|buy now/i);
   assert.match(styles, /@media \(max-width: 760px\)/);
   assert.match(styles, /\.site-nav\.is-open/);
+  assert.match(styles, /\.choose-section\s*\{[^}]*height:\s*41rem[^}]*overflow:\s*hidden/);
   assert.match(styles, /\.choose-section img\s*\{[^}]*position:\s*absolute[^}]*inset:\s*0/);
   assert.match(styles, /\.choose-section div\s*\{[^}]*position:\s*absolute[^}]*z-index:\s*1/);
   assert.match(styles, /\.hero\s*\{[^}]*padding-top:\s*31\.5rem/);
