@@ -1,0 +1,18 @@
+import { HOME_PATH, STONE_PATH, STORIES_PATH } from "../routes.js";
+
+const links = [["stones", "stones"], ["stories", "stories"], ["how-to-choose", "choose"], ["about", "about"], ["for-trade", "trade"]];
+
+export function HomePage({ text, onNavigate }) {
+  return <main id="main-content" tabIndex="-1">
+    <section id="top" className="hero" aria-labelledby="hero-title">
+      <img className="hero-image" src="/assets/rubiae-hero-rain-window.png" alt="Rainy window, table, and woman seen from behind" />
+      <div className="hero-copy"><h1 id="hero-title">{text.hero.title}</h1><p>{text.hero.body}</p><a className="solid-link" href={STONE_PATH} onClick={(event) => onNavigate(event, STONE_PATH)}>{text.hero.cta}<span aria-hidden="true">⟶</span></a></div>
+      <aside className="hero-story" aria-label="Rubiae Moments"><img className="hero-story-street" src="/assets/rubiae-moments-rain-street-v2.png" alt="Rainy city street and sculpture in monochrome" /><img className="hero-story-ruby" src="/assets/rubiae-moments-ruby-v6.png" alt="Decorative close-up of a deep red ruby" /><div><p className="eyebrow">{text.hero.storyLabel}</p><h2>{text.hero.story}</h2><a className="text-link" href={STORIES_PATH} onClick={(event) => onNavigate(event, STORIES_PATH)}>{text.hero.storyCta}</a></div></aside>
+    </section>
+    <section id="stones" className="slow-look section-light" aria-labelledby="slow-title"><div className="slow-display">{text.slow.display}</div><img className="slow-pendant" src="/assets/rubiae-slow-look-pendant.png" alt="Ruby pendant resting on patterned fabric" /><img className="slow-charms" src="/assets/rubiae-hand-ruby-charms.png" alt="Hand arranging ruby charms" /><div className="slow-copy"><h2 id="slow-title">{text.slow.heading}</h2><p>{text.slow.body}</p><a className="text-link" href={STONE_PATH} onClick={(event) => onNavigate(event, STONE_PATH)}>{text.slow.cta}</a></div></section>
+    <section id="how-to-choose" className="choose-section" aria-labelledby="choose-title"><img src="/assets/rubiae-rain-watch.png" alt="Watch, key, and ruby jewellery by a rain-streaked window" /><div><h2 id="choose-title">{text.choose.title}</h2><a className="solid-link solid-link--light" href={`${HOME_PATH}#facts`}>{text.choose.cta}<span aria-hidden="true">⟶</span></a></div></section>
+    <section id="stories" className="moments section-light" aria-labelledby="moments-title"><img src="/assets/rubiae-moments-envelope.png" alt="Paper envelope, fountain pen, key, and ruby jewellery" /><div><h2 id="moments-title">{text.moments.title}</h2><p>{text.moments.body}</p><a className="text-link" href={STORIES_PATH} onClick={(event) => onNavigate(event, STORIES_PATH)}>{text.moments.cta}</a></div></section>
+    <section id="facts" className="facts" aria-labelledby="facts-title"><div><h2 id="facts-title">{text.facts.title}</h2><a href={STONE_PATH} onClick={(event) => onNavigate(event, STONE_PATH)}>{text.facts.describe}<span aria-hidden="true">⟶</span></a><a href="#for-trade">{text.facts.trade}<span aria-hidden="true">⟶</span></a></div><img src="/assets/rubiae-facts-macro.png" alt="Ruby jewellery in a macro view" /></section>
+    <footer className="site-footer"><section id="about"><p className="eyebrow">RUBIAE</p><p>{text.about}</p></section><section id="for-trade"><p className="eyebrow">{text.nav.trade}</p><p>{text.trade}</p></section><div className="footer-bottom"><h2>{text.closing}</h2><nav aria-label="Footer navigation">{links.map(([id, key]) => <a key={id} href={id === "stones" ? STONE_PATH : id === "stories" ? STORIES_PATH : `#${id}`} onClick={id === "stones" ? (event) => onNavigate(event, STONE_PATH) : id === "stories" ? (event) => onNavigate(event, STORIES_PATH) : undefined}>{text.nav[key]}</a>)}</nav></div></footer>
+  </main>;
+}

@@ -1,0 +1,89 @@
+export const previewStone = {
+  id: "RBA-001",
+  images: {
+    lifestyle: "/assets/rubiae-stone-rba-001-lifestyle.png",
+    neutral: "/assets/rubiae-stone-rba-001-neutral.png",
+    macro: "/assets/rubiae-stone-rba-001-macro.png",
+    millimetre: "/assets/rubiae-stone-rba-001-millimetre.png",
+    report: "/assets/rubiae-stone-rba-001-report.png",
+    video: "/assets/rubiae-stone-rba-001-video.png",
+  },
+};
+
+export const publishedMoments = [];
+export const anonymousMoments = [];
+export const showFictionalStoryDemos = true;
+export const fictionalStoryDemos = [
+  {
+    id: "quiet-gesture",
+    en: { title: "A quiet gesture", summary: "A small choice, kept close.", body: "This is fictional sample copy for layout review only. It tests the rhythm of a story held on a page, without standing in for anyone's experience.", boundary: "Fictional layout demo — not a customer story." },
+    nl: { title: "Een stil gebaar", summary: "Een kleine keuze, dichtbij gehouden.", body: "Dit is fictieve voorbeeldtekst, alleen voor layoutbeoordeling. Zij test het ritme van een verhaal op papier, zonder voor iemands ervaring te spreken.", boundary: "Fictieve layoutdemo — geen klantverhaal." },
+  },
+  {
+    id: "kept-in-view",
+    en: { title: "Kept in view", summary: "A pause before the next step.", body: "This fictional sample copy gives a second title and a longer line of reading room. It exists only to examine selection, hierarchy, and the pace of the paper exhibit.", boundary: "Fictional layout demo — not a customer story." },
+    nl: { title: "In beeld gehouden", summary: "Een pauze voor de volgende stap.", body: "Deze fictieve voorbeeldtekst geeft een tweede titel en meer leesruimte. Zij bestaat alleen om selectie, hiërarchie en het tempo van het papieren exhibit te beoordelen.", boundary: "Fictieve layoutdemo — geen klantverhaal." },
+  },
+  {
+    id: "room-to-return",
+    en: { title: "Room to return", summary: "Meaning can remain unfinished.", body: "This fictional sample copy makes room for a quieter ending. It tests how a short story settles on the page when no personal account has been authorised for publication.", boundary: "Fictional layout demo — not a customer story." },
+    nl: { title: "Ruimte om terug te keren", summary: "Betekenis mag onaf zijn.", body: "Deze fictieve voorbeeldtekst laat ruimte voor een stiller einde. Zij test hoe een kort verhaal op de pagina landt wanneer geen persoonlijk verhaal voor publicatie is geautoriseerd.", boundary: "Fictieve layoutdemo — geen klantverhaal." },
+  },
+];
+
+export const copy = {
+  en: {
+    nav: { stones: "Stones", stories: "Stories", choose: "How to Choose", about: "About", trade: "For Trade" },
+    hero: { title: "Choose a stone for the life you are shaping.", body: "Natural gemstones, honestly described and chosen on your terms.", cta: "Explore the stones", storyLabel: "RUBIAE MOMENTS", story: "Her story, in her own words.", storyCta: "Read her moment" },
+    slow: { display: "A stone, seen slowly.", heading: "Begin with the stone.", body: "Colour, natural character, and what is known — clearly described.", cta: "Explore the stones" },
+    choose: { title: "Look slowly. Ask clearly. Choose freely.", cta: "How to choose" },
+    moments: { title: "A moment can begin with a stone.", body: "Rubiae Moments is a space for stories shared in her own words.", cta: "Discover Rubiae Moments" },
+    facts: { title: "For those who need the facts.", describe: "How we describe stones", trade: "For Trade" },
+    about: "Rubiae brings natural gemstones into view with room for personal meaning.", trade: "For professional buyers: begin with material, format, quantity, quality range, and documentation.", closing: "Choose on your terms.", menu: "Menu", close: "Close menu",
+    stone: {
+      label: "Stone Detail · preview illustration",
+      title: "Loose red gemstone",
+      intro: "A layout preview. Facts below are intentionally limited until a real stone is documented.",
+      known: "What is known",
+      stoneInfo: "This stone",
+      evidence: "Evidence",
+      evidenceNote: "Preview illustrations only — not product evidence.",
+      furtherEvidence: "Further evidence",
+      openEvidence: "Open supporting views",
+      inquiry: "Inquire about this stone",
+      inquiryNote: "For questions about origin, treatment or measurements, we are here to help.",
+      inquiryCta: "Send an inquiry",
+      facts: [["Reference", "RBA-001"], ["Stone", "Loose red gemstone"], ["Weight", "Unknown"], ["Shape & cut", "Unknown"]],
+      knownFacts: [["Treatment", "Unknown"], ["Origin", "Unknown"], ["Report", "Unknown"], ["Evidence source", "Preview illustration"]],
+      views: [["Millimetre reference", "millimetre"], ["Report preview", "report"], ["Optional short video", "video"]],
+    },
+    stories: { label: "RUBIAE MOMENTS", title: "Stories, held with care.", intro: "Stories appear here only when someone has chosen to share them.", emptyTitle: "No stories have been published yet.", emptyBody: "When a contributor authorises a story for publication, it will appear here in her own words.", back: "Return home", demoLabel: "FICTIONAL LAYOUT DEMO", allDemos: "All demo stories", demoByline: "Layout study only" },
+  },
+  nl: {
+    nav: { stones: "Stenen", stories: "Verhalen", choose: "Hoe kies je", about: "Over Rubiae", trade: "Voor professionals" },
+    hero: { title: "Kies een steen voor het leven dat je vormgeeft.", body: "Natuurlijke edelstenen, eerlijk beschreven en gekozen op jouw voorwaarden.", cta: "Bekijk de stenen", storyLabel: "RUBIAE MOMENTS", story: "Haar verhaal, in haar eigen woorden.", storyCta: "Lees haar moment" },
+    slow: { display: "Een steen, rustig bekeken.", heading: "Begin bij de steen.", body: "Kleur, natuurlijk karakter en wat bekend is — helder beschreven.", cta: "Bekijk de stenen" },
+    choose: { title: "Kijk rustig. Vraag door. Kies vrij.", cta: "Hoe kies je" },
+    moments: { title: "Een moment kan beginnen met een steen.", body: "Rubiae Moments biedt ruimte aan verhalen, verteld in haar eigen woorden.", cta: "Ontdek Rubiae Moments" },
+    facts: { title: "Voor wie de feiten nodig heeft.", describe: "Hoe we stenen beschrijven", trade: "Voor professionals" },
+    about: "Rubiae brengt natuurlijke edelstenen in beeld met ruimte voor persoonlijke betekenis.", trade: "Voor professionele kopers: begin met materiaal, formaat, hoeveelheid, kwaliteitsniveau en documentatie.", closing: "Kies op jouw voorwaarden.", menu: "Menu", close: "Menu sluiten",
+    stone: {
+      label: "Steendetail · voorbeeldillustratie",
+      title: "Losse rode edelsteen",
+      intro: "Een lay-outvoorbeeld. De feiten hieronder blijven bewust beperkt totdat een echte steen is gedocumenteerd.",
+      known: "Wat bekend is",
+      stoneInfo: "Deze steen",
+      evidence: "Onderbouwing",
+      evidenceNote: "Alleen voorbeeldillustraties — geen productbewijs.",
+      furtherEvidence: "Meer onderbouwing",
+      openEvidence: "Open aanvullende beelden",
+      inquiry: "Vraag naar deze steen",
+      inquiryNote: "Voor vragen over herkomst, behandeling of afmetingen helpen we je graag.",
+      inquiryCta: "Stuur een vraag",
+      facts: [["Referentie", "RBA-001"], ["Steen", "Losse rode edelsteen"], ["Gewicht", "Onbekend"], ["Vorm & slijpsel", "Onbekend"]],
+      knownFacts: [["Behandeling", "Onbekend"], ["Herkomst", "Onbekend"], ["Rapport", "Onbekend"], ["Bron onderbouwing", "Voorbeeldillustratie"]],
+      views: [["Millimeterreferentie", "millimetre"], ["Rapportvoorbeeld", "report"], ["Optionele korte video", "video"]],
+    },
+    stories: { label: "RUBIAE MOMENTS", title: "Verhalen, zorgvuldig bewaard.", intro: "Verhalen verschijnen hier alleen wanneer iemand ervoor kiest ze te delen.", emptyTitle: "Er zijn nog geen verhalen gepubliceerd.", emptyBody: "Wanneer een bijdrage voor publicatie is goedgekeurd, verschijnt zij hier in haar eigen woorden.", back: "Terug naar home", demoLabel: "FICTIEVE LAYOUTDEMO", allDemos: "Alle demoverhalen", demoByline: "Alleen layoutstudie" },
+  },
+};

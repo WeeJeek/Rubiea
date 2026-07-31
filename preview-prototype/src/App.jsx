@@ -1,120 +1,47 @@
 import { useEffect, useState } from "react";
-
-const copy = {
-  en: {
-    nav: { stones: "Stones", stories: "Stories", choose: "How to Choose", about: "About", trade: "For Trade" },
-    hero: { title: "Choose a stone for the life you are shaping.", body: "Natural gemstones, honestly described and chosen on your terms.", cta: "Explore the stones", storyLabel: "RUBIAE MOMENTS", story: "Her story, in her own words.", storyCta: "Read her moment" },
-    slow: { display: "A stone, seen slowly.", heading: "Begin with the stone.", body: "Colour, natural character, and what is known — clearly described.", cta: "Explore the stones" },
-    choose: { title: "Look slowly. Ask clearly. Choose freely.", cta: "How to choose" },
-    moments: { title: "A moment can begin with a stone.", body: "Rubiae Moments is a space for stories shared in her own words.", cta: "Discover Rubiae Moments" },
-    facts: { title: "For those who need the facts.", describe: "How we describe stones", trade: "For Trade" },
-    about: "Rubiae brings natural gemstones into view with room for personal meaning.", trade: "For professional buyers: begin with material, format, quantity, quality range, and documentation.", closing: "Choose on your terms.", menu: "Menu", close: "Close menu",
-  },
-  nl: {
-    nav: { stones: "Stenen", stories: "Verhalen", choose: "Hoe kies je", about: "Over Rubiae", trade: "Voor professionals" },
-    hero: { title: "Kies een steen voor het leven dat je vormgeeft.", body: "Natuurlijke edelstenen, eerlijk beschreven en gekozen op jouw voorwaarden.", cta: "Bekijk de stenen", storyLabel: "RUBIAE MOMENTS", story: "Haar verhaal, in haar eigen woorden.", storyCta: "Lees haar moment" },
-    slow: { display: "Een steen, rustig bekeken.", heading: "Begin bij de steen.", body: "Kleur, natuurlijk karakter en wat bekend is — helder beschreven.", cta: "Bekijk de stenen" },
-    choose: { title: "Kijk rustig. Vraag door. Kies vrij.", cta: "Hoe kies je" },
-    moments: { title: "Een moment kan beginnen met een steen.", body: "Rubiae Moments biedt ruimte aan verhalen, verteld in haar eigen woorden.", cta: "Ontdek Rubiae Moments" },
-    facts: { title: "Voor wie de feiten nodig heeft.", describe: "Hoe we stenen beschrijven", trade: "Voor professionals" },
-    about: "Rubiae brengt natuurlijke edelstenen in beeld met ruimte voor persoonlijke betekenis.", trade: "Voor professionele kopers: begin met materiaal, formaat, hoeveelheid, kwaliteitsniveau en documentatie.", closing: "Kies op jouw voorwaarden.", menu: "Menu", close: "Menu sluiten",
-  },
-};
+import { copy } from "./content.js";
+import { HOME_PATH, STONE_PATH, STORIES_PATH, normalizePath } from "./routes.js";
+import { HomePage } from "./pages/HomePage.jsx";
+import { StoneDetailPage } from "./pages/StoneDetailPage.jsx";
+import { StoriesPage } from "./pages/StoriesPage.jsx";
 
 const links = [
-  ["stones", "stones"],
-  ["stories", "stories"],
-  ["how-to-choose", "choose"],
-  ["about", "about"],
-  ["for-trade", "trade"],
+  ["stones", "stones", STONE_PATH],
+  ["stories", "stories", STORIES_PATH],
+  ["how-to-choose", "choose", `${HOME_PATH}#how-to-choose`],
+  ["about", "about", `${HOME_PATH}#about`],
+  ["for-trade", "trade", `${HOME_PATH}#for-trade`],
 ];
 
 export function App() {
   const [locale, setLocale] = useState("en");
   const [menuOpen, setMenuOpen] = useState(false);
+  const [path, setPath] = useState(() => normalizePath(window.location.pathname));
   const text = copy[locale];
-  const navigate = () => setMenuOpen(false);
+  const navigate = (event, destination) => {
+    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return;
+    event.preventDefault();
+    const [pathname, hash = ""] = destination.split("#");
+    window.history.pushState({}, "", destination);
+    setPath(normalizePath(pathname));
+    setMenuOpen(false);
+    window.requestAnimationFrame(() => document.querySelector(hash ? `#${hash}` : "#main-content")?.focus());
+  };
 
+  useEffect(() => { document.documentElement.lang = locale; }, [locale]);
   useEffect(() => {
-    document.documentElement.lang = locale;
-  }, [locale]);
+    const updatePath = () => setPath(normalizePath(window.location.pathname));
+    window.addEventListener("popstate", updatePath);
+    return () => window.removeEventListener("popstate", updatePath);
+  }, []);
 
-  return (
-    <>
-      <a className="skip-link" href="#main-content">Skip to content</a>
-      <header className="site-header">
-        <a className="brand" href="#top" aria-label="Rubiae home">Rubiae</a>
-        <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => setMenuOpen((open) => !open)}>
-          {menuOpen ? text.close : text.menu}
-        </button>
-        <nav id="site-navigation" className={`site-nav ${menuOpen ? "is-open" : ""}`} aria-label="Main navigation">
-          {links.map(([id, key]) => <a key={id} href={`#${id}`} onClick={navigate}>{text.nav[key]}</a>)}
-          <button className="language-toggle" type="button" onClick={() => setLocale((current) => current === "en" ? "nl" : "en")} aria-label="Switch language">EN / NL</button>
-        </nav>
-      </header>
-
-      <main id="main-content" tabIndex="-1">
-      <section id="top" className="hero" aria-labelledby="hero-title">
-        <img className="hero-image" src="/assets/rubiae-hero-rain-window.png" alt="Rainy window, table, and woman seen from behind" />
-        <div className="hero-copy">
-          <h1 id="hero-title">{text.hero.title}</h1>
-          <p>{text.hero.body}</p>
-          <a className="solid-link" href="#stones">{text.hero.cta}<span aria-hidden="true">⟶</span></a>
-        </div>
-        <aside className="hero-story" aria-label="Rubiae Moments">
-          <img className="hero-story-street" src="/assets/rubiae-moments-rain-street-v2.png" alt="Rainy city street and sculpture in monochrome" />
-          <img className="hero-story-ruby" src="/assets/rubiae-moments-ruby-v6.png" alt="Decorative close-up of a deep red ruby" />
-          <div>
-            <p className="eyebrow">{text.hero.storyLabel}</p>
-            <h2>{text.hero.story}</h2>
-            <a className="text-link" href="#stories">{text.hero.storyCta}</a>
-          </div>
-        </aside>
-      </section>
-
-      <section id="stones" className="slow-look section-light" aria-labelledby="slow-title">
-        <div className="slow-display">{text.slow.display}</div>
-        <img className="slow-pendant" src="/assets/rubiae-slow-look-pendant.png" alt="Ruby pendant resting on patterned fabric" />
-        <img className="slow-charms" src="/assets/rubiae-hand-ruby-charms.png" alt="Hand arranging ruby charms" />
-        <div className="slow-copy">
-          <h2 id="slow-title">{text.slow.heading}</h2>
-          <p>{text.slow.body}</p>
-          <a className="text-link" href="#facts">{text.slow.cta}</a>
-        </div>
-      </section>
-
-      <section id="how-to-choose" className="choose-section" aria-labelledby="choose-title">
-        <img src="/assets/rubiae-rain-watch.png" alt="Watch, key, and ruby jewellery by a rain-streaked window" />
-        <div>
-          <h2 id="choose-title">{text.choose.title}</h2>
-          <a className="solid-link solid-link--light" href="#facts">{text.choose.cta}<span aria-hidden="true">⟶</span></a>
-        </div>
-      </section>
-
-      <section id="stories" className="moments section-light" aria-labelledby="moments-title">
-        <img src="/assets/rubiae-moments-envelope.png" alt="Paper envelope, fountain pen, key, and ruby jewellery" />
-        <div>
-          <h2 id="moments-title">{text.moments.title}</h2>
-          <p>{text.moments.body}</p>
-          <a className="text-link" href="#about">{text.moments.cta}</a>
-        </div>
-      </section>
-
-      <section id="facts" className="facts" aria-labelledby="facts-title">
-        <div>
-          <h2 id="facts-title">{text.facts.title}</h2>
-          <a href="#stones">{text.facts.describe}<span aria-hidden="true">⟶</span></a>
-          <a href="#for-trade">{text.facts.trade}<span aria-hidden="true">⟶</span></a>
-        </div>
-        <img src="/assets/rubiae-facts-macro.png" alt="Ruby jewellery in a macro view" />
-      </section>
-
-      <footer className="site-footer">
-        <section id="about"><p className="eyebrow">RUBIAE</p><p>{text.about}</p></section>
-        <section id="for-trade"><p className="eyebrow">{text.nav.trade}</p><p>{text.trade}</p></section>
-        <div className="footer-bottom"><h2>{text.closing}</h2><nav aria-label="Footer navigation">{links.map(([id, key]) => <a key={id} href={`#${id}`}>{text.nav[key]}</a>)}</nav></div>
-      </footer>
-      </main>
-    </>
-  );
+  return <>
+    <a className="skip-link" href="#main-content">Skip to content</a>
+    <header className={`site-header ${path === HOME_PATH ? "" : "site-header--paper"}`}>
+      <a className="brand" href={HOME_PATH} onClick={(event) => navigate(event, HOME_PATH)} aria-label="Rubiae home">Rubiae</a>
+      <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? text.close : text.menu}</button>
+      <nav id="site-navigation" className={`site-nav ${menuOpen ? "is-open" : ""}`} aria-label="Main navigation">{links.map(([id, key, destination]) => <a key={id} href={destination} onClick={(event) => navigate(event, destination)}>{text.nav[key]}</a>)}<button className="language-toggle" type="button" onClick={() => setLocale((current) => current === "en" ? "nl" : "en")} aria-label="Switch language">EN / NL</button></nav>
+    </header>
+    {path === STONE_PATH ? <StoneDetailPage text={text} /> : path === STORIES_PATH ? <StoriesPage text={text} locale={locale} onNavigate={navigate} /> : <HomePage text={text} onNavigate={navigate} />}
+  </>;
 }
