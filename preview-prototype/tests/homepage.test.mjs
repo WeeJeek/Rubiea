@@ -35,6 +35,7 @@ test("approved v6 homepage keeps visual assets, navigation, language and preview
   assert.match(styles, /\.choose-section\s*\{[^}]*height:\s*41rem[^}]*overflow:\s*hidden/);
   assert.match(styles, /\.choose-section img\s*\{[^}]*position:\s*absolute[^}]*inset:\s*0/);
   assert.match(styles, /\.choose-section div\s*\{[^}]*position:\s*absolute[^}]*z-index:\s*1/);
+  assert.match(styles, /\.choose-section \.solid-link\s*\{[^}]*position:\s*absolute[^}]*bottom:\s*2\.5rem/);
   assert.match(styles, /\.hero\s*\{[^}]*padding-top:\s*31\.5rem/);
   assert.match(styles, /\.hero-image\s*\{[^}]*height:\s*24rem[^}]*object-position:\s*65% center/);
   assert.match(home, /className="hero-story-street"[^>]*rubiae-moments-rain-street-v2\.png/);
