@@ -34,12 +34,12 @@ export const fictionalStoryDemos = [
 export const copy = {
   en: {
     nav: { stones: "Stones", stories: "Stories", choose: "How to Choose", about: "About", trade: "For Trade" },
-    hero: { title: "Choose a stone for the life you are shaping.", body: "Natural gemstones, honestly described and chosen on your terms.", cta: "Explore the stones", storyLabel: "RUBIAE MOMENTS", story: "Her story, in her own words.", storyCta: "Read her moment" },
+    hero: { title: "Choose a stone for the life you are shaping.", body: "Natural gemstones, honestly described and chosen on your terms.", cta: "Explore the stones", storyLabel: "EMPYRA MOMENTS", story: "Her story, in her own words.", storyCta: "Read her moment" },
     slow: { display: "A stone, seen slowly.", heading: "Begin with the stone.", body: "Colour, natural character, and what is known — clearly described.", cta: "Explore the stones" },
     choose: { title: "Look slowly. Ask clearly. Choose freely.", cta: "How to choose" },
-    moments: { title: "A moment can begin with a stone.", body: "Rubiae Moments is a space for stories shared in her own words.", cta: "Discover Rubiae Moments" },
+    moments: { title: "A moment can begin with a stone.", body: "Empyra Moments is a space for stories shared in her own words.", cta: "Discover Empyra Moments" },
     facts: { title: "For those who need the facts.", describe: "How we describe stones", trade: "For Trade" },
-    about: "Rubiae brings natural gemstones into view with room for personal meaning.", trade: "For professional buyers: begin with material, format, quantity, quality range, and documentation.", closing: "Choose on your terms.", menu: "Menu", close: "Close menu",
+    about: "Empyra brings natural gemstones into view with room for personal meaning.", trade: "For professional buyers: begin with material, format, quantity, quality range, and documentation.", closing: "Choose on your terms.", menu: "Menu", close: "Close menu",
     stone: {
       label: "Stone Detail · preview illustration",
       title: "Loose red gemstone",
@@ -69,16 +69,16 @@ export const copy = {
         video: "Still preview for an optional short video of the loose red gemstone",
       },
     },
-    stories: { label: "RUBIAE MOMENTS", title: "Stories, held with care.", intro: "Stories appear here only when someone has chosen to share them.", emptyTitle: "No stories have been published yet.", emptyBody: "When a contributor authorises a story for publication, it will appear here in her own words.", back: "Return home", demoLabel: "FICTIONAL LAYOUT DEMO", allDemos: "All demo stories", demoByline: "Layout study only" },
+    stories: { label: "EMPYRA MOMENTS", title: "Stories, held with care.", intro: "Stories appear here only when someone has chosen to share them.", emptyTitle: "No stories have been published yet.", emptyBody: "When a contributor authorises a story for publication, it will appear here in her own words.", back: "Return home", demoLabel: "FICTIONAL LAYOUT DEMO", allDemos: "All demo stories", demoByline: "Layout study only" },
   },
   nl: {
-    nav: { stones: "Stenen", stories: "Verhalen", choose: "Hoe kies je", about: "Over Rubiae", trade: "Voor professionals" },
-    hero: { title: "Kies een steen voor het leven dat je vormgeeft.", body: "Natuurlijke edelstenen, eerlijk beschreven en gekozen op jouw voorwaarden.", cta: "Bekijk de stenen", storyLabel: "RUBIAE MOMENTS", story: "Haar verhaal, in haar eigen woorden.", storyCta: "Lees haar moment" },
+    nav: { stones: "Stenen", stories: "Verhalen", choose: "Hoe kies je", about: "Over Empyra", trade: "Voor professionals" },
+    hero: { title: "Kies een steen voor het leven dat je vormgeeft.", body: "Natuurlijke edelstenen, eerlijk beschreven en gekozen op jouw voorwaarden.", cta: "Bekijk de stenen", storyLabel: "EMPYRA MOMENTS", story: "Haar verhaal, in haar eigen woorden.", storyCta: "Lees haar moment" },
     slow: { display: "Een steen, rustig bekeken.", heading: "Begin bij de steen.", body: "Kleur, natuurlijk karakter en wat bekend is — helder beschreven.", cta: "Bekijk de stenen" },
     choose: { title: "Kijk rustig. Vraag door. Kies vrij.", cta: "Hoe kies je" },
-    moments: { title: "Een moment kan beginnen met een steen.", body: "Rubiae Moments biedt ruimte aan verhalen, verteld in haar eigen woorden.", cta: "Ontdek Rubiae Moments" },
+    moments: { title: "Een moment kan beginnen met een steen.", body: "Empyra Moments biedt ruimte aan verhalen, verteld in haar eigen woorden.", cta: "Ontdek Empyra Moments" },
     facts: { title: "Voor wie de feiten nodig heeft.", describe: "Hoe we stenen beschrijven", trade: "Voor professionals" },
-    about: "Rubiae brengt natuurlijke edelstenen in beeld met ruimte voor persoonlijke betekenis.", trade: "Voor professionele kopers: begin met materiaal, formaat, hoeveelheid, kwaliteitsniveau en documentatie.", closing: "Kies op jouw voorwaarden.", menu: "Menu", close: "Menu sluiten",
+    about: "Empyra brengt natuurlijke edelstenen in beeld met ruimte voor persoonlijke betekenis.", trade: "Voor professionele kopers: begin met materiaal, formaat, hoeveelheid, kwaliteitsniveau en documentatie.", closing: "Kies op jouw voorwaarden.", menu: "Menu", close: "Menu sluiten",
     stone: {
       label: "Steendetail · voorbeeldillustratie",
       title: "Losse rode edelsteen",
@@ -108,6 +108,6 @@ export const copy = {
         video: "Stilstaand voorbeeld voor een optionele korte video van de losse rode edelsteen",
       },
     },
-    stories: { label: "RUBIAE MOMENTS", title: "Verhalen, zorgvuldig bewaard.", intro: "Verhalen verschijnen hier alleen wanneer iemand ervoor kiest ze te delen.", emptyTitle: "Er zijn nog geen verhalen gepubliceerd.", emptyBody: "Wanneer een bijdrage voor publicatie is goedgekeurd, verschijnt zij hier in haar eigen woorden.", back: "Terug naar home", demoLabel: "FICTIEVE LAYOUTDEMO", allDemos: "Alle demoverhalen", demoByline: "Alleen layoutstudie" },
+    stories: { label: "EMPYRA MOMENTS", title: "Verhalen, zorgvuldig bewaard.", intro: "Verhalen verschijnen hier alleen wanneer iemand ervoor kiest ze te delen.", emptyTitle: "Er zijn nog geen verhalen gepubliceerd.", emptyBody: "Wanneer een bijdrage voor publicatie is goedgekeurd, verschijnt zij hier in haar eigen woorden.", back: "Terug naar home", demoLabel: "FICTIEVE LAYOUTDEMO", allDemos: "Alle demoverhalen", demoByline: "Alleen layoutstudie" },
   },
 };

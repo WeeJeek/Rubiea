@@ -1,5 +1,5 @@
 import assert from "node:assert/strict";
-import { readFileSync } from "node:fs";
+import { existsSync, readFileSync } from "node:fs";
 import test from "node:test";
 
 const app = readFileSync(new URL("../src/App.jsx", import.meta.url), "utf8");
@@ -47,4 +47,38 @@ test("approved v6 homepage keeps visual assets, navigation, language and preview
   assert.match(styles, /@media \(max-width: 760px\)[\s\S]*\.hero-story-ruby\s*\{[^}]*right:\s*-29%[^}]*bottom:\s*-6%[^}]*width:\s*58%/);
   assert.match(styles, /a:focus-visible,\s*button:focus-visible/);
   assert.match(styles, /\.skip-link:focus/);
+});
+
+test("site uses the EMPYRA typographic masthead and no longer presents Rubiae as the brand", () => {
+  const app = readFileSync(new URL("../src/App.jsx", import.meta.url), "utf8");
+  const content = readFileSync(new URL("../src/content.js", import.meta.url), "utf8");
+  const home = readFileSync(new URL("../src/pages/HomePage.jsx", import.meta.url), "utf8");
+  const document = readFileSync(new URL("../index.html", import.meta.url), "utf8");
+
+  assert.match(app, /src="\/assets\/empyra-masthead-black\.svg"/);
+  assert.match(app, /src="\/assets\/empyra-masthead-cream\.svg"/);
+  assert.match(app, /aria-label="EMPYRA home"/);
+  for (const asset of ["empyra-masthead-black.svg", "empyra-masthead-cream.svg", "empyra-logo-stacked-black.svg"])
+    assert.equal(existsSync(new URL(`../public/assets/${asset}`, import.meta.url)), true);
+
+  // the masthead sits straight on the page, with no bone panel behind it
+  assert.doesNotMatch(styles, /\.brand\s*\{[^}]*background:/s);
+  // cream masthead only over the dark stone photograph, and only on desktop
+  assert.match(styles, /\.site-header--stone \.brand-mark--cream \{ display: block; \}/);
+  // navigation answers the masthead's tracking
+  assert.match(styles, /\.site-nav a, \.language-toggle \{[^}]*letter-spacing: 0\.16em;[^}]*text-transform: uppercase;/s);
+  // the full lockup and tagline appear once, in the footer colophon
+  assert.match(home, /footer-colophon/);
+  assert.match(home, /empyra-logo-stacked-black\.svg/);
+  // icons are declared
+  assert.match(document, /rel="icon" href="\/empyra-favicon\.svg"/);
+  assert.match(document, /rel="apple-touch-icon"/);
+  assert.match(content, /EMPYRA MOMENTS/);
+  assert.match(content, /Empyra brings natural gemstones/i);
+  assert.match(document, /<title>EMPYRA \| Preview<\/title>/);
+  assert.doesNotMatch(app, /Rubiae/);
+  assert.doesNotMatch(content, /Rubiae/);
+  assert.match(home, /aria-label="EMPYRA Moments"/);
+  assert.match(home, />EMPYRA<\/p>/);
+  assert.doesNotMatch(home, /aria-label="Rubiae Moments"|>RUBIAE<\/p>/);
 });
