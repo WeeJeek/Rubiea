@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import { copy } from "./content.js";
-import { HOME_PATH, STONE_PATH, STORIES_PATH, normalizePath } from "./routes.js";
+import { COOKIE_PATH, HOME_PATH, LEGAL_PATH, PRIVACY_PATH, STONE_PATH, STORIES_PATH, normalizePath } from "./routes.js";
 import { HomePage } from "./pages/HomePage.jsx";
+import { LegalPage } from "./pages/LegalPage.jsx";
 import { StoneDetailPage } from "./pages/StoneDetailPage.jsx";
 import { StoriesPage } from "./pages/StoriesPage.jsx";
 
@@ -42,6 +43,6 @@ export function App() {
       <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? text.close : text.menu}</button>
       <nav id="site-navigation" className={`site-nav ${menuOpen ? "is-open" : ""}`} aria-label="Main navigation">{links.map(([id, key, destination]) => <a key={id} href={destination} onClick={(event) => navigate(event, destination)}>{text.nav[key]}</a>)}<button className="language-toggle" type="button" onClick={() => setLocale((current) => current === "en" ? "nl" : "en")} aria-label="Switch language">EN / NL</button></nav>
     </header>
-    {path === STONE_PATH ? <StoneDetailPage text={text} /> : path === STORIES_PATH ? <StoriesPage text={text} locale={locale} onNavigate={navigate} /> : <HomePage text={text} onNavigate={navigate} />}
+    {path === STONE_PATH ? <StoneDetailPage text={text} /> : path === STORIES_PATH ? <StoriesPage text={text} locale={locale} onNavigate={navigate} /> : [LEGAL_PATH, PRIVACY_PATH, COOKIE_PATH].includes(path) ? <LegalPage path={path} text={text} onNavigate={navigate} /> : <HomePage text={text} onNavigate={navigate} />}
   </>;
 }
