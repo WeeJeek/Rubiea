@@ -13,7 +13,7 @@ test("GEM-005 Stone Detail follows the approved hero and evidence contract", () 
   assert.match(page, /id="stone-supporting-evidence"/);
   assert.match(page, /aria-expanded=\{evidenceOpen\}/);
   assert.match(app, /path === STONE_PATH \? "site-header--stone"/);
-  assert.match(styles, /\.site-header--stone\s*\{[^}]*position:\s*absolute/s);
+  assert.match(styles, /\.site-header--stone\s*\{[^}]*position:\s*relative/s);
   assert.match(styles, /\.stone-detail-hero\s*\{[^}]*grid-template-columns:\s*minmax\(0, 65fr\) minmax\(18rem, 35fr\)/s);
   assert.match(styles, /grid-template-areas:\s*"photo identity"\s*"photo facts"/);
   assert.match(styles, /grid-template-areas:\s*"identity"\s*"photo"\s*"facts"/);
@@ -21,9 +21,12 @@ test("GEM-005 Stone Detail follows the approved hero and evidence contract", () 
   assert.doesNotMatch(styles, /linear-gradient/);
 });
 
-test("GEM-005 Stone Detail desktop header spans both surfaces with split contrast", () => {
-  assert.match(styles, /\.site-header--stone\s*\{[^}]*width:\s*100%[^}]*color:\s*#fffafa/s);
-  assert.match(styles, /@media \(min-width:\s*761px\)[\s\S]*?\.site-header--stone \.site-nav\s*\{[^}]*color:\s*#251f24/s);
+test("GEM-005 Stone Detail header sits on paper, so nothing lands on the photograph", () => {
+  // one header rule at every width: paper ground, ink type
+  assert.match(styles, /\.site-header--stone\s*\{[^}]*width:\s*100%[^}]*background:\s*#fffdfa[^}]*color:\s*#251f24/s);
+  // the old split-contrast overrides are gone — they left "Stones" in ink over a dark photograph
+  assert.doesNotMatch(styles, /\.site-header--stone \.site-nav\s*\{/);
+  assert.doesNotMatch(styles, /brand-mark--cream/);
   assert.doesNotMatch(styles, /\.site-header--stone\s*\{[^}]*width:\s*65%/s);
 });
 

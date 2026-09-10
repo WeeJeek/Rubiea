@@ -40,6 +40,42 @@ THE GIRDLE SEAM
   that fine, so artwork for those processes widens it to 1.4. Use the files
   in the collateral pack marked "foil" or "deboss" for anything physical.
 
+THE BLACK SET — WHAT THE WEBSITE USES  (added 2026-09-10)
+  The site runs the identity entirely in black. Files carrying "-black" in
+  the name are that set; everything else in this pack is the original
+  colour identity and stays the reference for print and packaging.
+
+  svg/empyra-masthead-black.svg      the site header. Wordmark ALONE, no
+                                     symbol, no tagline, #0E0C0D. The symbol
+                                     is deliberately absent — below ~60 px it
+                                     closes up and reads as a dark dot.
+  svg/empyra-masthead-cream.svg      the same, #FFFAFA, for a dark ground
+  svg/empyra-logo-stacked-black.svg  the footer lockup. Two values of black:
+                                     crown #4E474D over pavilion #0E0C0D, so
+                                     the stone still reads as cut. Arc,
+                                     wordmark, rule and tagline all #0E0C0D.
+  svg/empyra-symbol-black.svg        + -compact-black, -micro-black. Same
+                                     optical size family and the same
+                                     thresholds as the colour set.
+  svg/empyra-favicon.svg             the micro mark on a BONE #F7F2E9 tile
+  svg/empyra-app-icon.svg            the full mark on a Bone tile, 180/512
+
+  png/*-black-*.png                  raster exports of all of the above.
+                                     Lockups and symbols are TRANSPARENT;
+                                     the favicon and app-icon PNGs carry the
+                                     Bone tile and are opaque by design.
+
+  WHY THE ICONS HAVE A TILE, AND THE LOCKUPS DO NOT
+  A transparent black mark disappears against a dark browser chrome, and
+  roughly half of viewers run dark mode. A tile is standard practice for
+  favicons and costs nothing. Everywhere else the black art sits straight
+  on the page with no panel behind it.
+
+  DO NOT MIX THE TWO SETS
+  png/empyra-favicon-16.png (no "black") is the ORIGINAL COLOUR icon —
+  Ruby and Ember. It is not the one the site uses. For anything web, take
+  the "-black" files.
+
 COLOUR
   Ruby        #7C1226   the flame, the pavilion
   Ember       #C4442C   the crown, accents, links

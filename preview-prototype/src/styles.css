@@ -29,7 +29,7 @@ a:focus-visible, button:focus-visible { outline: 3px solid #a5203f; outline-offs
   color: #fffafa;
 }
 .site-header--paper { position: relative; color: #251f24; background: #fffdfa; }
-.site-header--stone { position: absolute; width: 100%; color: #fffafa; }
+.site-header--stone { position: relative; width: 100%; background: #fffdfa; color: #251f24; }
 
 .brand {
   display: block;
@@ -37,18 +37,11 @@ a:focus-visible, button:focus-visible { outline: 3px solid #a5203f; outline-offs
   text-decoration: none;
 }
 .brand-mark { width: 100%; height: auto; }
-.brand-mark--cream { display: none; }
 
 .site-nav { display: flex; align-items: center; gap: clamp(1rem, 1.9vw, 1.85rem); }
 .site-nav a, .language-toggle { border: 0; padding: 0; background: none; color: inherit; font-size: 0.64rem; letter-spacing: 0.16em; text-decoration: none; text-transform: uppercase; }
 .site-nav a:hover, .site-nav a:focus-visible, .language-toggle:hover, .language-toggle:focus-visible, .text-link:hover, .text-link:focus-visible { color: #9e4350; }
 .menu-toggle { display: none; }
-
-@media (min-width: 761px) {
-  .site-header--stone .site-nav { color: #251f24; }
-  .site-header--stone .brand-mark--ink { display: none; }
-  .site-header--stone .brand-mark--cream { display: block; }
-}
 
 .hero { position: relative; min-height: 52rem; overflow: hidden; color: #261e25; }
 .hero-image { width: 100%; height: 52rem; object-fit: cover; object-position: center; }
@@ -123,13 +116,13 @@ h1, h2 { margin: 0; font-family: Georgia, serif; font-weight: 400; letter-spacin
 
 .site-footer { padding: clamp(3rem, 6vw, 7rem) clamp(1.5rem, 7vw, 9rem) 2rem; background: #efeded; }
 .site-footer > section { display: inline-block; width: min(24rem, 44%); margin: 0 7% 4rem 0; vertical-align: top; }
-.footer-bottom { display: flex; align-items: end; justify-content: space-between; gap: 3rem; padding-top: 3rem; border-top: 1px solid #c4bec0; }
+.footer-bottom { display: flex; align-items: flex-end; justify-content: space-between; gap: clamp(2rem, 4vw, 4rem); padding-top: 3rem; border-top: 1px solid #c4bec0; }
 .footer-bottom h2 { max-width: 8ch; }
-.footer-bottom nav { display: flex; flex-wrap: wrap; justify-content: end; gap: 1.3rem; max-width: 32rem; }
+.footer-mark { width: 11rem; height: auto; }
+.footer-end { display: flex; flex-direction: column; align-items: flex-end; gap: 1.5rem; }
+.footer-bottom nav { display: flex; flex-wrap: wrap; justify-content: end; gap: 1.5rem; max-width: 32rem; }
 .footer-bottom a { font-size: 0.64rem; letter-spacing: 0.16em; text-decoration: none; text-transform: uppercase; }
-.footer-colophon { display: flex; align-items: flex-end; justify-content: space-between; gap: 3rem; margin-top: 3.5rem; padding-top: 1.9rem; border-top: 1px solid rgba(37, 31, 36, 0.16); }
-.footer-mark { width: 13.75rem; height: auto; }
-.footer-legal { display: flex; flex-direction: column; align-items: flex-end; gap: 0.56rem; margin: 0 0 0.4rem; color: #665e62; font-size: 0.65rem; letter-spacing: 0.14em; }
+.footer-legal { display: flex; flex-direction: column; align-items: flex-end; gap: 0.5rem; margin: 0; color: #665e62; font-size: 0.65rem; letter-spacing: 0.14em; }
 
 .stone-detail, .stories-page { background: #fffdfa; color: #251f24; }
 .stone-detail-hero {
@@ -259,10 +252,9 @@ h1, h2 { margin: 0; font-family: Georgia, serif; font-weight: 400; letter-spacin
   .site-footer > section { display: block; width: auto; margin-right: 0; }
   .footer-bottom { display: block; }
   .footer-bottom nav { justify-content: start; margin-top: 2rem; }
-  .footer-colophon { display: block; margin-top: 2.75rem; }
-  .footer-mark { width: 12.5rem; }
-  .footer-legal { align-items: flex-start; margin: 1.4rem 0 0; }
-  .site-header--stone { position: relative; width: 100%; background: #fffdfa; color: #251f24; }
+  .footer-mark { width: 10.5rem; margin-top: 2.5rem; }
+  .footer-end { display: block; }
+  .footer-legal { align-items: flex-start; margin-top: 1.5rem; }
   .stone-detail-hero { grid-template-areas: "identity" "photo" "facts"; grid-template-columns: 1fr; grid-template-rows: auto auto auto; }
   .stone-identity { padding: 3rem 1.5rem 2rem; }
   .stone-identity h1 { font-size: clamp(2.7rem, 13vw, 4rem); }

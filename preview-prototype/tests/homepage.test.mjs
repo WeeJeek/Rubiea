@@ -56,20 +56,23 @@ test("site uses the EMPYRA typographic masthead and no longer presents Rubiae as
   const document = readFileSync(new URL("../index.html", import.meta.url), "utf8");
 
   assert.match(app, /src="\/assets\/empyra-masthead-black\.svg"/);
-  assert.match(app, /src="\/assets\/empyra-masthead-cream\.svg"/);
   assert.match(app, /aria-label="EMPYRA home"/);
-  for (const asset of ["empyra-masthead-black.svg", "empyra-masthead-cream.svg", "empyra-logo-stacked-black.svg"])
+  for (const asset of ["empyra-masthead-black.svg", "empyra-logo-stacked-black.svg"])
     assert.equal(existsSync(new URL(`../public/assets/${asset}`, import.meta.url)), true);
 
   // the masthead sits straight on the page, with no bone panel behind it
   assert.doesNotMatch(styles, /\.brand\s*\{[^}]*background:/s);
-  // cream masthead only over the dark stone photograph, and only on desktop
-  assert.match(styles, /\.site-header--stone \.brand-mark--cream \{ display: block; \}/);
+  // only the home header overlays photography; stone detail sits on paper like every other page
+  assert.match(styles, /\.site-header--stone \{ position: relative;[^}]*background: #fffdfa;/);
   // navigation answers the masthead's tracking
   assert.match(styles, /\.site-nav a, \.language-toggle \{[^}]*letter-spacing: 0\.16em;[^}]*text-transform: uppercase;/s);
-  // the full lockup and tagline appear once, in the footer colophon
-  assert.match(home, /footer-colophon/);
+  // the footer closes on a single row: statement, lockup, links and legal line
+  assert.match(home, /footer-bottom/);
+  assert.match(home, /footer-mark/);
+  assert.match(home, /footer-end/);
   assert.match(home, /empyra-logo-stacked-black\.svg/);
+  assert.doesNotMatch(home, /footer-colophon/);
+  assert.doesNotMatch(styles, /\.footer-colophon/);
   // icons are declared
   assert.match(document, /rel="icon" href="\/empyra-favicon\.svg"/);
   assert.match(document, /rel="apple-touch-icon"/);

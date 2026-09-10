@@ -38,7 +38,7 @@ export function App() {
   return <>
     <a className="skip-link" href="#main-content">Skip to content</a>
     <header className={`site-header ${path === HOME_PATH ? "" : path === STONE_PATH ? "site-header--stone" : "site-header--paper"}`}>
-      <a className="brand" href={HOME_PATH} onClick={(event) => navigate(event, HOME_PATH)} aria-label="EMPYRA home"><img className="brand-mark brand-mark--ink" src="/assets/empyra-masthead-black.svg" alt="EMPYRA" /><img className="brand-mark brand-mark--cream" src="/assets/empyra-masthead-cream.svg" alt="" aria-hidden="true" /></a>
+      <a className="brand" href={HOME_PATH} onClick={(event) => navigate(event, HOME_PATH)} aria-label="EMPYRA home"><img className="brand-mark" src="/assets/empyra-masthead-black.svg" alt="EMPYRA" /></a>
       <button className="menu-toggle" type="button" aria-expanded={menuOpen} aria-controls="site-navigation" onClick={() => setMenuOpen((open) => !open)}>{menuOpen ? text.close : text.menu}</button>
       <nav id="site-navigation" className={`site-nav ${menuOpen ? "is-open" : ""}`} aria-label="Main navigation">{links.map(([id, key, destination]) => <a key={id} href={destination} onClick={(event) => navigate(event, destination)}>{text.nav[key]}</a>)}<button className="language-toggle" type="button" onClick={() => setLocale((current) => current === "en" ? "nl" : "en")} aria-label="Switch language">EN / NL</button></nav>
     </header>
